@@ -309,13 +309,13 @@ export default function Home() {
               className="aspect-square w-full rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl relative"
             >
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d173369.36660126788!2d21.7820465243179!3d47.07259166708602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474647e366035eb5%3A0xe138f310f8a8cf3!2sBalajti+Ferenc+Photography!5e0!3m2!1sro!2sro!4v1711200000000!5m2!1sro!2sro" 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5434.035881533315!2d21.9213121!3d47.0791118!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4746499da3c0a119%3A0x90dbc64492002a6!2sFotograf%20nunta%20Oradea%20-%20Ferenc%20Balajti!5e0!3m2!1sen!2sro!4v1774720564508!5m2!1sen!2sro" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
                 allowFullScreen="" 
                 loading="lazy" 
-                title="Locație Balajti Ferenc Photography"
+                title="Locație Ferenc Balajti Photography"
               ></iframe>
             </motion.div>
 
