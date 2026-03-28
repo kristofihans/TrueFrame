@@ -1,125 +1,96 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail } from 'lucide-react';
-
-const Instagram = ({ size = 24, className = "" }) => (
-  // SVG omitted string
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-);
-const Facebook = ({ size = 24, className = "" }) => (
-  // SVG omitted string
-  <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-);
+import { MapPin, Phone, MessageCircle } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <div className="pt-32 pb-20 min-h-screen bg-transparent font-sans">
+    <div className="pt-32 pb-24 min-h-screen bg-transparent font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-serif font-bold text-white mb-6"
-          >
-            Să scriem povestea împreună
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-zinc-400 font-light"
-          >
-            Fie că aveți deja data stabilită sau doar doriți detalii suplimentare, lăsați-mi un mesaj și vă voi răspunde cu cel mai mare drag.
-          </motion.p>
+        {/* Title Section matching Home.jsx */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Unde ne găsești</h1>
+          <div className="h-1 w-20 bg-white/20 mx-auto rounded-full" />
+          <p className="mt-8 text-lg text-zinc-400 font-light max-w-2xl mx-auto italic">
+            "Să scriem povestea împreună. Fie că aveți deja data stabilită sau doar doriți detalii suplimentare, lăsați-mi un mesaj și vă voi răspunde cu cel mai mare drag."
+          </p>
         </div>
 
-        {/* Top Info Cards */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
-        >
-          <div className="glass-panel p-6 rounded-3xl flex flex-col items-center text-center">
-            <div className="p-4 bg-white/10 rounded-full text-white mb-4"><MapPin size={28} /></div>
-            <strong className="block text-white mb-2 text-lg font-serif">Locație</strong>
-            <span className="text-zinc-400 font-light">Oradea, Bihor</span>
-            <span className="text-sm text-zinc-500 mt-2">Disponibil pentru deplasări interne.</span>
-          </div>
-
-          <div className="glass-panel p-6 rounded-3xl flex flex-col items-center text-center">
-            <div className="p-4 bg-white/10 rounded-full text-white mb-4"><Phone size={28} /></div>
-            <strong className="block text-white mb-2 text-lg font-serif">Telefon</strong>
-            <a href="tel:+40727854187" className="text-zinc-400 font-light hover:text-white transition-colors">+40 727 854 187</a>
-          </div>
-
-          <div className="glass-panel p-6 rounded-3xl flex flex-col items-center text-center">
-            <div className="p-4 bg-white/10 rounded-full text-white mb-4"><Mail size={28} /></div>
-            <strong className="block text-white mb-2 text-lg font-serif">Email & Socials</strong>
-            <a href="mailto:contact@trueframe.example" className="text-zinc-400 font-light hover:text-white transition-colors mb-4">contact@trueframe.example</a>
-            <div className="flex justify-center gap-3">
-              <a href="#" className="p-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all text-zinc-400 hover:text-white"><Instagram size={20} /></a>
-              <a href="#" className="p-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all text-zinc-400 hover:text-white"><Facebook size={20} /></a>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Bottom Split (Form Left, Map Right) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
+          {/* Map Area matching Home.jsx */}
           <motion.div 
-            initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
-            className="glass-panel p-8 md:p-12 rounded-3xl h-full flex flex-col justify-center"
-          >
-            <h3 className="text-2xl font-serif font-bold text-white mb-8 border-b border-white/10 pb-4">Îmi doresc o colaborare</h3>
-            
-            <form className="space-y-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div>
-                  <input type="text" id="name" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Nume și Prenume *" />
-                </div>
-                <div>
-                  <input type="tel" id="phone" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Telefon *" />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div>
-                  <input type="email" id="email" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Email" />
-                </div>
-                <div>
-                  <input type="date" id="date" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none" />
-                </div>
-              </div>
-
-              <div>
-                <select id="eventType" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none">
-                  <option value="" className="bg-zinc-900">Alege tipul de eveniment...</option>
-                  <option value="nunta" className="bg-zinc-900">Nuntă</option>
-                  <option value="botez" className="bg-zinc-900">Botez</option>
-                  <option value="sedinta" className="bg-zinc-900">Ședință Foto</option>
-                </select>
-              </div>
-
-              <div>
-                <textarea id="message" rows="4" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none resize-none" placeholder="Mesajul tău *"></textarea>
-              </div>
-
-              <button type="submit" className="w-full btn-primary !py-4 text-base tracking-wide uppercase mt-4">
-                Trimite Solicitarea
-              </button>
-            </form>
-          </motion.div>
-
-          {/* Contact Map */}
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
-            className="rounded-3xl overflow-hidden glass-panel h-[50vh] lg:h-auto border border-white/10"
+            initial={{ opacity: 0, x: -20 }} 
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="aspect-square w-full rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl relative"
           >
             <iframe 
-              title="Locatie Oradea"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87361.64208493035!2d21.849187399347576!3d47.05141940984852!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474647e366035eb5%3A0xe138f310f8a8cf3!2sOradea!5e0!3m2!1sen!2sro!4v1700000000000!5m2!1sen!2sro" 
-              className="w-full h-full border-0 rounded-2xl" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d173369.36660126788!2d21.7820465243179!3d47.07259166708602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474647e366035eb5%3A0xe138f310f8a8cf3!2sBalajti+Ferenc+Photography!5e0!3m2!1sro!2sro!4v1711200000000!5m2!1sro!2sro" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
               allowFullScreen="" 
               loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
+              title="Locație Balajti Ferenc Photography"
             ></iframe>
+          </motion.div>
+
+          {/* Form & WhatsApp Side matching Home.jsx */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }} 
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="p-8 md:p-12 glass-panel rounded-[2.5rem] space-y-8"
+          >
+            <div className="pb-6 border-b border-white/10">
+              <h3 className="text-2xl font-serif font-bold text-white mb-2">Îmi doresc o colaborare</h3>
+              <p className="text-zinc-400 text-lg font-light leading-relaxed">
+                Ai întrebări sau vrei să programezi o ședință? Scrie-ne și îți răspundem imediat!
+              </p>
+            </div>
+
+            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <input type="text" id="name" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Nume și Prenume *" />
+                <input type="tel" id="phone" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Telefon *" />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <input type="email" id="email" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Email" />
+                <input type="date" id="date" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none" />
+              </div>
+
+              <select id="eventType" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none">
+                <option value="" className="bg-zinc-900">Alege tipul de eveniment...</option>
+                <option value="nunta" className="bg-zinc-900">Nuntă</option>
+                <option value="botez" className="bg-zinc-900">Botez</option>
+                <option value="sedinta" className="bg-zinc-900">Ședință Foto</option>
+              </select>
+
+              <textarea id="message" rows="3" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none resize-none" placeholder="Mesajul tău *"></textarea>
+
+              <button type="submit" className="w-full btn-primary !py-4 text-base tracking-wide uppercase mt-2 shadow-lg">
+                Trimite Mesajul
+              </button>
+            </form>
+            
+            <div className="relative py-4">
+              <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div>
+              <div className="relative flex justify-center text-xs uppercase"><span className="bg-zinc-900/40 border border-white/10 px-4 py-1 rounded-full text-zinc-500">sau</span></div>
+            </div>
+
+            <div className="pt-2">
+              <a 
+                href="https://wa.me/40727854187" 
+                target="_blank" 
+                rel="noreferrer"
+                className="inline-flex items-center gap-3 bg-green-600/90 hover:bg-green-600 text-white px-10 py-5 rounded-full text-xl font-bold transition-all shadow-[0_10px_30px_rgba(22,163,74,0.15)] w-full justify-center group"
+              >
+                <MessageCircle size={28} className="group-hover:scale-110 transition-transform" />
+                Contactează-mă pe WhatsApp
+              </a>
+            </div>
           </motion.div>
 
         </div>

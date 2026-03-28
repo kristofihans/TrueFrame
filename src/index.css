@@ -41,3 +41,13 @@
     @apply bg-zinc-900/40 backdrop-blur-2xl border border-white/10 shadow-xl pointer-events-auto;
   }
 }
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
