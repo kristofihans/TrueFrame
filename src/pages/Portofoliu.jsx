@@ -96,7 +96,7 @@ export default function Portofoliu() {
                     <img
                       src={album.cover} alt={album.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => { e.target.src = `https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=800&sig=${album.id}`; }}
+                      onError={(e) => { e.target.src = `./images/photo${album.id}.jpg`; }}
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
                     <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full text-white drop-shadow-md text-xs font-bold flex items-center gap-1.5 shadow-sm border border-white/70">
@@ -125,7 +125,7 @@ export default function Portofoliu() {
                     src={photo.src} 
                     alt={`${activeAlbum.title} ${index + 1}`} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:opacity-90"
-                    onError={(e) => { e.target.src = `https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=800&sig=${activeAlbum.id}${index}`; }}
+                    onError={(e) => { e.target.src = `./images/photo${((activeAlbum.id + index) % 13) || 1}.jpg`; }}
                   />
                   {/* Plus icon on hover indicates it expands */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30 backdrop-blur-[2px]">

@@ -12,7 +12,7 @@ export const blogPosts = [
     date: "14 Mai 2026",
     readTime: "4 min read",
     category: "Ghidul Mirilor",
-    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800"
+    image: "./images/photo3.jpg"
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ export const blogPosts = [
     date: "02 Aprilie 2026",
     readTime: "6 min read",
     category: "Locații",
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800"
+    image: "./images/photo8.jpg"
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ export const blogPosts = [
     date: "20 Martie 2026",
     readTime: "3 min read",
     category: "Sfaturi",
-    image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=800"
+    image: "./images/photo11.jpg"
   }
 ];
 

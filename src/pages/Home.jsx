@@ -144,19 +144,19 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="glass-panel p-6 rounded-3xl text-left hover:-translate-y-2 transition-transform duration-300">
-              <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600" alt="Fotografie Nunta" className="w-full h-48 object-cover rounded-2xl mb-6 shadow-md" />
+              <img src="./images/photo1.jpg" alt="Fotografie Nunta" className="w-full h-48 object-cover rounded-2xl mb-6 shadow-md" onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600'; }} />
               <h3 className="text-2xl font-serif font-bold text-gray-900 mb-4">Fotografie Nuntă</h3>
               <p className="text-gray-700 font-light leading-relaxed mb-6">Documentarea autentică și plină de emoție a celei mai importante zile din viața voastră, de la emoțiile mirilor până la lacrimile bunicilor.</p>
               <Link to="/servicii" className="text-gray-900 font-medium hover:text-gray-800 transition-colors inline-flex items-center gap-2">Detalii Nuntă &rarr;</Link>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="glass-panel p-6 rounded-3xl text-left hover:-translate-y-2 transition-transform duration-300">
-              <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&q=80&w=600" alt="Sesiuni Foto" className="w-full h-48 object-cover rounded-2xl mb-6 shadow-md" />
+              <img src="./images/photo4.jpg" alt="Sesiuni Foto" className="w-full h-48 object-cover rounded-2xl mb-6 shadow-md" onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?auto=format&fit=crop&q=80&w=600'; }} />
               <h3 className="text-2xl font-serif font-bold text-gray-900 mb-4">Sesiuni Foto</h3>
               <p className="text-gray-700 font-light leading-relaxed mb-6">Fie că e o sesiune de logodnă, Save-the-Date, Maternitate sau doar Familie, surprind gesturile naturale într-un mediu complet relaxat.</p>
               <Link to="/servicii" className="text-gray-900 font-medium hover:text-gray-800 transition-colors inline-flex items-center gap-2">Vezi Sesiuni &rarr;</Link>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="glass-panel p-6 rounded-3xl text-left hover:-translate-y-2 transition-transform duration-300">
-              <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=600" alt="Cabina Foto" className="w-full h-48 object-cover rounded-2xl mb-6 shadow-md" />
+              <img src="./images/photo6.jpg" alt="Cabina Foto" className="w-full h-48 object-cover rounded-2xl mb-6 shadow-md" onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=600'; }} />
               <h3 className="text-2xl font-serif font-bold text-gray-900 mb-4">Cabină Foto</h3>
               <p className="text-gray-700 font-light leading-relaxed mb-6">Distracție absolută și o atmosferă efervescentă asigurată invitaților prin oglinda noastră foto dotată cu props-uri distractive și print rapid.</p>
               <Link to="/servicii" className="text-gray-900 font-medium hover:text-gray-800 transition-colors inline-flex items-center gap-2">Detalii Cabină &rarr;</Link>
