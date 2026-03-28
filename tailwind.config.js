@@ -23,7 +23,7 @@ export default {
       },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        serif: ['haborocontrastnormregular', 'serif'],
       }
     },
   },

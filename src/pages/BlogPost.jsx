@@ -12,7 +12,7 @@ export default function BlogPost() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-transparent font-sans">
         <div className="text-center glass-panel p-12 rounded-3xl">
-          <h1 className="text-4xl font-serif font-bold text-white mb-4">Articolul nu a fost găsit</h1>
+          <h1 className="text-4xl font-serif text-white mb-4">Articolul nu a fost găsit</h1>
           <Link to="/blog" className="btn-primary">Înapoi la Blog</Link>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default function BlogPost() {
             
             <motion.h1 
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-              className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight"
+              className="text-3xl md:text-5xl lg:text-6xl font-serif text-white leading-tight"
             >
               {post.title}
             </motion.h1>
@@ -58,7 +58,7 @@ export default function BlogPost() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10 pb-20">
         <motion.article 
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
-          className="glass-panel p-8 md:p-12 lg:p-16 rounded-[2.5rem] shadow-2xl space-y-8 prose prose-lg md:prose-xl prose-invert prose-headings:font-serif prose-headings:font-bold prose-headings:text-white prose-p:text-zinc-100 prose-strong:text-white prose-p:font-normal prose-p:leading-relaxed text-zinc-100"
+          className="glass-panel p-8 md:p-12 lg:p-16 rounded-[2.5rem] shadow-2xl space-y-8 prose prose-lg md:prose-xl prose-invert prose-headings:font-serif prose-headings:text-white prose-p:text-zinc-100 prose-strong:text-white prose-p:font-normal prose-p:leading-relaxed text-zinc-100"
         >
           <p className="lead text-xl md:text-2xl text-white font-medium italic border-l-4 border-white/70 pl-6">
             {post.excerpt}

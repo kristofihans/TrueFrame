@@ -21,11 +21,11 @@ export default function DespreMine() {
       {/* Content Side */}
       <div className="w-full md:w-1/2 py-16 md:py-32 px-4 md:px-16 lg:px-24 flex items-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="max-w-xl mx-auto space-y-8">
-          <div className="inline-block px-4 py-1 border border-white/10 rounded-full text-zinc-300 text-sm font-bold tracking-widest uppercase mb-4 bg-zinc-900/40">
+          <div className="inline-block px-4 py-1 border border-white/10 rounded-full text-zinc-300 text-sm tracking-widest uppercase mb-4 bg-zinc-900/40">
             Povestea Mea
           </div>
           
-          <h2 className="text-4xl font-serif text-white font-bold leading-tight">
+          <h2 className="text-4xl font-serif text-white leading-tight">
             Hey, eu sunt Fredi...
           </h2>
           
