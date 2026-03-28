@@ -71,7 +71,12 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
             className="flex justify-center"
           >
-            <a href="#bio" className="btn-primary px-8 py-4 text-lg">Vezi mai mult</a>
+            <button 
+              onClick={() => document.getElementById('bio').scrollIntoView({ behavior: 'smooth' })} 
+              className="btn-primary px-8 py-4 text-lg"
+            >
+              Vezi mai mult
+            </button>
           </motion.div>
         </div>
       </section>
@@ -126,8 +131,13 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
-                 <a href="#servicii-highlight" className="btn-primary">Serviciile mele</a>
-                 <Link to="/contact" className="btn-outline">Contactează-mă</Link>
+                  <button 
+                    onClick={() => document.getElementById('servicii-highlight').scrollIntoView({ behavior: 'smooth' })} 
+                    className="btn-primary"
+                  >
+                    Serviciile mele
+                  </button>
+                  <Link to="/contact" className="btn-outline">Contactează-mă</Link>
               </div>
             </motion.div>
           </div>
