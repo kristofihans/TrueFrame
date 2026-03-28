@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, CheckCircle, Clock, ChevronRight, MessageCircle, Phone, MapPin } from 'lucide-react';
+import { Star, CheckCircle, Clock, ChevronLeft, ChevronRight, MessageCircle, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { blogPosts } from './Blog';
 
@@ -40,6 +40,17 @@ export default function Home() {
   }, [heroImages.length]);
 
   const latestPosts = [...blogPosts].slice(0, 3);
+
+  const scrollReviews = (direction) => {
+    if (!reviewsRef.current) return;
+    const cardWidth = window.innerWidth < 768 ? 350 + 24 : 450 + 24;
+    const container = reviewsRef.current;
+    if (direction === 'left') {
+      container.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="w-full font-sans text-zinc-100 bg-zinc-950">
@@ -234,32 +245,53 @@ export default function Home() {
           <p className="text-zinc-400">Povești reale din experiențele clienților. Glisează pentru a explora.</p>
         </div>
         
-        <div ref={reviewsRef} className="relative w-full overflow-hidden py-10 px-4 md:px-20">
-          <motion.div 
-            className="flex gap-6 w-max cursor-grab active:cursor-grabbing"
-            drag="x"
-            dragConstraints={reviewsRef}
+        <div className="relative group max-w-[100vw]">
+          {/* Desktop Arrows */}
+          <button 
+            onClick={() => scrollReviews('left')}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-zinc-900/60 border border-white/10 text-white flex items-center justify-center hover:bg-white hover:text-black transition-all hidden md:flex shadow-2xl backdrop-blur-md"
+            aria-label="Previous reviews"
           >
-            {reviews.map((review, i) => (
-              <div key={i} className="w-[350px] md:w-[450px] shrink-0 glass-panel p-10 rounded-[2.5rem] flex flex-col justify-between select-none border border-white/5">
-                <div>
-                  <div className="flex items-center justify-between mb-8">
-                    <div>
-                      <h4 className="font-bold text-white text-lg">{review.name}</h4>
-                      <p className="text-xs text-zinc-500 mt-1">{review.time}</p>
+            <ChevronLeft size={32} />
+          </button>
+          
+          <button 
+            onClick={() => scrollReviews('right')}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-zinc-900/60 border border-white/10 text-white flex items-center justify-center hover:bg-white hover:text-black transition-all hidden md:flex shadow-2xl backdrop-blur-md"
+            aria-label="Next reviews"
+          >
+            <ChevronRight size={32} />
+          </button>
+
+          <div 
+            ref={reviewsRef} 
+            className="relative w-full overflow-x-auto py-10 px-4 md:px-20 no-scrollbar snap-x snap-mandatory scroll-smooth"
+          >
+            <div className="flex gap-6 w-max">
+              {reviews.map((review, i) => (
+                <div 
+                  key={i} 
+                  className="w-[350px] md:w-[450px] shrink-0 glass-panel p-10 rounded-[2.5rem] flex flex-col justify-between select-none border border-white/5 snap-center"
+                >
+                  <div>
+                    <div className="flex items-center justify-between mb-8">
+                      <div>
+                        <h4 className="font-bold text-white text-lg">{review.name}</h4>
+                        <p className="text-xs text-zinc-500 mt-1">{review.time}</p>
+                      </div>
+                      <div className="w-12 h-12 rounded-full bg-white/5 text-white flex items-center justify-center font-serif text-2xl border border-white/10 uppercase">
+                        {review.name[0]}
+                      </div>
                     </div>
-                    <div className="w-12 h-12 rounded-full bg-white/5 text-white flex items-center justify-center font-serif text-2xl border border-white/10 uppercase">
-                      {review.name[0]}
+                    <div className="flex text-yellow-500 mb-6 gap-0.5">
+                      {[...Array(5)].map((_, j) => <Star key={j} size={16} className="fill-current" />)}
                     </div>
+                    <p className="text-zinc-300 text-base italic leading-relaxed">"{review.text}"</p>
                   </div>
-                  <div className="flex text-yellow-500 mb-6 gap-0.5">
-                    {[...Array(5)].map((_, j) => <Star key={j} size={16} className="fill-current" />)}
-                  </div>
-                  <p className="text-zinc-300 text-base italic leading-relaxed">"{review.text}"</p>
                 </div>
-              </div>
-            ))}
-          </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
