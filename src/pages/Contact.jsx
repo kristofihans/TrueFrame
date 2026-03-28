@@ -5,7 +5,7 @@ import { MapPin, Phone, MessageCircle } from 'lucide-react';
 export default function Contact() {
   return (
     <div className="pt-32 pb-24 min-h-screen bg-transparent font-sans">
-      <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title Section matching Home.jsx */}
         <div className="text-center mb-16">
