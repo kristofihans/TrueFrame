@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-900 antialiased;
+    background-color: #d4c4b7;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.25'/%3E%3C/svg%3E"), linear-gradient(135deg, #eaddce 0%, #b89f89 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  /* Completely removed #root styling to let the body texture flow freely */
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 rounded-full bg-gray-900 text-white font-medium shadow-lg hover:bg-gray-800 hover:scale-[1.02] transform transition-all duration-300 whitespace-nowrap;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 rounded-full border border-gray-900/30 text-gray-900 font-medium hover:bg-white/40 transform transition-all duration-300;
+  }
+
+  .glass-panel {
+    @apply bg-white/40 backdrop-blur-2xl border border-white/60 shadow-xl pointer-events-auto;
+  }
+}
