@@ -18,7 +18,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 text-white">
-              <img src="./images/logo.png" alt="TrueFrame Logo" className="h-12 w-auto brightness-0 invert opacity-90" />
+              <img src="./images/logo.png" alt="TrueFrame Logo" className="h-16 w-auto brightness-0 invert opacity-90" />
             </Link>
             <p className="text-sm leading-relaxed max-w-sm text-zinc-400">
               Cele mai frumoase momente povestite prin fotografii. 
