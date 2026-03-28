@@ -9,6 +9,12 @@ export default function DespreMine() {
       <div className="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-16 lg:p-24 relative">
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="relative mb-8 rounded-3xl overflow-hidden glass-panel p-2">
            <img src="./images/photographerimage.jpg" alt="Fredi - Story" className="w-full h-auto rounded-[1.25rem] object-cover" onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1554046920-90dcac028c24?q=80&w=3049&auto=format&fit=crop'; }} />
+           {/* Overlay Quote Box */}
+           <div className="absolute bottom-10 left-10 right-10 glass-panel p-6 rounded-2xl border border-white/20 shadow-2xl backdrop-blur-md">
+             <p className="text-sm md:text-base text-white font-medium text-center leading-relaxed italic">
+               “Cred că secretul unei fotografii reușite stă în emoțiile sincere: o îmbrățișare caldă, o privire plină de emoție, o explozie de râs autentic. Te invit să vizualizezi portofoliul meu.”
+             </p>
+           </div>
         </motion.div>
       </div>
 
@@ -16,30 +22,29 @@ export default function DespreMine() {
       <div className="w-full md:w-1/2 py-16 md:py-32 px-6 md:px-16 lg:px-24 flex items-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="max-w-xl mx-auto space-y-8">
           <div className="inline-block px-4 py-1 border border-white/10 rounded-full text-zinc-300 text-sm font-bold tracking-widest uppercase mb-4 bg-zinc-900/40">
-            Despre Mine
+            Povestea Mea
           </div>
           
-          <h2 className="text-3xl lg:text-4xl font-serif text-white font-bold leading-snug">
+          <h2 className="text-4xl font-serif text-white font-bold leading-tight">
             Hey, eu sunt Fredi...
           </h2>
           
           <div className="text-lg text-zinc-400 font-sans font-light leading-relaxed space-y-6">
+            <p className="text-white text-xl italic font-serif opacity-90">...fotograf de nuntă și evenimente din Oradea.</p>
             <p>
-              A fi fotograf înseamnă mai mult decât apăsarea unui buton. Înseamnă a observa, a simți și a păstra o fărâmă din viața oamenilor așa cum este ea.
+              Fotografia nu este doar despre prezent. Cei care mă aleg știu că investesc în viitorul lor – în amintiri care, peste zeci de ani, vor fi și mai valoroase decât în ziua în care au fost create.
             </p>
             <p>
-              Când am luat pentru prima dată aparatul în mână, nu știam că acesta va deveni modul prin care voi cunoaște sute de suflete pereche. De-a lungul celor 13 ani, am fost onorat să particip la momente unice.
+              Îmi doresc ca fotografiile de nuntă făcute de mine, să fie mai mult decât simple imagini – să fie amintiri vii, care te transportă înapoi în acele clipe speciale.
             </p>
             <p>
-              Abordarea mea este tip fotojurnalism combinat cu arta portretului. Nu forțez ipostaze care nu vă reprezintă. Prefer să rămân un observator discret și să captez emoțiile reale.
-            </p>
-            <p>
-              Dacă simțiți că rezonăm din punct de vedere artistic, vă aștept cu drag să ne cunoaștem!
+              Îmi place să fotografiez fără ca oamenii să simtă prea mult prezența mea. Nu îți voi cere să pozezi forțat și nu te voi pune în ipostaze nenaturale.
             </p>
           </div>
 
-          <div className="pt-10">
-            <img src="./images/logo.png" alt="TrueFrame Logo" className="h-16 object-contain brightness-0 invert opacity-90" />
+          <div className="pt-10 flex items-center gap-6">
+            <img src="./images/logo.png" alt="TrueFrame Logo" className="h-10 object-contain brightness-0 invert opacity-60" />
+            <div className="h-px bg-white/10 flex-grow" />
           </div>
         </motion.div>
       </div>

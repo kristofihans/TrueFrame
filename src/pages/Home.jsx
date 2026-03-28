@@ -5,16 +5,16 @@ import { Link } from 'react-router-dom';
 import { blogPosts } from './Blog';
 
 const reviews = [
-  { name: 'Fischer Nikolett', time: '4 months ago', text: 'Szuper fotók! Nagyon türelmes és kedves, ha nem vagy elég magabiztos a pózolásban akkor ő a tökéletes választás mert nagyon sokat segít! Egy óra alatt rengeteg kép készült amik egy életen át velünk maradnak! 🥰' },
+  { name: 'Fischer Nikolett', time: '4 months ago', text: 'Szuper fotók! Nagyon türelmes és kedves, ha nem vagy elég magabiztos a pózolásban akkor ő a töölkéletes választás mert nagyon sokat segít! Egy óra alatt rengeteg kép készült amik egy életen át velünk maradnak! 🥰' },
   { name: 'Dalma Lukács', time: '2 years ago', text: 'Csak a legjobbakat tudom Frédiről írni! Precíz, megbízható, türelmes és még sorolhatnám! Többször is volt már alkalmam a kamerája előtt szerepelni akár egyedül akár a párommal, az eredmény pedig mindig kifogástalan volt! Mindenkinek csak ajánlani tudom!' },
-  { name: 'Boglárka Kovács', time: '8 months ago', text: 'Egyszerűen nu găsim cuvinte pentru a ne exprima recunoștința față de fotograful nostru fantastic, care a imortalizat una dintre cele mai frumoase zile din viața noastră nu doar la nuntă, ci și la ședința foto de a doua zi! 🥹📸' },
-  { name: 'Emese Fuzesi', time: '2 years ago', text: 'Hala și mulțumiri Feri! 🥰 Mereu spuneam că ești un vrăjitor... și chiar așa este! Fiecare imagine de-a ta povestește o istorie... mereu surprinzi momentele cele mai intime și te joci cu lumina cum nimeni altcineva! Te recomand cu tot dragul oricui, pentru că în munca ta nu am fost niciodată dezamăgită! 👌🏻😊' },
-  { name: 'Krisztina Pap', time: '9 months ago', text: 'Suntem foarte recunoscători că ai imortalizat atât nunta noastră civilă, cât și botezul bebelușului nostru. Este un sentiment minunat să revezi aceste secunde surprinse cu atâta profesionalism. Nu ești doar un fotograf talentat, ci și un om extraordinar...' },
+  { name: 'Boglárka Kovács', time: '8 months ago', text: 'Egyszerűen nem találunk szavakat arra, mennyire hálásak vagyunk a fantasztikus fotósunknak, aki életünk egyik legszebb napját örökítette meg nemcsak az esküvőnkön, hanem a másnapi élményfotózáson is! 🥹📸' },
+  { name: 'Emese Fuzesi', time: '2 years ago', text: 'Hála és köszönet Feri! 🥰 Mindig mondogattam, hogy te egy varazsló vagy.. de ez így is van! Minden képed egy történetet mesél el.. mindig a legmeghittebb pillanatokat kapod lencsevégre, és úgy játszol a fénnyel ahogy senki! Nyugodt szívvel ajánlak barkinek, mert a te munkádban én még nem csalódtam!👌🏻😊' },
+  { name: 'Krisztina Pap', time: '9 months ago', text: 'Nagyon hálásak vagyunk, hogy te örökítetted meg a polgári esküvőnket és a kisbabánk keresztelőjét is. Csodálatos érzés visszanézni ezeket a pillanatokat, amiket ilyen profizmussal kaptál el. Nemcsak tehetséges fotós vagy, hanem olyan ember...' },
   { name: 'Iulia Bortis', time: '2 weeks ago', text: 'Am avut o experienta placuta in a colabora cu Ferenc, fotograful nostru de botez. Profesional, atent, talentat, a surprins momentele importante ale evenimentului. Pozele sunt frumoase, de o calitate foarte buna. Recomand cu incredere!' },
   { name: 'Eszter Ujvárosi', time: '1 year ago', text: 'Am avut norocul să lucrăm cu Balajti Ferenc la nunta noastră, și nu am putea fi mai mulțumiți de alegerea făcută! Este un adevărat artist, iar ceea ce face el este, fără îndoială, artă pură. Fotografiile au ieșit absolut minunate...' },
   { name: 'Krisztina Kovacs', time: '4 months ago', text: 'Domnu Balajti Ferenc a fost recomandat de la o cunostinta. De la inceput a fost foarte amabil si super profesional! Ne-a ajutat foarte multe.' },
   { name: 'Evelyn Nagy', time: '1 year ago', text: 'Am avut plăcerea de a colabora cu Frédi la nunta noastră, și nu am putea fi mai mulțumiți de rezultat! Fotografiile sunt absolut superbe, surprinzând perfect emoțiile și momentele speciale ale zilei noastre. Profesionalismul, creativitatea și atenția la detalii ne-au impresionat cu adevărat. Ne-am simțit în largul nostru pe tot parcursul zilei și asta se vede în fotografii. Recomandăm cu încredere pe Frédi tuturor celor care își doresc amintiri de neuitat! 🤍' },
-  { name: 'Reka Kiss', time: '10 months ago', text: 'Am avut onoarea ca acest fotograf talentat să surprindă cele mai emoționante momente de la botezul băiețelului nostru – și nu putem fi mai recunoscători pentru alegerea făcută! 🙏' },
+  { name: 'Reka Kiss', time: '10 months ago', text: 'Am avut onoarea ca acest fotogarf talentat să surprindă cele mai emoționante momente de la botezul băiețelului nostru – și nu putem fi mai recunoscători pentru alegerea făcută! 🙏' },
   { name: 'Claudiu Farcalau (Clauux)', time: '2 years ago', text: 'Recomand pe Freddy cu cel mai mare drag. Un mod de a face poze foarte profesionist dar și cu umor pentru a te face cat mai relaxat în timpul ședinței și a avea cele mai bune rezultate. Mai jos am atașat câteva poze cu partenera și singur pentru a vă face o idee.' }
 ].sort(() => 0.5 - Math.random());
 
@@ -25,6 +25,7 @@ const fadeIn = {
 
 export default function Home() {
   const [currentHero, setCurrentHero] = useState(0);
+  const reviewsRef = useRef(null);
   const heroImages = [
     './images/herobackground.jpg',
     './images/photo1.jpg',
@@ -233,14 +234,13 @@ export default function Home() {
           <p className="text-zinc-400">Povești reale din experiențele clienților. Glisează pentru a explora.</p>
         </div>
         
-        <div className="relative w-full overflow-hidden py-10">
+        <div ref={reviewsRef} className="relative w-full overflow-hidden py-10 px-4 md:px-20">
           <motion.div 
             className="flex gap-6 w-max cursor-grab active:cursor-grabbing"
             drag="x"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+            dragConstraints={reviewsRef}
           >
-            {[...reviews, ...reviews].map((review, i) => (
+            {reviews.map((review, i) => (
               <div key={i} className="w-[350px] md:w-[450px] shrink-0 glass-panel p-10 rounded-[2.5rem] flex flex-col justify-between select-none border border-white/5">
                 <div>
                   <div className="flex items-center justify-between mb-8">
@@ -266,62 +266,77 @@ export default function Home() {
       {/* 7. Contact Section */}
       <section className="py-24 bg-transparent" id="contact">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Unde ne găsești</h2>
+            <div className="h-1 w-20 bg-white/20 mx-auto rounded-full" />
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Map Area */}
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               className="aspect-square w-full rounded-[2.5rem] overflow-hidden border border-white/5 shadow-2xl relative"
             >
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d173369.36660126788!2d21.7820465243179!3d47.07259166708602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474647af58f2409d%3A0x7730e203038a397a!2sOradea!5e0!3m2!1sro!2sro!4v1711200000000!5m2!1sro!2sro" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d173369.36660126788!2d21.7820465243179!3d47.07259166708602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474647e366035eb5%3A0xe138f310f8a8cf3!2sBalajti+Ferenc+Photography!5e0!3m2!1sro!2sro!4v1711200000000!5m2!1sro!2sro" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
                 allowFullScreen="" 
                 loading="lazy" 
-                title="Locație TrueFrame Oradea"
+                title="Locație Balajti Ferenc Photography"
               ></iframe>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               className="p-8 md:p-12 glass-panel rounded-[2.5rem] space-y-8"
             >
-              <h2 className="text-4xl font-serif font-bold text-white mb-2">Unde ne găsești</h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-2xl font-serif font-bold text-white mb-4">Contactează-ne rapid</h3>
-                  <p className="text-zinc-400 text-lg font-light leading-relaxed">
-                    Ai întrebări sau vrei să programezi o ședință? Scrie-ne pe WhatsApp sau sună-ne. Îți răspundem imediat!
-                  </p>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4 text-white p-4 rounded-2xl bg-white/5">
-                    <Phone size={24} className="text-zinc-400" />
-                    <div>
-                      <p className="text-xs text-zinc-500 uppercase tracking-widest font-bold">Sună-ne</p>
-                      <p className="text-xl font-medium">+40 727 854 187</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4 text-white p-4 rounded-2xl bg-white/5">
-                    <MapPin size={24} className="text-zinc-400" />
-                    <div>
-                      <p className="text-xs text-zinc-500 uppercase tracking-widest font-bold">Locație</p>
-                      <p className="text-xl font-medium">Oradea, România</p>
-                    </div>
-                  </div>
+              <div className="pb-6 border-b border-white/10">
+                <p className="text-zinc-400 text-lg font-light leading-relaxed">
+                  Ai întrebări sau vrei să programezi o ședință? Scrie-ne și îți răspundem imediat!
+                </p>
+              </div>
+
+              {/* Form Integrated from Contact.jsx */}
+              <form className="space-y-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <input type="text" id="name" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Nume și Prenume *" />
+                  <input type="tel" id="phone" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Telefon *" />
                 </div>
 
-                <div className="pt-6">
-                  <a 
-                    href="https://wa.me/40727854187" 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-full text-xl font-bold transition-all shadow-[0_10px_30px_rgba(22,163,74,0.3)] w-full justify-center group"
-                  >
-                    <MessageCircle size={28} className="group-hover:scale-110 transition-transform" />
-                    Scrie-ne pe WhatsApp
-                  </a>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <input type="email" id="email" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Email" />
+                  <input type="date" id="date" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none" />
                 </div>
+
+                <select id="eventType" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none">
+                  <option value="" className="bg-zinc-900">Alege tipul de eveniment...</option>
+                  <option value="nunta" className="bg-zinc-900">Nuntă</option>
+                  <option value="botez" className="bg-zinc-900">Botez</option>
+                  <option value="sedinta" className="bg-zinc-900">Ședință Foto</option>
+                </select>
+
+                <textarea id="message" rows="3" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none resize-none" placeholder="Mesajul tău *"></textarea>
+
+                <button type="submit" className="w-full btn-primary !py-4 text-base tracking-wide uppercase mt-2 shadow-lg">
+                  Trimite Mesajul
+                </button>
+              </form>
+              
+              <div className="relative py-4">
+                <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-white/10"></div></div>
+                <div className="relative flex justify-center text-xs uppercase"><span className="bg-zinc-900/40 border border-white/10 px-4 py-1 rounded-full text-zinc-500">sau</span></div>
+              </div>
+
+              <div className="pt-2">
+                <a 
+                  href="https://wa.me/40727854187" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-3 bg-green-600/90 hover:bg-green-600 text-white px-10 py-5 rounded-full text-xl font-bold transition-all shadow-[0_10px_30px_rgba(22,163,74,0.15)] w-full justify-center group"
+                >
+                  <MessageCircle size={28} className="group-hover:scale-110 transition-transform" />
+                  Contactează-mă pe WhatsApp
+                </a>
               </div>
             </motion.div>
           </div>
