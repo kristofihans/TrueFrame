@@ -23,7 +23,7 @@ export default {
       },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
-        serif: ['Rosie Brown Serif', 'serif'],
+        serif: ['Bodoni Moda', 'serif'],
       }
     },
   },
