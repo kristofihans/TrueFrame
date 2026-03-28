@@ -132,12 +132,25 @@ export default function Home() {
                   Îmi place să fotografiez fără ca oamenii să simtă prea mult prezența mea. Nu îți voi cere să pozezi forțat și nu te voi pune în ipostaze nenaturale.
                 </p>
               </div>
-              <div className="flex gap-4 pt-6">
+              
+              {/* Desktop Buttons (Hidden on mobile) */}
+              <div className="hidden lg:flex gap-4 pt-6">
                 <Link to="/portofoliu" className="btn-primary px-8">Explorează Portofoliu</Link>
                 <Link to="/servicii" className="btn-outline px-8">Serviciile mele</Link>
               </div>
             </motion.div>
           </div>
+
+          {/* Mobile Buttons (Shown ONLY on mobile, under everything else) */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="lg:hidden flex flex-col gap-4 pt-12 w-full max-w-sm mx-auto px-4"
+          >
+            <Link to="/portofoliu" className="btn-primary w-full text-center py-4">Explorează Portofoliu</Link>
+            <Link to="/servicii" className="btn-outline w-full text-center py-4">Serviciile mele</Link>
+          </motion.div>
         </div>
       </section>
 
