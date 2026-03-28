@@ -2,8 +2,8 @@
 
 @font-face {
   font-family: 'Rosie Brown Serif';
-  src: url('./assets/fonts/Rosie Brown Serif Demo.otf') format('opentype');
-  font-weight: normal;
+  src: url('./assets/fonts/rosie-brown-serif.otf') format('opentype');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
