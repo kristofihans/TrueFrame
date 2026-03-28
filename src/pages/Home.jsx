@@ -192,18 +192,26 @@ export default function Home() {
           <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="text-gray-700">Glisează sau folosește săgețile pentru a citi recenziile. Povești reale din experiențele clienților.</motion.p>
         </div>
         
-        {/* Swipable Container */}
-        <div className="max-w-[90rem] mx-auto px-2 sm:px-4 lg:px-8 flex items-center gap-2 lg:gap-6">
-          <button onClick={scrollLeft} className="hidden md:flex shrink-0 p-4 rounded-full bg-white/70 border border-white hover:bg-white shadow-xl text-gray-900 transition-transform hover:-translate-x-1" aria-label="Recenzia Precedenta">
-            <ChevronLeft size={24} />
-          </button>
-          
-          <div ref={scrollRef} className="flex-1 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-4 px-2 scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-            {reviews.map((review, i) => (
-              <motion.div 
+        {/* Infinite Ticker Container */}
+        <div className="relative w-full overflow-hidden py-10">
+          {/* Gradients for soft edges */}
+          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#d4c4b7] to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#d4c4b7] to-transparent z-10 pointer-events-none" />
+
+          <motion.div 
+            className="flex gap-6 w-max"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ 
+              duration: 50, 
+              repeat: Infinity, 
+              ease: "linear" 
+            }}
+          >
+            {/* Duplicate reviews for seamless loop */}
+            {[...reviews, ...reviews].map((review, i) => (
+              <div 
                 key={i} 
-                initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
-                className="snap-center lg:snap-start shrink-0 w-[85vw] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] glass-panel p-8 rounded-3xl flex flex-col justify-between"
+                className="w-[300px] md:w-[400px] shrink-0 glass-panel p-8 rounded-3xl flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
@@ -218,15 +226,11 @@ export default function Home() {
                   <div className="flex text-yellow-500 mb-4 gap-0.5">
                     {[...Array(5)].map((_, j) => <Star key={j} size={14} className="fill-current" />)}
                   </div>
-                  <p className="text-gray-800 text-sm md:text-base italic leading-relaxed">"{review.text}"</p>
+                  <p className="text-gray-800 text-sm md:text-base italic leading-relaxed line-clamp-4">"{review.text}"</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </div>
-          
-          <button onClick={scrollRight} className="hidden md:flex shrink-0 p-4 rounded-full bg-white/70 border border-white hover:bg-white shadow-xl text-gray-900 transition-transform hover:translate-x-1" aria-label="Recenzia Urmatoare">
-            <ChevronRight size={24} />
-          </button>
+          </motion.div>
         </div>
       </section>
 
