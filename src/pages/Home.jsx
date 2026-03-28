@@ -96,7 +96,7 @@ export default function Home() {
 
       {/* 2. Bio Section */}
       <section id="bio" className="py-24 relative bg-transparent scroll-mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div 
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
@@ -143,7 +143,7 @@ export default function Home() {
 
       {/* 3. Stats Section */}
       <section className="py-20 bg-zinc-900/30 border-y border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <div className="text-5xl font-serif font-bold text-white mb-2">150+</div>
@@ -199,7 +199,7 @@ export default function Home() {
 
       {/* 5. Guarantee Section */}
       <section className="py-24 bg-zinc-900/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center border-b border-white/5 pb-16">
             <motion.div 
               initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
@@ -230,7 +230,7 @@ export default function Home() {
 
       {/* 6. Reviews Section */}
       <section className="py-24 bg-transparent border-y border-white/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center text-white">
+        <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8 mb-12 text-center text-white">
           <div className="inline-flex items-center gap-2 bg-zinc-900/40 border border-white/10 px-6 py-3 rounded-full mb-8">
              <div className="flex text-yellow-500 gap-0.5">
                <Star size={18} className="fill-current" />
@@ -297,7 +297,7 @@ export default function Home() {
 
       {/* 7. Contact Section */}
       <section className="py-24 bg-transparent" id="contact">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Unde ne găsești</h2>
             <div className="h-1 w-20 bg-white/20 mx-auto rounded-full" />
@@ -377,7 +377,7 @@ export default function Home() {
 
       {/* 8. Blog Highlight Section */}
       <section className="py-24 bg-zinc-900/10 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-0 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-serif font-bold text-white mb-16">Cel mai nou pe blog</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {latestPosts.map((post, i) => (

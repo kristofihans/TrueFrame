@@ -19,7 +19,7 @@ export default function DespreMine() {
       </div>
 
       {/* Content Side */}
-      <div className="w-full md:w-1/2 py-16 md:py-32 px-6 md:px-16 lg:px-24 flex items-center">
+      <div className="w-full md:w-1/2 py-16 md:py-32 px-0 md:px-16 lg:px-24 flex items-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="max-w-xl mx-auto space-y-8">
           <div className="inline-block px-4 py-1 border border-white/10 rounded-full text-zinc-300 text-sm font-bold tracking-widest uppercase mb-4 bg-zinc-900/40">
             Povestea Mea
