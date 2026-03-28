@@ -51,7 +51,7 @@ export default function Blog() {
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-zinc-400 font-light"
+            className="text-lg text-zinc-200 font-light"
           >
             Tot ce trebuie să știi despre organizarea evenimentului perfect, din perspectiva unui fotograf.
           </motion.p>
@@ -87,7 +87,7 @@ export default function Blog() {
                   </Link>
                 </h2>
                 
-                <p className="text-zinc-400 font-light leading-relaxed mb-6 line-clamp-3">
+                <p className="text-zinc-100 font-light leading-relaxed mb-6 line-clamp-3">
                   {post.excerpt}
                 </p>
                 
