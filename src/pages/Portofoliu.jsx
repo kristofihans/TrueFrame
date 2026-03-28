@@ -34,7 +34,7 @@ export default function Portofoliu() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           {!activeAlbum ? (
             <>
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-4xl md:text-5xl font-serif text-white mb-4">
                 Albume Foto
               </motion.h1>
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="text-lg text-zinc-400 font-light">
@@ -50,7 +50,7 @@ export default function Portofoliu() {
               >
                 <ArrowLeft size={18} /> Înapoi la Albume
               </motion.button>
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-3xl md:text-5xl font-serif font-bold text-white mb-4">
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-3xl md:text-5xl font-serif text-white mb-4">
                 {activeAlbum.title}
               </motion.h1>
               <div className="inline-block px-4 py-1 border border-white/10 rounded-full text-zinc-300 text-sm font-bold uppercase tracking-widest bg-zinc-900/40">
@@ -106,7 +106,7 @@ export default function Portofoliu() {
                   </div>
                   <div className="p-6 text-center border-t border-white/5">
                     <span className="text-xs uppercase tracking-widest text-zinc-500 font-bold mb-2 block">{album.category}</span>
-                    <h3 className="text-xl font-serif font-bold text-white group-hover:text-zinc-200 transition-colors">
+                    <h3 className="text-xl font-serif text-white group-hover:text-zinc-200 transition-colors">
                       {album.title}
                     </h3>
                   </div>

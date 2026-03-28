@@ -76,7 +76,7 @@ export default function Home() {
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-tight drop-shadow-2xl mb-8"
+            className="text-5xl md:text-7xl lg:text-8xl font-serif text-white leading-tight drop-shadow-2xl mb-8"
           >
             Fotograf de nuntă și evenimente din Oradea.
           </motion.h1>
@@ -119,7 +119,7 @@ export default function Home() {
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
               className="space-y-8 order-1 lg:order-2"
             >
-              <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Hey, eu sunt Fredi...</h2>
+              <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">Hey, eu sunt Fredi...</h2>
               <div className="text-zinc-400 leading-relaxed text-lg font-light space-y-6">
                 <p className="text-white text-2xl italic font-serif opacity-90">...fotograf de nuntă și evenimente din Oradea.</p>
                 <p>
@@ -159,19 +159,19 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <div className="text-5xl font-serif font-bold text-white mb-2">150+</div>
+              <div className="text-5xl font-serif text-white mb-2">150+</div>
               <p className="text-zinc-500 text-sm uppercase tracking-widest font-bold">Nunți și evenimente fotografiate</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-              <div className="text-5xl font-serif font-bold text-white mb-2">15+</div>
+              <div className="text-5xl font-serif text-white mb-2">15+</div>
               <p className="text-zinc-500 text-sm uppercase tracking-widest font-bold">Ani de experiență</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-              <div className="text-5xl font-serif font-bold text-white mb-2">400.000+</div>
+              <div className="text-5xl font-serif text-white mb-2">400.000+</div>
               <p className="text-zinc-500 text-sm uppercase tracking-widest font-bold">Fotografii realizate</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
-              <div className="text-5xl font-serif font-bold text-white mb-2 flex items-center justify-center gap-1">
+              <div className="text-5xl font-serif text-white mb-2 flex items-center justify-center gap-1">
                 5.0 <Star className="fill-yellow-500 text-yellow-500" size={32} />
               </div>
               <p className="text-zinc-500 text-sm uppercase tracking-widest font-bold">Rating de 5 stele pe Google</p>
@@ -184,7 +184,7 @@ export default function Home() {
       <section className="py-24 bg-transparent scroll-mt-20" id="servicii">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
-            className="text-4xl md:text-5xl font-serif font-bold text-white mb-16"
+            className="text-4xl md:text-5xl font-serif text-white mb-16"
           >
             Ce pot face pentru tine
           </motion.h2>
@@ -199,7 +199,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 className="glass-panel p-10 rounded-[2.5rem] border border-white/5 hover:border-white/20 transition-all group flex flex-col h-full"
               >
-                <h3 className="text-2xl font-serif font-bold text-white mb-6">{s.title}</h3>
+                <h3 className="text-2xl font-serif text-white mb-6">{s.title}</h3>
                 <p className="text-zinc-400 mb-8 font-light leading-relaxed flex-grow">{s.desc}</p>
                 <Link to="/servicii" className="btn-outline group-hover:bg-white group-hover:text-black transition-all">
                   Află detalii
@@ -224,7 +224,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               className="space-y-8"
             >
-              <h2 className="text-4xl font-serif font-bold text-white">Garanție 100% Satisfacție</h2>
+              <h2 className="text-4xl font-serif text-white">Garanție 100% Satisfacție</h2>
               <p className="text-zinc-400 text-lg font-light leading-relaxed">
                 Mă angajez să livrez nu doar fotografii, ci emoții reale care dăinuiesc. Fiecare detaliu și privire este surprinsă cu devotament, la cele mai înalte standarde artistice, pentru ca amintirile voastre să fie absolut impecabile. 
               </p>
@@ -254,7 +254,7 @@ export default function Home() {
              </div>
              <span className="font-bold">5.0 Recenzii Google</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4">Ce spun clienții mei</h2>
+          <h2 className="text-4xl md:text-5xl font-serif mb-4">Ce spun clienții mei</h2>
           <p className="text-zinc-400">Povești reale din experiențele clienților. Glisează pentru a explora.</p>
         </div>
         
@@ -312,7 +312,7 @@ export default function Home() {
       <section className="py-24 bg-transparent" id="contact">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Unde ne găsești</h2>
+            <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">Unde ne găsești</h2>
             <div className="h-1 w-20 bg-white/20 mx-auto rounded-full" />
           </div>
 
@@ -391,7 +391,7 @@ export default function Home() {
       {/* 8. Blog Highlight Section */}
       <section className="py-24 bg-zinc-900/10 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-serif font-bold text-white mb-16">Cel mai nou pe blog</h2>
+          <h2 className="text-4xl font-serif text-white mb-16">Cel mai nou pe blog</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {latestPosts.map((post, i) => (
               <motion.article 
@@ -404,7 +404,7 @@ export default function Home() {
                 </div>
                 <div className="p-8 flex flex-col flex-grow text-left">
                   <p className="text-xs text-zinc-500 uppercase tracking-widest mb-4 font-bold">{post.category}</p>
-                  <h3 className="text-xl font-serif font-bold text-white mb-4 line-clamp-2">{post.title}</h3>
+                  <h3 className="text-xl font-serif text-white mb-4 line-clamp-2">{post.title}</h3>
                   <Link to={`/blog/${post.id}`} className="mt-auto text-white flex items-center gap-2 font-medium hover:gap-3 transition-all">
                     Citește articol <ChevronRight size={18} />
                   </Link>

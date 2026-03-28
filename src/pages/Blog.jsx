@@ -45,7 +45,7 @@ export default function Blog() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-serif font-bold text-white mb-6"
+            className="text-4xl md:text-5xl font-serif text-white mb-6"
           >
             Povești și Sfaturi
           </motion.h1>
@@ -81,7 +81,7 @@ export default function Blog() {
                   <span className="flex items-center gap-1"><Clock size={14}/> {post.readTime}</span>
                 </div>
                 
-                <h2 className="text-2xl font-serif font-bold text-white mb-3 line-clamp-2">
+                <h2 className="text-2xl font-serif text-white mb-3 line-clamp-2">
                   <Link to={`/blog/${post.id}`} className="hover:text-zinc-200 transition-colors">
                     {post.title}
                   </Link>

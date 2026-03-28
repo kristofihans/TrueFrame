@@ -9,7 +9,7 @@ export default function Contact() {
         
         {/* Title Section matching Home.jsx */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Unde ne găsești</h1>
+          <h1 className="text-4xl md:text-5xl font-serif text-white mb-4">Unde ne găsești</h1>
           <div className="h-1 w-20 bg-white/20 mx-auto rounded-full" />
           <p className="mt-8 text-lg text-zinc-400 font-light max-w-2xl mx-auto italic">
             "Să scriem povestea împreună. Fie că aveți deja data stabilită sau doar doriți detalii suplimentare, lăsați-mi un mesaj și vă voi răspunde cu cel mai mare drag."
@@ -44,7 +44,7 @@ export default function Contact() {
             className="p-8 md:p-12 glass-panel rounded-[2.5rem] space-y-8"
           >
             <div className="pb-6 border-b border-white/10">
-              <h3 className="text-2xl font-serif font-bold text-white mb-2">Îmi doresc o colaborare</h3>
+              <h3 className="text-2xl font-serif text-white mb-2">Îmi doresc o colaborare</h3>
               <p className="text-zinc-400 text-lg font-light leading-relaxed">
                 Ai întrebări sau vrei să programezi o ședință? Scrie-ne și îți răspundem imediat!
               </p>
