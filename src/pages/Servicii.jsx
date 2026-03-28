@@ -38,13 +38,13 @@ export default function Servicii() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-serif font-bold text-white mb-6"
           >
             Servicii Foto
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-gray-700 font-light"
+            className="text-lg text-zinc-400 font-light"
           >
             Fiecare eveniment are propriul ritm. Eu mă adaptez și devin povestitorul tău vizual. 
             Descoperă cum te pot ajuta să îți păstrezi amintirile vii.
@@ -70,11 +70,11 @@ export default function Servicii() {
               </div>
 
               <div className="w-full lg:w-1/2 space-y-6">
-                <div className="inline-block px-4 py-1 bg-white/60 border border-white/70 text-gray-900 text-sm font-bold uppercase tracking-widest rounded-full mb-2">
+                <div className="inline-block px-4 py-1 bg-zinc-900/40 border border-white/10 text-white text-sm font-bold uppercase tracking-widest rounded-full mb-2">
                   Serviciu Pachet
                 </div>
-                <h3 className="text-3xl font-serif font-bold text-gray-900">{service.title}</h3>
-                <p className="text-lg text-gray-700 leading-relaxed font-light">{service.description}</p>
+                <h3 className="text-3xl font-serif font-bold text-white">{service.title}</h3>
+                <p className="text-lg text-zinc-400 leading-relaxed font-light">{service.description}</p>
                 <Link to="/contact" className="btn-primary mt-4 inline-block">
                   Solicită o ofertă
                 </Link>

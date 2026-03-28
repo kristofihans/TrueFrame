@@ -15,15 +15,15 @@ export default function DespreMine() {
       {/* Content Side */}
       <div className="w-full md:w-1/2 py-16 md:py-32 px-6 md:px-16 lg:px-24 flex items-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2 }} className="max-w-xl mx-auto space-y-8">
-          <div className="inline-block px-4 py-1 border border-white/70 rounded-full text-gray-900 text-sm font-bold tracking-widest uppercase mb-4 bg-white/40">
+          <div className="inline-block px-4 py-1 border border-white/10 rounded-full text-zinc-300 text-sm font-bold tracking-widest uppercase mb-4 bg-zinc-900/40">
             Despre Mine
           </div>
           
-          <h2 className="text-3xl lg:text-4xl font-serif text-gray-900 font-bold leading-snug">
+          <h2 className="text-3xl lg:text-4xl font-serif text-white font-bold leading-snug">
             Hey, eu sunt Fredi...
           </h2>
           
-          <div className="text-lg text-gray-700 font-sans font-light leading-relaxed space-y-6">
+          <div className="text-lg text-zinc-400 font-sans font-light leading-relaxed space-y-6">
             <p>
               A fi fotograf înseamnă mai mult decât apăsarea unui buton. Înseamnă a observa, a simți și a păstra o fărâmă din viața oamenilor așa cum este ea.
             </p>

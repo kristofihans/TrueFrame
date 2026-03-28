@@ -6,7 +6,7 @@ export default function WhatsAppButton() {
       href="https://wa.me/40727854187"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-[60] flex items-center justify-center w-14 h-14 bg-green-500 text-gray-900 rounded-full shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-110 transition-transform duration-300"
+      className="fixed bottom-6 right-6 z-[60] flex items-center justify-center w-14 h-14 bg-green-500 text-white rounded-full shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-110 transition-transform duration-300"
       aria-label="Contactează-mă pe WhatsApp"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">

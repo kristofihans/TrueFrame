@@ -11,24 +11,24 @@ const Facebook = ({ size = 24, className = "" }) => (
 
 export default function Footer() {
   return (
-    <footer className="bg-transparent text-gray-700 pt-16 pb-8 border-t border-white/5 relative z-10 w-full">
+    <footer className="bg-transparent text-zinc-400 pt-16 pb-8 border-t border-white/5 relative z-10 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2 text-gray-900">
+            <Link to="/" className="flex items-center gap-2 text-white">
               <img src="./images/logo.png" alt="TrueFrame Logo" className="h-12 w-auto brightness-0 invert opacity-90" />
             </Link>
-            <p className="text-sm leading-relaxed max-w-sm text-gray-700">
+            <p className="text-sm leading-relaxed max-w-sm text-zinc-400">
               Cele mai frumoase momente povestite prin fotografii. 
               Servicii foto profesionale în Oradea și împrejurimi.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/40 border border-white/50 flex items-center justify-center hover:bg-white/20 hover:text-gray-900 transition-colors">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:text-white transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="https://instagram.com/trueframe_weddings_and_studio" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/40 border border-white/50 flex items-center justify-center hover:bg-white/20 hover:text-gray-900 transition-colors">
+              <a href="https://instagram.com/trueframe_weddings_and_studio" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:text-white transition-colors">
                 <Instagram size={20} />
               </a>
             </div>
@@ -36,7 +36,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-gray-900 font-serif text-xl font-medium mb-6">Linkuri Utile</h3>
+            <h3 className="text-white font-serif text-xl font-medium mb-6">Linkuri Utile</h3>
             <ul className="space-y-3">
               {['Home', 'Servicii', 'Portofoliu', 'Despre Mine', 'Blog', 'Contact'].map((item) => (
                 <li key={item}>
@@ -53,7 +53,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-gray-900 font-serif text-xl font-medium mb-6">Contact</h3>
+            <h3 className="text-white font-serif text-xl font-medium mb-6">Contact</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm">
                 <MapPin className="text-brand-500 shrink-0" size={20} />
@@ -72,11 +72,11 @@ export default function Footer() {
 
         </div>
         
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-500">
           <p>&copy; {new Date().getFullYear()} TrueFrame Photography. Toate drepturile rezervate.</p>
           <div className="flex gap-4">
-            <Link to="/termeni" className="hover:text-gray-900 transition-colors">Termeni și Condiții</Link>
-            <Link to="/confidentialitate" className="hover:text-gray-900 transition-colors">Politică de Confidențialitate</Link>
+            <Link to="/termeni" className="hover:text-white transition-colors">Termeni și Condiții</Link>
+            <Link to="/confidentialitate" className="hover:text-white transition-colors">Politică de Confidențialitate</Link>
           </div>
         </div>
       </div>

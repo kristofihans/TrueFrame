@@ -45,13 +45,13 @@ export default function Blog() {
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-serif font-bold text-white mb-6"
           >
             Povești și Sfaturi
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-gray-700 font-light"
+            className="text-lg text-zinc-400 font-light"
           >
             Tot ce trebuie să știi despre organizarea evenimentului perfect, din perspectiva unui fotograf.
           </motion.p>
@@ -76,26 +76,26 @@ export default function Blog() {
                 />
               </div>
               <div className="p-6 md:p-8 flex-grow flex flex-col border-t border-white/5">
-                <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wide text-gray-700 mb-4">
-                  <span className="text-brand-400">{post.category}</span>
+                <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wide text-zinc-500 mb-4">
+                  <span className="text-white/80">{post.category}</span>
                   <span className="flex items-center gap-1"><Clock size={14}/> {post.readTime}</span>
                 </div>
                 
-                <h2 className="text-2xl font-serif font-bold text-gray-900 mb-3 line-clamp-2">
-                  <Link to={`/blog/${post.id}`} className="hover:text-gray-800 transition-colors">
+                <h2 className="text-2xl font-serif font-bold text-white mb-3 line-clamp-2">
+                  <Link to={`/blog/${post.id}`} className="hover:text-zinc-200 transition-colors">
                     {post.title}
                   </Link>
                 </h2>
                 
-                <p className="text-gray-700 font-light leading-relaxed mb-6 line-clamp-3">
+                <p className="text-zinc-400 font-light leading-relaxed mb-6 line-clamp-3">
                   {post.excerpt}
                 </p>
                 
-                <div className="mt-auto flex items-center justify-between pt-4 border-t border-white/50">
-                  <span className="text-sm text-gray-500">{post.date}</span>
+                <div className="mt-auto flex items-center justify-between pt-4 border-t border-white/10">
+                  <span className="text-sm text-zinc-500">{post.date}</span>
                   <Link 
                     to={`/blog/${post.id}`} 
-                    className="text-gray-900 hover:text-gray-800 transition-colors font-medium flex items-center gap-1 text-sm group"
+                    className="text-white hover:text-zinc-200 transition-colors font-medium flex items-center gap-1 text-sm group"
                   >
                     Citește <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </Link>

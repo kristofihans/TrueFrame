@@ -19,13 +19,13 @@ export default function Contact() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-serif font-bold text-white mb-6"
           >
             Să scriem povestea împreună
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-gray-700 font-light"
+            className="text-lg text-zinc-400 font-light"
           >
             Fie că aveți deja data stabilită sau doar doriți detalii suplimentare, lăsați-mi un mesaj și vă voi răspunde cu cel mai mare drag.
           </motion.p>
@@ -37,25 +37,25 @@ export default function Contact() {
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
         >
           <div className="glass-panel p-6 rounded-3xl flex flex-col items-center text-center">
-            <div className="p-4 bg-white/60 rounded-full text-gray-900 mb-4"><MapPin size={28} /></div>
-            <strong className="block text-gray-900 mb-2 text-lg font-serif">Locație</strong>
-            <span className="text-gray-700 font-light">Oradea, Bihor</span>
-            <span className="text-sm text-gray-500 mt-2">Disponibil pentru deplasări interne.</span>
+            <div className="p-4 bg-white/10 rounded-full text-white mb-4"><MapPin size={28} /></div>
+            <strong className="block text-white mb-2 text-lg font-serif">Locație</strong>
+            <span className="text-zinc-400 font-light">Oradea, Bihor</span>
+            <span className="text-sm text-zinc-500 mt-2">Disponibil pentru deplasări interne.</span>
           </div>
 
           <div className="glass-panel p-6 rounded-3xl flex flex-col items-center text-center">
-            <div className="p-4 bg-white/60 rounded-full text-gray-900 mb-4"><Phone size={28} /></div>
-            <strong className="block text-gray-900 mb-2 text-lg font-serif">Telefon</strong>
-            <a href="tel:+40727854187" className="text-gray-700 font-light hover:text-gray-900 transition-colors">+40 727 854 187</a>
+            <div className="p-4 bg-white/10 rounded-full text-white mb-4"><Phone size={28} /></div>
+            <strong className="block text-white mb-2 text-lg font-serif">Telefon</strong>
+            <a href="tel:+40727854187" className="text-zinc-400 font-light hover:text-white transition-colors">+40 727 854 187</a>
           </div>
 
           <div className="glass-panel p-6 rounded-3xl flex flex-col items-center text-center">
-            <div className="p-4 bg-white/60 rounded-full text-gray-900 mb-4"><Mail size={28} /></div>
-            <strong className="block text-gray-900 mb-2 text-lg font-serif">Email & Socials</strong>
-            <a href="mailto:contact@trueframe.example" className="text-gray-700 font-light hover:text-gray-900 transition-colors mb-4">contact@trueframe.example</a>
+            <div className="p-4 bg-white/10 rounded-full text-white mb-4"><Mail size={28} /></div>
+            <strong className="block text-white mb-2 text-lg font-serif">Email & Socials</strong>
+            <a href="mailto:contact@trueframe.example" className="text-zinc-400 font-light hover:text-white transition-colors mb-4">contact@trueframe.example</a>
             <div className="flex justify-center gap-3">
-              <a href="#" className="p-3 bg-white/40 border border-white/50 rounded-xl hover:bg-white/20 transition-all text-gray-700 hover:text-gray-900"><Instagram size={20} /></a>
-              <a href="#" className="p-3 bg-white/40 border border-white/50 rounded-xl hover:bg-white/20 transition-all text-gray-700 hover:text-gray-900"><Facebook size={20} /></a>
+              <a href="#" className="p-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all text-zinc-400 hover:text-white"><Instagram size={20} /></a>
+              <a href="#" className="p-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all text-zinc-400 hover:text-white"><Facebook size={20} /></a>
             </div>
           </div>
         </motion.div>
@@ -67,38 +67,38 @@ export default function Contact() {
             initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
             className="glass-panel p-8 md:p-12 rounded-3xl h-full flex flex-col justify-center"
           >
-            <h3 className="text-2xl font-serif font-bold text-gray-900 mb-8 border-b border-white/50 pb-4">Îmi doresc o colaborare</h3>
+            <h3 className="text-2xl font-serif font-bold text-white mb-8 border-b border-white/10 pb-4">Îmi doresc o colaborare</h3>
             
             <form className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <input type="text" id="name" required className="w-full px-4 py-3 bg-white/40 border border-gray-900/30 rounded-xl focus:ring-2 focus:ring-gray-900/40 focus:border-gray-900 focus:bg-white/60 text-gray-900 placeholder:text-gray-600 transition-all outline-none" placeholder="Nume și Prenume *" />
+                  <input type="text" id="name" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Nume și Prenume *" />
                 </div>
                 <div>
-                  <input type="tel" id="phone" required className="w-full px-4 py-3 bg-white/40 border border-gray-900/30 rounded-xl focus:ring-2 focus:ring-gray-900/40 focus:border-gray-900 focus:bg-white/60 text-gray-900 placeholder:text-gray-600 transition-all outline-none" placeholder="Telefon *" />
+                  <input type="tel" id="phone" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Telefon *" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <input type="email" id="email" className="w-full px-4 py-3 bg-white/40 border border-gray-900/30 rounded-xl focus:ring-2 focus:ring-gray-900/40 focus:border-gray-900 focus:bg-white/60 text-gray-900 placeholder:text-gray-600 transition-all outline-none" placeholder="Email" />
+                  <input type="email" id="email" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Email" />
                 </div>
                 <div>
-                  <input type="date" id="date" className="w-full px-4 py-3 bg-white/40 border border-gray-900/30 rounded-xl focus:ring-2 focus:ring-gray-900/40 focus:border-gray-900 focus:bg-white/60 text-gray-900 transition-all outline-none" />
+                  <input type="date" id="date" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none" />
                 </div>
               </div>
 
               <div>
-                <select id="eventType" className="w-full px-4 py-3 bg-white/40 border border-gray-900/30 rounded-xl focus:ring-2 focus:ring-gray-900/40 focus:border-gray-900 focus:bg-white/60 text-gray-900 transition-all outline-none appearance-none">
-                  <option value="">Alege tipul de eveniment...</option>
-                  <option value="nunta">Nuntă</option>
-                  <option value="botez">Botez</option>
-                  <option value="sedinta">Ședință Foto</option>
+                <select id="eventType" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none">
+                  <option value="" className="bg-zinc-900">Alege tipul de eveniment...</option>
+                  <option value="nunta" className="bg-zinc-900">Nuntă</option>
+                  <option value="botez" className="bg-zinc-900">Botez</option>
+                  <option value="sedinta" className="bg-zinc-900">Ședință Foto</option>
                 </select>
               </div>
 
               <div>
-                <textarea id="message" rows="4" required className="w-full px-4 py-3 bg-white/40 border border-gray-900/30 rounded-xl focus:ring-2 focus:ring-gray-900/40 focus:border-gray-900 focus:bg-white/60 text-gray-900 placeholder:text-gray-600 transition-all outline-none resize-none" placeholder="Mesajul tău *"></textarea>
+                <textarea id="message" rows="4" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none resize-none" placeholder="Mesajul tău *"></textarea>
               </div>
 
               <button type="submit" className="w-full btn-primary !py-4 text-base tracking-wide uppercase mt-4">
@@ -110,7 +110,7 @@ export default function Contact() {
           {/* Contact Map */}
           <motion.div 
             initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.4 }}
-            className="rounded-3xl overflow-hidden glass-panel h-[50vh] lg:h-auto border border-white/50"
+            className="rounded-3xl overflow-hidden glass-panel h-[50vh] lg:h-auto border border-white/10"
           >
             <iframe 
               title="Locatie Oradea"

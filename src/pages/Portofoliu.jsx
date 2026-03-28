@@ -34,10 +34,10 @@ export default function Portofoliu() {
         <div className="text-center max-w-2xl mx-auto mb-12">
           {!activeAlbum ? (
             <>
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
                 Albume Foto
               </motion.h1>
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="text-lg text-gray-700 font-light">
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="text-lg text-zinc-400 font-light">
                 Alege o categorie și descoperă colecția completă de amintiri surprinse de la fiecare eveniment.
               </motion.p>
             </>
@@ -46,14 +46,14 @@ export default function Portofoliu() {
               <motion.button 
                 initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}
                 onClick={() => setActiveAlbum(null)}
-                className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/70 text-gray-800 hover:bg-white/60 hover:text-gray-900 transition-all mb-6 font-medium bg-white/40 shadow-sm"
+                className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/10 text-white hover:bg-white/10 transition-all mb-6 font-medium bg-zinc-900/40 shadow-sm"
               >
                 <ArrowLeft size={18} /> Înapoi la Albume
               </motion.button>
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-3xl md:text-5xl font-serif font-bold text-white mb-4">
                 {activeAlbum.title}
               </motion.h1>
-              <div className="inline-block px-4 py-1 border border-white/70 rounded-full text-gray-900 text-sm font-bold uppercase tracking-widest bg-white/40">
+              <div className="inline-block px-4 py-1 border border-white/10 rounded-full text-zinc-300 text-sm font-bold uppercase tracking-widest bg-zinc-900/40">
                 {activeAlbum.category}
               </div>
             </>
@@ -69,8 +69,8 @@ export default function Portofoliu() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 border ${
                   activeCategory === cat 
-                    ? 'bg-white/60 text-gray-900 border-white/70 shadow-[0_0_15px_rgba(255,255,255,0.1)]' 
-                    : 'bg-transparent text-gray-700 border-white/5 hover:bg-white/40 hover:text-gray-900'
+                    ? 'bg-white/90 text-zinc-950 border-white shadow-[0_0_15px_rgba(255,255,255,0.1)]' 
+                    : 'bg-transparent text-zinc-400 border-white/10 hover:bg-white/10 hover:text-white'
                 }`}
               >
                 {cat}
@@ -105,8 +105,8 @@ export default function Portofoliu() {
                     </div>
                   </div>
                   <div className="p-6 text-center border-t border-white/5">
-                    <span className="text-xs uppercase tracking-widest text-gray-700 font-bold mb-2 block">{album.category}</span>
-                    <h3 className="text-xl font-serif font-bold text-gray-900 group-hover:text-gray-800 transition-colors">
+                    <span className="text-xs uppercase tracking-widest text-zinc-500 font-bold mb-2 block">{album.category}</span>
+                    <h3 className="text-xl font-serif font-bold text-white group-hover:text-zinc-200 transition-colors">
                       {album.title}
                     </h3>
                   </div>
