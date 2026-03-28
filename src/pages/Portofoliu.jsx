@@ -8,12 +8,12 @@ import { Images, ArrowLeft, ZoomIn } from 'lucide-react';
 const categories = ['Toate', 'Nunti', 'Botezuri', 'Produse'];
 
 const albums = [
-  { id: 1, title: 'Nuntă Maria & Ion', category: 'Nunti', cover: '/images/photo1.jpg', photos: [{ src: '/images/photo1.jpg' }, { src: '/images/photo2.jpg' }, { src: '/images/photo3.jpg' }] },
-  { id: 2, title: 'Botez Albert', category: 'Botezuri', cover: '/images/photo4.jpg', photos: [{ src: '/images/photo4.jpg' }, { src: '/images/photo5.jpg' }] },
-  { id: 3, title: 'Sesiune Produse Artisanal', category: 'Produse', cover: '/images/photo6.jpg', photos: [{ src: '/images/photo6.jpg' }, { src: '/images/photo7.jpg' }] },
-  { id: 4, title: 'Cununie Civilă', category: 'Nunti', cover: '/images/photo8.jpg', photos: [{ src: '/images/photo8.jpg' }, { src: '/images/photo9.jpg' }] },
-  { id: 5, title: 'Botez Sofia', category: 'Botezuri', cover: '/images/photo10.jpg', photos: [{ src: '/images/photo10.jpg' }, { src: '/images/photo11.jpg' }] },
-  { id: 6, title: 'Nuntă Elena & Alex', category: 'Nunti', cover: '/images/photo12.jpg', photos: [{ src: '/images/photo12.jpg' }, { src: '/images/photo13.jpg' }] }
+  { id: 1, title: 'Nuntă Maria & Ion', category: 'Nunti', cover: './images/photo1.jpg', photos: [{ src: './images/photo1.jpg' }, { src: './images/photo2.jpg' }, { src: './images/photo3.jpg' }] },
+  { id: 2, title: 'Botez Albert', category: 'Botezuri', cover: './images/photo4.jpg', photos: [{ src: './images/photo4.jpg' }, { src: './images/photo5.jpg' }] },
+  { id: 3, title: 'Sesiune Produse Artisanal', category: 'Produse', cover: './images/photo6.jpg', photos: [{ src: './images/photo6.jpg' }, { src: './images/photo7.jpg' }] },
+  { id: 4, title: 'Cununie Civilă', category: 'Nunti', cover: './images/photo8.jpg', photos: [{ src: './images/photo8.jpg' }, { src: './images/photo9.jpg' }] },
+  { id: 5, title: 'Botez Sofia', category: 'Botezuri', cover: './images/photo10.jpg', photos: [{ src: './images/photo10.jpg' }, { src: './images/photo11.jpg' }] },
+  { id: 6, title: 'Nuntă Elena & Alex', category: 'Nunti', cover: './images/photo12.jpg', photos: [{ src: './images/photo12.jpg' }, { src: './images/photo13.jpg' }] }
 ];
 
 export default function Portofoliu() {

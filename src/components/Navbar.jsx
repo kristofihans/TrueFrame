@@ -38,7 +38,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 group">
-            <img src="/images/logo.png" alt="TrueFrame Logo" className={`h-10 w-auto transition-all brightness-0 invert`} />
+            <img src="./images/logo.png" alt="TrueFrame Logo" className={`h-10 w-auto transition-all brightness-0 invert`} />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">

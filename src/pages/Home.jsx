@@ -43,7 +43,7 @@ export default function Home() {
       <section className="relative h-screen flex flex-col justify-between overflow-hidden pt-40 pb-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/herobackground.jpg" 
+            src="./images/herobackground.jpg" 
             alt="Hero Background" 
             className="w-full h-full object-cover"
             onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2938&auto=format&fit=crop'; }}
@@ -85,7 +85,7 @@ export default function Home() {
               className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-white/5"
             >
               <img 
-                src="/images/photographerimage.jpg" 
+                src="./images/photographerimage.jpg" 
                 alt="Fredi - Photographer" 
                 className="w-full h-full object-cover"
                 onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1554046920-90dcac028c24?q=80&w=3049&auto=format&fit=crop'; }}

@@ -8,7 +8,7 @@ export default function DespreMine() {
       {/* Visual Side */}
       <div className="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-16 lg:p-24 relative">
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="relative mb-8 rounded-3xl overflow-hidden glass-panel p-2">
-           <img src="/images/photographerimage.jpg" alt="Fredi - Story" className="w-full h-auto rounded-[1.25rem] object-cover" onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1554046920-90dcac028c24?q=80&w=3049&auto=format&fit=crop'; }} />
+           <img src="./images/photographerimage.jpg" alt="Fredi - Story" className="w-full h-auto rounded-[1.25rem] object-cover" onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1554046920-90dcac028c24?q=80&w=3049&auto=format&fit=crop'; }} />
         </motion.div>
       </div>
 
@@ -39,7 +39,7 @@ export default function DespreMine() {
           </div>
 
           <div className="pt-10">
-            <img src="/images/logo.png" alt="TrueFrame Logo" className="h-16 object-contain brightness-0 invert opacity-90" />
+            <img src="./images/logo.png" alt="TrueFrame Logo" className="h-16 object-contain brightness-0 invert opacity-90" />
           </div>
         </motion.div>
       </div>
