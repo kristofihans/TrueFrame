@@ -391,20 +391,20 @@ export default function Home() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <input type="email" id="email" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Email" />
-                  <div className="relative group/date">
-                    <input 
-                      type="date" 
-                      id="date" 
-                      required
-                      className="peer w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none relative z-10" 
-                    />
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none transition-opacity duration-200 peer-valid:opacity-0 peer-focus:opacity-0 date-placeholder">
-                      Date
-                    </span>
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none group-focus-within/date:text-white transition-colors">
-                      <Calendar size={18} />
+                    <div className="relative h-[52px]">
+                      <input 
+                        type="date" 
+                        id="date" 
+                        required
+                        className="peer absolute inset-0 w-full h-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none z-10 text-[16px]" 
+                      />
+                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none transition-opacity duration-200 peer-focus:opacity-0 peer-valid:opacity-0 z-0">
+                        Date
+                      </span>
+                      <div className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none group-focus-within/date:text-white transition-colors z-20">
+                        <Calendar size={18} />
+                      </div>
                     </div>
-                  </div>
                 </div>
 
                 <select id="eventType" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none">
