@@ -393,14 +393,14 @@ export default function Home() {
                   <input type="email" id="email" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Email" />
                   <div className="relative group/date">
                     <input 
-                      type="text" 
+                      type="date" 
                       id="date" 
-                      placeholder="Date"
-                      onFocus={(e) => { e.target.type = 'date'; try { e.target.showPicker(); } catch (err) {} }}
-                      onBlur={(e) => { if (!e.target.value) e.target.type = 'text'; }}
-                      onClick={(e) => { e.target.type = 'date'; try { e.target.showPicker(); } catch (err) {} }}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none" 
+                      required
+                      className="peer w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none relative z-10" 
                     />
+                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none transition-opacity duration-200 peer-valid:opacity-0 peer-focus:opacity-0 date-placeholder">
+                      Date
+                    </span>
                     <div className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none group-focus-within/date:text-white transition-colors">
                       <Calendar size={18} />
                     </div>
