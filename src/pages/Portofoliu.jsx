@@ -1,30 +1,70 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { Zoom } from "yet-another-react-lightbox/plugins";
-import { Images, ArrowLeft, ZoomIn } from 'lucide-react';
-
-const categories = ['Toate', 'Nunti', 'Botezuri', 'Produse'];
-
-const albums = [
-  { id: 1, title: 'Nuntă Maria & Ion', category: 'Nunti', cover: './images/photo1.jpg', photos: [{ src: './images/photo1.jpg' }, { src: './images/photo2.jpg' }, { src: './images/photo3.jpg' }] },
-  { id: 2, title: 'Botez Albert', category: 'Botezuri', cover: './images/photo4.jpg', photos: [{ src: './images/photo4.jpg' }, { src: './images/photo5.jpg' }] },
-  { id: 3, title: 'Sesiune Produse Artisanal', category: 'Produse', cover: './images/photo6.jpg', photos: [{ src: './images/photo6.jpg' }, { src: './images/photo7.jpg' }] },
-  { id: 4, title: 'Cununie Civilă', category: 'Nunti', cover: './images/photo8.jpg', photos: [{ src: './images/photo8.jpg' }, { src: './images/photo9.jpg' }] },
-  { id: 5, title: 'Botez Sofia', category: 'Botezuri', cover: './images/photo10.jpg', photos: [{ src: './images/photo10.jpg' }, { src: './images/photo11.jpg' }] },
-  { id: 6, title: 'Nuntă Elena & Alex', category: 'Nunti', cover: './images/photo12.jpg', photos: [{ src: './images/photo12.jpg' }, { src: './images/photo13.jpg' }] }
-];
+import { Images, ArrowLeft, ZoomIn, Loader2 } from 'lucide-react';
+import { client, urlFor } from '../lib/sanity';
 
 export default function Portofoliu() {
+  const [albums, setAlbums] = useState([]);
+  const [categories, setCategories] = useState(['Toate']);
   const [activeCategory, setActiveCategory] = useState('Toate');
   const [activeAlbum, setActiveAlbum] = useState(null);
   const [lightboxIndex, setLightboxIndex] = useState(-1);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch Albums and Categories in parallel
+    const fetchData = async () => {
+      try {
+        const [albumData, categoryData] = await Promise.all([
+          client.fetch(`*[_type == "album"] | order(_createdAt desc) {
+            _id,
+            title,
+            "slug": slug.current,
+            "categoryName": category->title,
+            mainImage,
+            gallery
+          }`),
+          client.fetch(`*[_type == "category"] { title }`)
+        ]);
+
+        setAlbums(albumData);
+        const dynamicCategories = ['Toate', ...categoryData.map(c => c.title)];
+        setCategories(dynamicCategories);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching Sanity data:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const filteredAlbums = useMemo(() => {
     if (activeCategory === 'Toate') return albums;
-    return albums.filter(album => album.category === activeCategory);
-  }, [activeCategory]);
+    return albums.filter(album => album.categoryName === activeCategory);
+  }, [activeCategory, albums]);
+
+  // Transform Sanity gallery to Lightbox slides
+  const slides = useMemo(() => {
+    if (!activeAlbum || !activeAlbum.gallery) return [];
+    return activeAlbum.gallery.map(photo => ({
+      src: urlFor(photo).width(1600).url(),
+      title: activeAlbum.title
+    }));
+  }, [activeAlbum]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen pt-48 flex flex-col items-center justify-center text-white bg-zinc-950 px-4">
+        <Loader2 className="w-12 h-12 animate-spin text-white mb-6 opacity-80" />
+        <p className="text-xl font-light tracking-widest uppercase opacity-70">Pregătim expoziția...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="pt-32 pb-20 min-h-screen font-sans bg-transparent">
@@ -54,7 +94,7 @@ export default function Portofoliu() {
                 {activeAlbum.title}
               </motion.h1>
               <div className="inline-block px-4 py-1 border border-white/10 rounded-full text-zinc-300 text-sm font-bold uppercase tracking-widest bg-zinc-900/40">
-                {activeAlbum.category}
+                {activeAlbum.categoryName}
               </div>
             </>
           )}
@@ -62,15 +102,15 @@ export default function Portofoliu() {
 
         {/* Filters Grid */}
         {!activeAlbum && (
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-20">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 border ${
+                className={`px-8 py-3 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 border ${
                   activeCategory === cat 
-                    ? 'bg-white/90 text-zinc-950 border-white shadow-[0_0_15px_rgba(255,255,255,0.1)]' 
-                    : 'bg-transparent text-zinc-400 border-white/10 hover:bg-white/10 hover:text-white'
+                    ? 'bg-white text-zinc-950 border-white shadow-[0_0_20px_rgba(255,255,255,0.15)] scale-105' 
+                    : 'bg-transparent text-zinc-400 border-white/10 hover:bg-white/5 hover:text-white'
                 }`}
               >
                 {cat}
@@ -80,7 +120,7 @@ export default function Portofoliu() {
         )}
 
         {/* Dynamic Content Area */}
-        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           <AnimatePresence mode="popLayout">
             {!activeAlbum ? (
               // Mode 1: SHOW ALBUMS
@@ -88,25 +128,25 @@ export default function Portofoliu() {
                 <motion.div
                   layout
                   initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.4 }}
-                  key={`album-${album.id}`}
-                  className="group cursor-pointer rounded-3xl overflow-hidden shadow-xl transition-all duration-300 glass-panel hover:-translate-y-2"
+                  key={`album-${album._id}`}
+                  className="group cursor-pointer rounded-[2.5rem] overflow-hidden shadow-2xl transition-all duration-500 glass-panel hover:-translate-y-3"
                   onClick={() => setActiveAlbum(album)}
                 >
-                  <div className="aspect-[4/3] relative overflow-hidden">
+                  <div className="aspect-[4/5] relative overflow-hidden">
                     <img
-                      src={album.cover} alt={album.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                      onError={(e) => { e.target.src = `./images/photo${album.id}.jpg`; }}
+                      src={urlFor(album.mainImage).width(800).url()} 
+                      alt={album.title}
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-                    <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full text-white drop-shadow-md text-xs font-bold flex items-center gap-1.5 shadow-sm border border-white/70">
+                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500" />
+                    <div className="absolute top-6 right-6 bg-black/60 backdrop-blur-md px-4 py-2 rounded-full text-white drop-shadow-md text-xs font-bold flex items-center gap-2 border border-white/20">
                       <Images size={14} />
-                      {album.photos.length} fotogafii
+                      {album.gallery?.length || 0} cadre
                     </div>
                   </div>
-                  <div className="p-6 text-center border-t border-white/5">
-                    <span className="text-xs uppercase tracking-widest text-zinc-500 font-bold mb-2 block">{album.category}</span>
-                    <h3 className="text-xl font-serif text-white group-hover:text-zinc-200 transition-colors">
+                  <div className="p-8 text-center border-t border-white/5">
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-black mb-3 block">{album.categoryName}</span>
+                    <h3 className="text-2xl font-serif text-white group-hover:text-zinc-200 transition-colors leading-tight">
                       {album.title}
                     </h3>
                   </div>
@@ -114,22 +154,20 @@ export default function Portofoliu() {
               ))
             ) : (
               // Mode 2: SHOW PHOTOS IN ALBUM
-              activeAlbum.photos.map((photo, index) => (
+              activeAlbum.gallery?.map((photo, index) => (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.4, delay: index * 0.05 }}
                   key={`photo-${index}`}
-                  className="group cursor-pointer rounded-2xl overflow-hidden shadow-lg border border-white/5 aspect-[4/3] relative"
+                  className="group cursor-pointer rounded-[2rem] overflow-hidden shadow-xl border border-white/5 aspect-[4/5] relative"
                   onClick={() => setLightboxIndex(index)}
                 >
                   <img 
-                    src={photo.src} 
+                    src={urlFor(photo).width(800).url()} 
                     alt={`${activeAlbum.title} ${index + 1}`} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 group-hover:opacity-90"
-                    onError={(e) => { e.target.src = `./images/photo${((activeAlbum.id + index) % 13) || 1}.jpg`; }}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 group-hover:opacity-90"
                   />
-                  {/* Plus icon on hover indicates it expands */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30 backdrop-blur-[2px]">
-                     <ZoomIn size={32} className="text-white drop-shadow-md" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-black/40 backdrop-blur-[2px]">
+                     <ZoomIn size={40} className="text-white drop-shadow-2xl scale-50 group-hover:scale-100 transition-transform duration-500" />
                   </div>
                 </motion.div>
               ))
@@ -137,17 +175,24 @@ export default function Portofoliu() {
           </AnimatePresence>
         </motion.div>
 
+        {albums.length === 0 && !loading && (
+          <div className="text-center py-40">
+            <p className="text-xl font-light italic text-zinc-500 uppercase tracking-widest">Momentan lucrăm la selectarea celor mai bune cadre.</p>
+          </div>
+        )}
+
         {/* Final Lightbox layer */}
         <Lightbox 
           open={lightboxIndex >= 0} 
           index={lightboxIndex} 
           close={() => setLightboxIndex(-1)} 
-          slides={activeAlbum ? activeAlbum.photos : []} 
+          slides={slides} 
           plugins={[Zoom]} 
           carousel={{ padding: "0px", spacing: 0 }} 
-          animation={{ fade: 300 }} 
+          animation={{ fade: 400 }} 
         />
       </div>
     </div>
   );
 }
+

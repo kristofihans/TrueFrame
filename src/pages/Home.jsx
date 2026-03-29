@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, CheckCircle, Clock, ChevronLeft, ChevronRight, MessageCircle, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { blogPosts } from './Blog';
+import { client, urlFor } from '../lib/sanity'; // Added Sanity client
 
 const reviews = [
   { name: 'Fischer Nikolett', time: '4 months ago', text: 'Szuper fotók! Nagyon türelmes és kedves, ha nem vagy elég magabiztos a pózolásban akkor ő a töölkéletes választás mert nagyon sokat segít! Egy óra alatt rengeteg kép készült amik egy életen át velünk maradnak! 🥰' },
@@ -26,6 +26,17 @@ const fadeIn = {
 export default function Home() {
   const [currentHero, setCurrentHero] = useState(0);
   const reviewsRef = useRef(null);
+  const [latestPosts, setLatestPosts] = useState([]);
+
+  useEffect(() => {
+    client.fetch(`*[_type == "post"] | order(publishedAt desc) [0...3] {
+      _id,
+      title,
+      slug,
+      mainImage,
+      summary
+    }`).then(data => setLatestPosts(data || []));
+  }, []);
   const heroImages = [
     './images/herobackground.jpg',
     './images/photo1.jpg',
@@ -38,8 +49,6 @@ export default function Home() {
     }, 5000);
     return () => clearInterval(timer);
   }, [heroImages.length]);
-
-  const latestPosts = [...blogPosts].slice(0, 3);
 
   const scrollReviews = (direction) => {
     if (!reviewsRef.current) return;
@@ -421,30 +430,46 @@ export default function Home() {
       </section>
 
       {/* 8. Blog Highlight Section */}
-      <section className="py-24 bg-zinc-900/10 border-t border-white/5">
+      <section className="py-32 bg-zinc-900/10 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-serif font-normal text-white mb-16">Cel mai nou pe blog</h2>
+          <div className="max-w-2xl mx-auto mb-20 text-center">
+            <span className="text-zinc-500 text-sm font-bold uppercase tracking-[0.2em] mb-4 block">Povești Recente</span>
+            <h2 className="text-4xl md:text-6xl font-serif text-white">Cel mai nou pe blog</h2>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {latestPosts.map((post, i) => (
               <motion.article 
-                key={post.id} transition={{ delay: i * 0.1 }}
+                key={post._id} transition={{ delay: i * 0.1 }}
                 initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
-                className="glass-panel overflow-hidden rounded-3xl flex flex-col group h-full border border-white/5 hover:border-white/20 transition-all"
+                className="glass-panel overflow-hidden rounded-[2.5rem] flex flex-col group h-full border border-white/5 hover:border-white/20 transition-all hover:-translate-y-3"
               >
                 <div className="aspect-video overflow-hidden">
-                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  {post.mainImage && (
+                    <img 
+                      src={urlFor(post.mainImage).width(800).url()} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" 
+                    />
+                  )}
                 </div>
                 <div className="p-8 flex flex-col flex-grow text-left">
-                  <p className="text-xs text-zinc-500 uppercase tracking-widest mb-4 font-bold">{post.category}</p>
-                  <h3 className="text-xl font-serif font-normal text-white mb-4 line-clamp-2">{post.title}</h3>
-                  <Link to={`/blog/${post.id}`} className="mt-auto text-white flex items-center gap-2 font-medium hover:gap-3 transition-all">
-                    Citește articol <ChevronRight size={18} />
-                  </Link>
+                  <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] mb-4 font-black">Life & Moments</p>
+                  <h3 className="text-2xl font-serif text-white mb-5 line-clamp-2 leading-tight group-hover:text-zinc-200">{post.title}</h3>
+                  <p className="text-zinc-400 font-light text-sm line-clamp-3 mb-8 leading-relaxed">
+                    {post.summary}
+                  </p>
+                  <div className="mt-auto pt-6 border-t border-white/5">
+                    <Link to={`/blog/${post.slug?.current}`} className="text-sm font-bold uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 group/link">
+                      Citește <ChevronRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
               </motion.article>
             ))}
           </div>
-          <div className="mt-16">
+
+          <div className="mt-20">
             <Link to="/blog" className="btn-outline">Toate articolele</Link>
           </div>
         </div>

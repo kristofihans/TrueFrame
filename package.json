@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@portabletext/react": "^6.0.3",
+    "@sanity/client": "^7.20.0",
+    "@sanity/image-url": "^2.1.0",
     "browserslist": "^4.28.1",
     "caniuse-lite": "^1.0.30001781",
     "framer-motion": "^12.38.0",
