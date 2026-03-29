@@ -73,6 +73,25 @@ input[type="date"] {
   -moz-appearance: textfield;
   appearance: none;
   color: transparent;
+  position: relative;
+}
+
+input[type="date"]::before {
+  content: "Date";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #71717a; /* zinc-500 */
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+input[type="date"]:focus::before,
+input[type="date"]:valid::before,
+input[type="date"]:not(:placeholder-shown)::before {
+  opacity: 0;
+  visibility: hidden;
 }
 
 input[type="date"]:focus,
