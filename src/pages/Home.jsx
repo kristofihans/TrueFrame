@@ -395,7 +395,7 @@ export default function Home() {
                     <input 
                       type="text" 
                       id="date" 
-                      placeholder="Data Eveniment"
+                      placeholder="Date"
                       onFocus={(e) => { e.target.type = 'date'; try { e.target.showPicker(); } catch (err) {} }}
                       onBlur={(e) => { if (!e.target.value) e.target.type = 'text'; }}
                       onClick={(e) => { e.target.type = 'date'; try { e.target.showPicker(); } catch (err) {} }}
