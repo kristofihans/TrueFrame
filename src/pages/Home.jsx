@@ -86,7 +86,7 @@ export default function Home() {
           >
             <button 
               onClick={() => document.getElementById('bio').scrollIntoView({ behavior: 'smooth' })} 
-              className="btn-primary px-12 py-5 text-xl font-medium tracking-wide uppercase shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+              className="btn-primary font-medium tracking-wide uppercase shadow-[0_0_30px_rgba(255,255,255,0.1)]"
             >
               Vezi mai mult
             </button>
@@ -100,16 +100,18 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div 
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
-              className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-white/5 order-2 lg:order-1"
+              className="space-y-6 order-2 lg:order-1"
             >
-              <img 
-                src="./images/photographerimage.jpg" 
-                alt="Fredi - Fotograf" 
-                className="w-full h-full object-cover"
-                onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1554046920-90dcac028c24?q=80&w=3049&auto=format&fit=crop'; }}
-              />
-              <div className="absolute bottom-6 left-6 right-6 glass-panel p-6 rounded-2xl border border-white/20 shadow-2xl backdrop-blur-md">
-                <p className="text-sm md:text-base text-white font-medium text-center leading-relaxed">
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-white/5">
+                <img 
+                  src="./images/photographerimage.jpg" 
+                  alt="Fredi - Fotograf" 
+                  className="w-full h-full object-cover"
+                  onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1554046920-90dcac028c24?q=80&w=3049&auto=format&fit=crop'; }}
+                />
+              </div>
+              <div className="glass-panel p-8 rounded-2xl border border-white/20 shadow-2xl backdrop-blur-md">
+                <p className="text-sm md:text-base text-white font-medium text-center leading-relaxed italic">
                   “Cred că secretul unei fotografii reușite stă în emoțiile sincere: o îmbrățișare caldă, o privire plină de emoție, o explozie de râs autentic. Te invit să vizualizezi portofoliul meu.”
                 </p>
               </div>
@@ -121,7 +123,7 @@ export default function Home() {
             >
               <h2 className="text-4xl md:text-5xl font-serif font-normal text-white mb-6">Hey, eu sunt Fredi...</h2>
               <div className="text-zinc-400 leading-relaxed text-lg font-light space-y-6">
-                <p className="text-white text-2xl italic font-serif opacity-90">...fotograf de nuntă și evenimente din Oradea.</p>
+                <p className="text-white text-2xl italic font-sans opacity-90">...fotograf de nuntă și evenimente din Oradea.</p>
                 <p>
                   Fotografia nu este doar despre prezent. Cei care mă aleg știu că investesc în viitorul lor – în amintiri care, peste zeci de ani, vor fi și mai valoroase decât în ziua în care au fost create.
                 </p>
@@ -135,8 +137,13 @@ export default function Home() {
               
               {/* Desktop Buttons (Hidden on mobile) */}
               <div className="hidden lg:flex gap-4 pt-6">
-                <Link to="/portofoliu" className="btn-primary px-8">Explorează Portofoliu</Link>
-                <Link to="/servicii" className="btn-outline px-8">Serviciile mele</Link>
+                <Link to="/portofoliu" className="btn-primary">Explorează Portofoliu</Link>
+                <button 
+                  onClick={() => document.getElementById('servicii').scrollIntoView({ behavior: 'smooth' })}
+                  className="btn-outline"
+                >
+                  Serviciile mele
+                </button>
               </div>
             </motion.div>
           </div>
@@ -148,8 +155,13 @@ export default function Home() {
             viewport={{ once: true }}
             className="lg:hidden flex flex-col gap-4 pt-12 w-full max-w-sm mx-auto px-4"
           >
-            <Link to="/portofoliu" className="btn-primary w-full text-center py-4">Explorează Portofoliu</Link>
-            <Link to="/servicii" className="btn-outline w-full text-center py-4">Serviciile mele</Link>
+            <Link to="/portofoliu" className="btn-primary w-full text-center">Explorează Portofoliu</Link>
+            <button 
+              onClick={() => document.getElementById('servicii').scrollIntoView({ behavior: 'smooth' })}
+              className="btn-outline w-full text-center"
+            >
+              Serviciile mele
+            </button>
           </motion.div>
         </div>
       </section>
@@ -180,19 +192,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Services Highlight */}
-      <section className="py-24 bg-transparent scroll-mt-20" id="servicii">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* 4. Services Highlight with Background */}
+      <section className="py-24 relative overflow-hidden scroll-mt-20" id="servicii">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="./images/photo9.jpg" 
+            alt="Services Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
             className="text-4xl md:text-5xl font-serif font-normal text-white mb-16"
           >
             Ce pot face pentru tine
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             {[
-              { title: 'Fotografie Nuntă', desc: 'Documentarea autentică a celei mai frumoase zile, captând fiecare emoție și detaliu prețios.' },
-              { title: 'Sesiuni de Cuplu', desc: 'Sedințe relaxate în locații deosebite pentru a celebra povestea voastră de dragoste.' },
-              { title: 'Evenimente Speciale', desc: 'Botezuri, aniversări sau petreceri private, imortalizate cu profesionalism și discreție.' }
+              { title: 'Fotografie de nunta', desc: 'Documentarea autentică a celei mai frumoase zile, captând fiecare emoție și detaliu prețios.' },
+              { title: 'Fotografie si filmari promotionale', desc: 'Prezentări vizuale profesionale care pun într-o lumină impecabilă brandul sau afacerea ta.' },
+              { title: 'Fotografie de brand', desc: 'Imagini strategice și estetice create special pentru a comunica valorile și personalitatea business-ului tău.' },
+              { title: 'Boudoir', desc: 'Sesiuni foto artistice care celebrează feminitatea, senzualitatea și încrederea de sine într-un cadru privat.' },
+              { title: 'Cabina foto', desc: 'Distracție garantată pentru invitați cu printuri instantanee și accesorii haioase, păstrând vibe-ul petrecerii.' }
             ].map((s, i) => (
               <motion.div 
                 key={i} transition={{ delay: i * 0.1 }}
@@ -201,7 +224,7 @@ export default function Home() {
               >
                 <h3 className="text-2xl font-serif font-normal text-white mb-6">{s.title}</h3>
                 <p className="text-zinc-400 mb-8 font-light leading-relaxed flex-grow">{s.desc}</p>
-                <Link to="/servicii" className="btn-outline group-hover:bg-white group-hover:text-black transition-all">
+                <Link to="/servicii" className="btn-outline group-hover:bg-white group-hover:text-black transition-all text-center">
                   Află detalii
                 </Link>
               </motion.div>
@@ -234,16 +257,25 @@ export default function Home() {
             </motion.div>
           </div>
           <div className="mt-16 text-center">
-            <Link to="/contact" className="btn-primary px-16 py-5 text-xl tracking-wider uppercase shadow-xl hover:scale-105 transition-transform">
+            <Link to="/contact" className="btn-primary tracking-wider uppercase shadow-xl hover:scale-105 transition-transform">
               Solicită o ofertă
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 6. Reviews Section */}
-      <section className="py-24 bg-transparent border-y border-white/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center text-white">
+      {/* 6. Reviews Section with Background */}
+      <section className="py-24 relative overflow-hidden border-y border-white/5">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="./images/photo6.jpg" 
+            alt="Reviews Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-[4px]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center text-white relative z-10">
           <div className="inline-flex items-center gap-2 bg-zinc-900/40 border border-white/10 px-6 py-3 rounded-full mb-8">
              <div className="flex text-yellow-500 gap-0.5">
                <Star size={18} className="fill-current" />
@@ -413,7 +445,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-16">
-            <Link to="/blog" className="btn-outline px-12 py-4">Toate articolele</Link>
+            <Link to="/blog" className="btn-outline">Toate articolele</Link>
           </div>
         </div>
       </section>

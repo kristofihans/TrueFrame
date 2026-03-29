@@ -38,11 +38,11 @@
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 rounded-full bg-white text-zinc-950 font-medium shadow-lg hover:bg-zinc-200 hover:scale-[1.02] transform transition-all duration-300 whitespace-nowrap;
+    @apply px-8 py-4 rounded-full bg-white text-zinc-950 font-medium text-base shadow-lg hover:bg-zinc-200 hover:scale-[1.02] transform transition-all duration-300 whitespace-nowrap;
   }
   
   .btn-outline {
-    @apply px-6 py-3 rounded-full border border-white/20 text-white font-medium hover:bg-white/10 transform transition-all duration-300;
+    @apply px-8 py-4 rounded-full border border-white/20 text-white font-medium text-base hover:bg-white/10 transform transition-all duration-300;
   }
 
   .glass-panel {

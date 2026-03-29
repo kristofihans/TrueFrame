@@ -4,22 +4,27 @@ import { Link } from 'react-router-dom';
 
 const services = [
   {
-    title: 'Fotografie Nuntă',
+    title: 'Fotografie de nunta',
     description: 'Documentarea autentică și plină de emoție a celei mai importante zile din viața voastră. De la pregătiri până la petrecere, ne asigurăm că fiecare amănunt este surprins într-o lumină perfectă.',
     image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop',
   },
   {
-    title: 'Fotografie Botez',
-    description: 'Momente duioase și unice la primul eveniment major din viața copilului tău. Creăm amintiri calde și sincere pe care familia le va prețui generații la rând.',
-    image: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?q=80&w=1200&auto=format&fit=crop',
+    title: 'Fotografie si filmari promotionale',
+    description: 'Prezentări vizuale profesionale și dinamice realizate pentru a evidenția punctele forte ale afacerii tale. Creăm conținut video și foto de impact pentru campanii reușite.',
+    image: './images/photo2.jpg',
   },
   {
-    title: 'Sesiuni de Familie / Cuplu',
-    description: 'Ședințe foto relaxate în natură sau în studio. Captăm dinamica și conexiunea voastră într-un cadru natural, fără ipostaze rigide, punând accent pe spontaneitate.',
-    image: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=1200&auto=format&fit=crop',
+    title: 'Fotografie de brand',
+    description: 'Imagini strategice care spun povestea business-ului tău. Ne concentrăm pe detalii care transmit profesionalism, încredere și viziunea brandului tău către clienți.',
+    image: './images/photo5.jpg',
   },
   {
-    title: 'Cabină Foto (Photobooth)',
+    title: 'Boudoir',
+    description: 'O celebrare artistică a feminității și eleganței. Sesiuni foto realizate cu maximă discreție și bun gust, menite să îți redea încrederea și să îți sublinieze frumusețea naturală.',
+    image: './images/photo7.jpg',
+  },
+  {
+    title: 'Cabina foto (Photobooth)',
     description: 'Distracție garantată pentru invitații voștri! Oglindă foto interactivă cu recuzită haioasă și printuri instantanee magnetice de înaltă calitate.',
     image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop',
   },

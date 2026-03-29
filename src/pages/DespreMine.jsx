@@ -7,10 +7,12 @@ export default function DespreMine() {
       
       {/* Visual Side */}
       <div className="w-full md:w-1/2 flex flex-col justify-center p-6 md:p-16 lg:p-24 relative">
-        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="relative mb-8 rounded-3xl overflow-hidden glass-panel p-2">
-           <img src="./images/photographerimage.jpg" alt="Fredi - Story" className="w-full h-auto rounded-[1.25rem] object-cover" onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1554046920-90dcac028c24?q=80&w=3049&auto=format&fit=crop'; }} />
-           {/* Overlay Quote Box */}
-           <div className="absolute bottom-10 left-10 right-10 glass-panel p-6 rounded-2xl border border-white/20 shadow-2xl backdrop-blur-md">
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="space-y-6">
+           <div className="relative rounded-3xl overflow-hidden glass-panel p-2">
+             <img src="./images/photographerimage.jpg" alt="Fredi - Story" className="w-full h-auto rounded-[1.25rem] object-cover" onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1554046920-90dcac028c24?q=80&w=3049&auto=format&fit=crop'; }} />
+           </div>
+           {/* Quote Box Under Image */}
+           <div className="glass-panel p-8 rounded-2xl border border-white/20 shadow-2xl backdrop-blur-md">
              <p className="text-sm md:text-base text-white font-medium text-center leading-relaxed italic">
                “Cred că secretul unei fotografii reușite stă în emoțiile sincere: o îmbrățișare caldă, o privire plină de emoție, o explozie de râs autentic. Te invit să vizualizezi portofoliul meu.”
              </p>
@@ -30,7 +32,7 @@ export default function DespreMine() {
           </h2>
           
           <div className="text-lg text-zinc-400 font-sans font-light leading-relaxed space-y-6">
-            <p className="text-white text-xl italic font-serif opacity-90">...fotograf de nuntă și evenimente din Oradea.</p>
+            <p className="text-white text-xl italic font-sans opacity-90">...fotograf de nuntă și evenimente din Oradea.</p>
             <p>
               Fotografia nu este doar despre prezent. Cei care mă aleg știu că investesc în viitorul lor – în amintiri care, peste zeci de ani, vor fi și mai valoroase decât în ziua în care au fost create.
             </p>
