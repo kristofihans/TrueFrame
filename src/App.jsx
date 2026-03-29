@@ -8,6 +8,7 @@ import DespreMine from './pages/DespreMine';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import BlogPost from './pages/BlogPost';
+import ServiceDetail from './pages/ServiceDetail';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="servicii" element={<Servicii />} />
+          <Route path="servicii/:slug" element={<ServiceDetail />} />
           <Route path="portofoliu" element={<Portofoliu />} />
           <Route path="despre-mine" element={<DespreMine />} />
           <Route path="blog" element={<Blog />} />

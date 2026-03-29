@@ -35,6 +35,8 @@ const services = [
   }
 ];
 
+import { servicesData } from '../data/servicesData';
+
 export default function Servicii() {
   return (
     <div className="pt-32 pb-20 min-h-screen bg-transparent font-sans">
@@ -57,7 +59,7 @@ export default function Servicii() {
         </div>
 
         <div className="space-y-12">
-          {services.map((service, index) => (
+          {servicesData.map((service, index) => (
             <motion.div 
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -79,9 +81,9 @@ export default function Servicii() {
                   Serviciu Pachet
                 </div>
                 <h3 className="text-3xl font-serif text-white mb-4">{service.title}</h3>
-                <p className="text-lg text-zinc-400 leading-relaxed font-light">{service.description}</p>
-                <Link to="/contact" className="btn-primary mt-4 inline-block">
-                  Solicită o ofertă
+                <p className="text-lg text-zinc-400 leading-relaxed font-light">{service.shortDesc}</p>
+                <Link to={`/servicii/${service.slug}`} className="btn-primary mt-4 inline-block">
+                  Află detalii
                 </Link>
               </div>
             </motion.div>
