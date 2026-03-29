@@ -123,7 +123,7 @@ export default function Home() {
             >
               <h2 className="text-4xl md:text-5xl font-serif font-normal text-white mb-6">Hey, eu sunt Fredi...</h2>
               <div className="text-zinc-400 leading-relaxed text-lg font-light space-y-6">
-                <p className="text-white text-2xl italic font-sans opacity-90">...fotograf de nuntă și evenimente din Oradea.</p>
+                <p>...fotograf de nuntă și evenimente din Oradea.</p>
                 <p>
                   Fotografia nu este doar despre prezent. Cei care mă aleg știu că investesc în viitorul lor – în amintiri care, peste zeci de ani, vor fi și mai valoroase decât în ziua în care au fost create.
                 </p>
