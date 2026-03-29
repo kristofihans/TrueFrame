@@ -30,8 +30,8 @@ export default function Portofoliu() {
           client.fetch(`*[_type == "category"] { title }`)
         ]);
 
-        setAlbums(albumData);
-        const dynamicCategories = ['Toate', ...categoryData.map(c => c.title)];
+        setAlbums(albumData || []);
+        const dynamicCategories = ['Toate', ...(categoryData?.map(c => c.title) || [])];
         setCategories(dynamicCategories);
         setLoading(false);
       } catch (error) {

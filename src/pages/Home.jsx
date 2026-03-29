@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, CheckCircle, Clock, ChevronLeft, ChevronRight, MessageCircle, Phone, MapPin } from 'lucide-react';
+import { Star, CheckCircle, Clock, ChevronLeft, ChevronRight, MessageCircle, Phone, MapPin, Camera, Mail, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { client, urlFor } from '../lib/sanity'; // Added Sanity client
 
@@ -35,7 +35,7 @@ export default function Home() {
       slug,
       mainImage,
       summary
-    }`).then(data => setLatestPosts(data || []));
+    }`).then(data => setLatestPosts(Array.isArray(data) ? data : []));
   }, []);
   const heroImages = [
     './images/herobackground.jpg',
@@ -391,7 +391,20 @@ export default function Home() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <input type="email" id="email" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Email" />
-                  <input type="date" id="date" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none" />
+                  <div className="relative group/date">
+                    <input 
+                      type="text" 
+                      id="date" 
+                      placeholder="Data Eveniment"
+                      onFocus={(e) => { e.target.type = 'date'; try { e.target.showPicker(); } catch (err) {} }}
+                      onBlur={(e) => { if (!e.target.value) e.target.type = 'text'; }}
+                      onClick={(e) => { e.target.type = 'date'; try { e.target.showPicker(); } catch (err) {} }}
+                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none" 
+                    />
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none group-focus-within/date:text-white transition-colors">
+                      <Calendar size={18} />
+                    </div>
+                  </div>
                 </div>
 
                 <select id="eventType" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none">
@@ -438,19 +451,21 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {latestPosts.map((post, i) => (
+            {(latestPosts || []).map((post, i) => (
               <motion.article 
-                key={post._id} transition={{ delay: i * 0.1 }}
+                key={post._id || i} transition={{ delay: i * 0.1 }}
                 initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
                 className="glass-panel overflow-hidden rounded-[2.5rem] flex flex-col group h-full border border-white/5 hover:border-white/20 transition-all hover:-translate-y-3"
               >
                 <div className="aspect-video overflow-hidden">
-                  {post.mainImage && (
+                  {post.mainImage ? (
                     <img 
                       src={urlFor(post.mainImage).width(800).url()} 
                       alt={post.title} 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" 
                     />
+                  ) : (
+                    <div className="w-full h-full bg-zinc-900 flex items-center justify-center text-white/5 uppercase tracking-widest text-[10px]">TrueFrame</div>
                   )}
                 </div>
                 <div className="p-8 flex flex-col flex-grow text-left">
@@ -460,7 +475,7 @@ export default function Home() {
                     {post.summary}
                   </p>
                   <div className="mt-auto pt-6 border-t border-white/5">
-                    <Link to={`/blog/${post.slug?.current}`} className="text-sm font-bold uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 group/link">
+                    <Link to={`/blog/${post.slug?.current || '#'}`} className="text-sm font-bold uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 group/link">
                       Citește <ChevronRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
                     </Link>
                   </div>

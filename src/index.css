@@ -59,3 +59,38 @@
     scrollbar-width: none; /* Firefox */
   }
 }
+
+/* Custom Date Input Styling */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-clear-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: none;
+  color: transparent;
+}
+
+input[type="date"]:focus,
+input[type="date"]:valid,
+input[type="date"]:not(:placeholder-shown) {
+  color: white;
+}
+
+input[type="date"]::-webkit-datetime-edit {
+  padding-left: 0.5rem;
+}
+
+input[type="date"]::-webkit-datetime-edit {
+  color: transparent !important;
+}
+
+input[type="date"]:focus::-webkit-datetime-edit,
+input[type="date"]:not(:placeholder-shown)::-webkit-datetime-edit,
+input[type="date"]:valid::-webkit-datetime-edit {
+  color: white !important;
+}

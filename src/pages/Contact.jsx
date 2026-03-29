@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Calendar } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -58,7 +58,18 @@ export default function Contact() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <input type="email" id="email" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Email" />
-                <input type="date" id="date" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none" />
+                <div className="relative group/date">
+                   <input 
+                    type="date" 
+                    id="date" 
+                    onClick={(e) => { try { e.target.showPicker(); } catch (err) {} }}
+                    onFocus={(e) => { try { e.target.showPicker(); } catch (err) {} }}
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none" 
+                  />
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none group-focus-within/date:text-white transition-colors">
+                    <Calendar size={18} />
+                  </div>
+                </div>
               </div>
 
               <select id="eventType" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none">
