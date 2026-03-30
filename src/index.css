@@ -72,5 +72,37 @@ input[type="date"] {
   -webkit-appearance: none;
   -moz-appearance: textfield;
   appearance: none;
-  color: white;
+  color: transparent !important;
+  position: relative;
+}
+
+input[type="date"]::before {
+  content: "Data evenimentului tău";
+  font-size: 0.8rem; /* Adjusted smaller to avoid icon overlap */
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #71717a; /* zinc-500 */
+  pointer-events: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 3rem); /* Ensure it doesn't reach the calendar icon */
+}
+
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+  opacity: 0;
+  visibility: hidden;
+}
+
+input[type="date"]:focus,
+input[type="date"]:valid {
+  color: white !important;
+}
+
+input[type="date"]::-webkit-datetime-edit {
+  color: inherit;
 }
