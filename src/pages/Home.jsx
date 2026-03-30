@@ -391,12 +391,31 @@ export default function Home() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <input type="email" id="email" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none" placeholder="Email" />
-                    <div className="relative group/date cursor-pointer">
+                    <div 
+                      className="relative group/date cursor-pointer"
+                      onClick={(e) => {
+                        const input = e.currentTarget.querySelector('input');
+                        if (input) {
+                          input.type = 'date';
+                          if (input.showPicker) {
+                            try { input.showPicker(); } catch(err) {}
+                          } else {
+                            input.focus();
+                          }
+                        }
+                      }}
+                    >
                        <input 
-                        type="date" 
+                        type="text" 
                         id="date" 
                         required
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none" 
+                        placeholder="Data evenimentului tău"
+                        onFocus={(e) => {
+                          e.target.type = 'date';
+                          try { e.target.showPicker(); } catch(err) {}
+                        }}
+                        onBlur={(e) => { if (!e.target.value) e.target.type = 'text'; }}
+                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none cursor-pointer placeholder:text-zinc-500" 
                       />
                       <div className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 pointer-events-none group-focus-within/date:text-white transition-colors">
                         <Calendar size={18} />
