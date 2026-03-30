@@ -77,7 +77,8 @@ input[type="date"] {
 }
 
 input[type="date"]::before {
-  content: "Date";
+  content: "Data evenimentului tău";
+  font-size: 0.875rem;
   position: absolute;
   left: 1rem;
   top: 50%;
