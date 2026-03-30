@@ -396,7 +396,12 @@ export default function Home() {
                         type="date" 
                         id="date" 
                         required
-                        className="w-full px-4 py-3 pr-12 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none cursor-text" 
+                        onClick={(e) => {
+                          if (window.innerWidth >= 768 && e.target.showPicker) {
+                            try { e.target.showPicker(); } catch(err) {}
+                          }
+                        }}
+                        className="w-full px-4 py-3 pr-12 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none cursor-text md:cursor-pointer" 
                       />
                       <div 
                         className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 cursor-pointer hover:text-white transition-colors group-focus-within/date:text-white"
