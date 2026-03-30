@@ -24,12 +24,11 @@ export default function DespreMine() {
           
           <div className="text-zinc-400 leading-relaxed text-lg font-light space-y-2">
             <p className="text-white text-4xl font-serif mb-6 leading-tight">Hey, eu sunt Fredi…</p>
-            <p>fotograf din Oradea.</p>
-            <p>Nu fotografiez tot. Și nu pentru oricine.</p>
-            <p>Nu caut perfecțiunea. Caut ce este real.</p>
-            <p>Momente sincere,</p>
-            <p>detalii care contează</p>
-            <p>și lucruri care nu pot fi repetate.</p>
+            <p>…fotograf din Oradea.</p>
+            <p>Nu fotografiez tot.</p>
+            <p>Nu caut perfecțiunea.</p>
+            <p>Caut ce este real.</p>
+            <p>Momente sincere, detalii care contează și lucruri care nu pot fi repetate.</p>
             <p>Nu regizez excesiv.</p>
             <p>Prefer să observ și să surprind lucrurile așa cum sunt.</p>
             <p>Nu este pentru toată lumea.</p>

@@ -77,7 +77,7 @@ export default function Navbar() {
                     {isServiceDropdownOpen && (
                       <motion.div
                         initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 10 }}
-                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 glass-panel p-4 rounded-3xl border border-white/20 shadow-2xl backdrop-blur-3xl"
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-zinc-950 p-4 rounded-3xl border border-white/20 shadow-2xl"
                       >
                         <div className="flex flex-col gap-1">
                           {servicesData.map((service) => (
