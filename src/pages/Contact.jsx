@@ -44,9 +44,9 @@ export default function Contact() {
             className="p-8 md:p-12 glass-panel rounded-[2.5rem] space-y-8"
           >
             <div className="pb-6 border-b border-white/10">
-              <h3 className="text-2xl font-serif text-white mb-2">Îmi doresc o colaborare</h3>
+              <h3 className="text-2xl font-serif text-white mb-2">Ce zici, începem împreună această aventură?</h3>
               <p className="text-zinc-400 text-lg font-light leading-relaxed">
-                Ai întrebări sau vrei să programezi o ședință? Scrie-ne și îți răspundem imediat!
+                Am un număr limitat de locuri, deci dacă vrei să colaborăm, nu ezita să-mi lași un mesaj
               </p>
             </div>
 
@@ -85,13 +85,15 @@ export default function Contact() {
               </div>
 
               <select id="eventType" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none">
-                <option value="" className="bg-zinc-900">Alege tipul de eveniment...</option>
-                <option value="nunta" className="bg-zinc-900">Nuntă</option>
-                <option value="botez" className="bg-zinc-900">Botez</option>
-                <option value="sedinta" className="bg-zinc-900">Ședință Foto</option>
+                <option value="" className="bg-zinc-900">Alege serviciul dorit</option>
+                <option value="Fotografie de nuntă" className="bg-zinc-900">Fotografie de nuntă</option>
+                <option value="Fotografie/filmare promoțională" className="bg-zinc-900">Fotografie/filmare promoțională</option>
+                <option value="Fotografie de brand" className="bg-zinc-900">Fotografie de brand</option>
+                <option value="Boudoir" className="bg-zinc-900">Boudoir</option>
+                <option value="Închiriere cabină foto (photobooth)" className="bg-zinc-900">Închiriere cabină foto (photobooth)</option>
               </select>
 
-              <textarea id="message" rows="3" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none resize-none" placeholder="Mesajul tău *"></textarea>
+              <textarea id="message" rows="3" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none resize-none" placeholder="Scrie-mi pe scurt despre evenimetul/proiectul tau"></textarea>
 
               <button type="submit" className="w-full btn-primary !py-4 text-base tracking-wide uppercase mt-2 shadow-lg">
                 Trimite Mesajul

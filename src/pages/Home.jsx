@@ -67,7 +67,7 @@ export default function Home() {
       {/* 1. Hero Section with Slideshow */}
       <section className="relative h-screen flex flex-col justify-center items-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             <motion.img
               key={currentHero}
               src={heroImages[currentHero]}
@@ -87,18 +87,18 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
             className="text-5xl md:text-7xl lg:text-8xl font-serif font-normal text-white leading-tight mb-8"
           >
-            Fotograf de nuntă și evenimente din Oradea.
+            Simplu. Real. Memorabil.
           </motion.h1>
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex justify-center mt-12"
+            className="flex flex-col sm:flex-row justify-center mt-12 gap-4"
           >
-            <button 
-              onClick={() => document.getElementById('bio').scrollIntoView({ behavior: 'smooth' })} 
-              className="btn-primary font-medium tracking-wide uppercase shadow-[0_0_30px_rgba(255,255,255,0.1)]"
-            >
-              Vezi mai mult
-            </button>
+            <Link to="/contact" className="btn-primary font-medium tracking-wide uppercase shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+              Solicită ofertă
+            </Link>
+            <Link to="/portofoliu" className="btn-outline bg-black/40 backdrop-blur-sm hover:!bg-black/60 font-medium tracking-wide uppercase">
+              Vezi portofoliul
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -119,40 +119,32 @@ export default function Home() {
                   onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1554046920-90dcac028c24?q=80&w=3049&auto=format&fit=crop'; }}
                 />
               </div>
-              <div className="glass-panel p-8 rounded-2xl border border-white/20 shadow-2xl backdrop-blur-md">
-                <p className="text-sm md:text-base text-white font-medium text-center leading-relaxed italic">
-                  “Cred că secretul unei fotografii reușite stă în emoțiile sincere: o îmbrățișare caldă, o privire plină de emoție, o explozie de râs autentic. Te invit să vizualizezi portofoliul meu.”
-                </p>
-              </div>
             </motion.div>
             
             <motion.div 
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
               className="space-y-8 order-1 lg:order-2"
             >
-              <h2 className="text-4xl md:text-5xl font-serif font-normal text-white mb-6">Hey, eu sunt Fredi...</h2>
-              <div className="text-zinc-400 leading-relaxed text-lg font-light space-y-6">
-                <p>...fotograf de nuntă și evenimente din Oradea.</p>
-                <p>
-                  Fotografia nu este doar despre prezent. Cei care mă aleg știu că investesc în viitorul lor – în amintiri care, peste zeci de ani, vor fi și mai valoroase decât în ziua în care au fost create.
-                </p>
-                <p>
-                  Îmi doresc ca fotografiile de nuntă făcute de mine, să fie mai mult decât simple imagini – să fie amintiri vii, care te transportă înapoi în acele clipe speciale.
-                </p>
-                <p>
-                  Îmi place să fotografiez fără ca oamenii să simtă prea mult prezența mea. Nu îți voi cere să pozezi forțat și nu te voi pune în ipostaze nenaturale.
-                </p>
+              <div className="text-zinc-400 leading-relaxed text-lg font-light space-y-2">
+                <p className="text-white text-3xl font-serif mb-6">Hey, eu sunt Fredi…</p>
+                <p>fotograf din Oradea.</p>
+                <p>Nu fotografiez tot. Și nu pentru oricine.</p>
+                <p>Nu caut perfecțiunea. Caut ce este real.</p>
+                <p>Momente sincere,</p>
+                <p>detalii care contează</p>
+                <p>și lucruri care nu pot fi repetate.</p>
+                <p>Nu regizez excesiv.</p>
+                <p>Prefer să observ și să surprind lucrurile așa cum sunt.</p>
+                <p>Nu este pentru toată lumea.</p>
+                <p>Dar dacă rezonezi cu stilul meu, probabil ai găsit ceea ce cauți.</p>
               </div>
               
               {/* Desktop Buttons (Hidden on mobile) */}
               <div className="hidden lg:flex gap-4 pt-6">
-                <Link to="/portofoliu" className="btn-primary">Explorează Portofoliu</Link>
-                <button 
-                  onClick={() => document.getElementById('servicii').scrollIntoView({ behavior: 'smooth' })}
-                  className="btn-outline"
-                >
-                  Serviciile mele
-                </button>
+                <Link to="/contact" className="btn-primary uppercase tracking-wide">Solicită ofertă</Link>
+                <Link to="/portofoliu" className="btn-outline uppercase tracking-wide">
+                  Vezi portofoliul
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -164,13 +156,10 @@ export default function Home() {
             viewport={{ once: true }}
             className="lg:hidden flex flex-col gap-4 pt-12 w-full max-w-sm mx-auto px-4"
           >
-            <Link to="/portofoliu" className="btn-primary w-full text-center">Explorează Portofoliu</Link>
-            <button 
-              onClick={() => document.getElementById('servicii').scrollIntoView({ behavior: 'smooth' })}
-              className="btn-outline w-full text-center"
-            >
-              Serviciile mele
-            </button>
+            <Link to="/contact" className="btn-primary w-full text-center uppercase tracking-wide">Solicită ofertă</Link>
+            <Link to="/portofoliu" className="btn-outline w-full text-center uppercase tracking-wide">
+              Vezi portofoliul
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -257,11 +246,14 @@ export default function Home() {
               className="space-y-8"
             >
               <h2 className="text-4xl font-serif text-white">Garanție 100% Satisfacție</h2>
-              <p className="text-zinc-400 text-lg font-light leading-relaxed">
-                Mă angajez să livrez nu doar fotografii, ci emoții reale care dăinuiesc. Fiecare detaliu și privire este surprinsă cu devotament, la cele mai înalte standarde artistice, pentru ca amintirile voastre să fie absolut impecabile. 
+              <p className="text-zinc-400 text-lg font-light leading-relaxed mb-4">
+                Fotografia are valoare pe termen lung — fie că este vorba despre amintiri, imagine personală sau identitatea unui brand.
+              </p>
+              <p className="text-zinc-400 text-lg font-light leading-relaxed mb-4">
+                Ofer această garanție pentru că am încredere deplină în munca mea și în ceea ce livrez. Dacă, după livrare, consideri că nu am respectat nivelul promis și rezultatul nu reflectă ceea ce am stabilit împreună, îți returnez întreaga sumă.
               </p>
               <p className="text-zinc-400 text-lg font-light leading-relaxed">
-                Dacă nu ești mulțumit de calitatea serviciilor mele, vom lucra împreună până când rezultatul final va fi cel dorit de tine.
+                Fotografia rămâne o formă de artă, iar preferințele pot fi diferite — de aceea, garanția nu acoperă aspectele subiective. Însă, dacă așteptările și promisiunile nu se aliniază, nu rămâi dezamăgit(ă).
               </p>
             </motion.div>
           </div>
@@ -377,8 +369,9 @@ export default function Home() {
               className="p-8 md:p-12 glass-panel rounded-[2.5rem] space-y-8"
             >
               <div className="pb-6 border-b border-white/10">
+                <h3 className="text-2xl font-serif text-white mb-2">Ce zici, începem împreună această aventură?</h3>
                 <p className="text-zinc-400 text-lg font-light leading-relaxed">
-                  Ai întrebări sau vrei să programezi o ședință? Scrie-ne și îți răspundem imediat!
+                  Am un număr limitat de locuri, deci dacă vrei să colaborăm, nu ezita să-mi lași un mesaj
                 </p>
               </div>
 
@@ -418,13 +411,15 @@ export default function Home() {
                 </div>
 
                 <select id="eventType" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none">
-                  <option value="" className="bg-zinc-900">Alege tipul de eveniment...</option>
-                  <option value="nunta" className="bg-zinc-900">Nuntă</option>
-                  <option value="botez" className="bg-zinc-900">Botez</option>
-                  <option value="sedinta" className="bg-zinc-900">Ședință Foto</option>
+                  <option value="" className="bg-zinc-900">Alege serviciul dorit</option>
+                  <option value="Fotografie de nuntă" className="bg-zinc-900">Fotografie de nuntă</option>
+                  <option value="Fotografie/filmare promoțională" className="bg-zinc-900">Fotografie/filmare promoțională</option>
+                  <option value="Fotografie de brand" className="bg-zinc-900">Fotografie de brand</option>
+                  <option value="Boudoir" className="bg-zinc-900">Boudoir</option>
+                  <option value="Închiriere cabină foto (photobooth)" className="bg-zinc-900">Închiriere cabină foto (photobooth)</option>
                 </select>
 
-                <textarea id="message" rows="3" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none resize-none" placeholder="Mesajul tău *"></textarea>
+                <textarea id="message" rows="3" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none resize-none" placeholder="Scrie-mi pe scurt despre evenimetul/proiectul tau"></textarea>
 
                 <button type="submit" className="w-full btn-primary !py-4 text-base tracking-wide uppercase mt-2 shadow-lg">
                   Trimite Mesajul
