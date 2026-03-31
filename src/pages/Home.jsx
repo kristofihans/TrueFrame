@@ -125,17 +125,14 @@ export default function Home() {
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
               className="space-y-8 order-1 lg:order-2"
             >
-              <div className="text-zinc-400 leading-relaxed text-lg font-light space-y-2">
-                <p className="text-white text-3xl font-serif mb-6">Hey, eu sunt Fredi…</p>
-                <p>…fotograf din Oradea.</p>
-                <p>Nu fotografiez tot.</p>
-                <p>Nu caut perfecțiunea.</p>
-                <p>Caut ce este real.</p>
-                <p>Momente sincere, detalii care contează și lucruri care nu pot fi repetate.</p>
-                <p>Nu regizez excesiv.</p>
-                <p>Prefer să observ și să surprind lucrurile așa cum sunt.</p>
-                <p>Nu este pentru toată lumea.</p>
-                <p>Dar dacă rezonezi cu stilul meu, probabil ai găsit ceea ce cauți.</p>
+              <div className="text-zinc-400 leading-relaxed text-lg font-light space-y-6">
+                <p className="text-white text-3xl font-serif mb-6 leading-tight">Hei! Sunt Fredi, fotograf pasionat din Oradea, iar misiunea mea este să surprind momentele reale, emoțiile sincere și poveștile autentice ale oamenilor.</p>
+                <p>Fie că este vorba de o nuntă, un botez sau o ședință boudoir, îmi doresc ca fotografiile mele să fie mai mult decât simple imagini – să fie amintiri vii, care te transportă înapoi în acele clipe speciale.</p>
+                <p>Îmi place să fotografiez fără ca oamenii să își dea seama prea mult de prezența mea. Nu îți voi cere să pozezi forțat, nu te voi pune în ipostaze nenaturale.</p>
+                <p>Vreau să îți împărtășesc secretul fotografiilor reușite:</p>
+                <p>O fotografie este reușită atunci când surprinde emoții sincere – o îmbrățișare caldă, o privire plină de emoție, o explozie de râs sincer.</p>
+                <p>Dacă îți dorești fotografii care să captureze cu adevărat atmosfera și emoția evenimentului tău, aș fi încântat să fac parte din povestea ta.</p>
+                <p>Hai să creăm împreună amintiri de neuitat!</p>
               </div>
               
               {/* Desktop Buttons (Hidden on mobile) */}
@@ -208,11 +205,11 @@ export default function Home() {
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             {[
-              { title: 'Fotografie de nunta', desc: 'Documentarea autentică a celei mai frumoase zile, captând fiecare emoție și detaliu prețios.' },
-              { title: 'Fotografie si filmari promotionale', desc: 'Prezentări vizuale profesionale care pun într-o lumină impecabilă brandul sau afacerea ta.' },
-              { title: 'Fotografie de brand', desc: 'Imagini strategice și estetice create special pentru a comunica valorile și personalitatea business-ului tău.' },
-              { title: 'Boudoir', desc: 'Sesiuni foto artistice care celebrează feminitatea, senzualitatea și încrederea de sine într-un cadru privat.' },
-              { title: 'Cabina foto', desc: 'Distracție garantată pentru invitați cu printuri instantanee și accesorii haioase, păstrând vibe-ul petrecerii.' }
+              { title: 'Fotografie de nuntă', desc: 'Dacă îți dorești fotografii de nuntă naturale, o atmosferă relaxată și o poveste vizuală autentică, ești la locul potrivit…' },
+              { title: 'Fotografie și filmări promoționale', desc: 'Îți dorești fotografii și/sau videouri de produs care atrag, conving și vând? Te invit să vezi ce îți pot oferi:' },
+              { title: 'Fotografie de brand', desc: 'Hai să creăm imagini care spun cine ești, fără să spui un cuvânt…' },
+              { title: 'Boudoir', desc: 'Te invit la un shooting în care scoatem la lumină feminitatea care există deja în tine.' },
+              { title: 'Photobooth', desc: 'Îți ofer o experiență premium de photobooth, cu decor complet și detalii care o transformă într-un punct de atracție…' }
             ].map((s, i) => (
               <motion.div 
                 key={i} transition={{ delay: i * 0.1 }}
@@ -344,7 +341,7 @@ export default function Home() {
       <section className="py-24 bg-transparent" id="contact">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-normal text-white mb-4">Unde ne găsești</h2>
+            <h2 className="text-4xl md:text-5xl font-serif font-normal text-white mb-4">Hai să ne cunoaștem mai bine</h2>
             <div className="h-1 w-20 bg-white/20 mx-auto rounded-full" />
           </div>
 
@@ -368,7 +365,6 @@ export default function Home() {
               className="p-8 md:p-12 glass-panel rounded-[2.5rem] space-y-8"
             >
               <div className="pb-6 border-b border-white/10">
-                <h3 className="text-2xl font-serif text-white mb-2">Ce zici, începem împreună această aventură?</h3>
                 <p className="text-zinc-400 text-lg font-light leading-relaxed">
                   Am un număr limitat de locuri, deci dacă vrei să colaborăm, nu ezita să-mi lași un mesaj
                 </p>

@@ -22,17 +22,14 @@ export default function DespreMine() {
             Povestea Mea
           </div>
           
-          <div className="text-zinc-400 leading-relaxed text-lg font-light space-y-2">
-            <p className="text-white text-4xl font-serif mb-6 leading-tight">Hey, eu sunt Fredi…</p>
-            <p>…fotograf din Oradea.</p>
-            <p>Nu fotografiez tot.</p>
-            <p>Nu caut perfecțiunea.</p>
-            <p>Caut ce este real.</p>
-            <p>Momente sincere, detalii care contează și lucruri care nu pot fi repetate.</p>
-            <p>Nu regizez excesiv.</p>
-            <p>Prefer să observ și să surprind lucrurile așa cum sunt.</p>
-            <p>Nu este pentru toată lumea.</p>
-            <p>Dar dacă rezonezi cu stilul meu, probabil ai găsit ceea ce cauți.</p>
+          <div className="text-zinc-400 leading-relaxed text-lg font-light space-y-6">
+            <p className="text-white text-4xl font-serif mb-6 leading-tight">Hei! Sunt Fredi, fotograf pasionat din Oradea, iar misiunea mea este să surprind momentele reale, emoțiile sincere și poveștile autentice ale oamenilor.</p>
+            <p>Fie că este vorba de o nuntă, un botez sau o ședință boudoir, îmi doresc ca fotografiile mele să fie mai mult decât simple imagini – să fie amintiri vii, care te transportă înapoi în acele clipe speciale.</p>
+            <p>Îmi place să fotografiez fără ca oamenii să își dea seama prea mult de prezența mea. Nu îți voi cere să pozezi forțat, nu te voi pune în ipostaze nenaturale.</p>
+            <p>Vreau să îți împărtășesc secretul fotografiilor reușite:</p>
+            <p>O fotografie este reușită atunci când surprinde emoții sincere – o îmbrățișare caldă, o privire plină de emoție, o explozie de râs sincer.</p>
+            <p>Dacă îți dorești fotografii care să captureze cu adevărat atmosfera și emoția evenimentului tău, aș fi încântat să fac parte din povestea ta.</p>
+            <p>Hai să creăm împreună amintiri de neuitat!</p>
           </div>
 
           <div className="pt-10 flex items-center gap-6">
