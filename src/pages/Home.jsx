@@ -79,7 +79,6 @@ export default function Home() {
               onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2938&auto=format&fit=crop'; }}
             />
           </AnimatePresence>
-          <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
         </div>
         
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full">
