@@ -38,9 +38,9 @@ export default function Home() {
     }`).then(data => setLatestPosts(Array.isArray(data) ? data : []));
   }, []);
   const heroImages = [
-    './images/herobackground.jpg',
-    './images/photo1.jpg',
-    './images/photo4.jpg'
+    './images/hero_nunta.jpg',
+    './images/hero_produs.jpg',
+    './images/hero_boudoir.jpg'
   ];
 
   useEffect(() => {
