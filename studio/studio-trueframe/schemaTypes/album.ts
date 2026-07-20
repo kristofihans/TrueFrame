@@ -59,6 +59,11 @@ export default defineType({
               type: 'string',
               title: 'Alt Text',
             },
+            {
+              name: 'description',
+              type: 'string',
+              title: 'Descriere / Legendă',
+            },
           ],
         },
       ],

@@ -109,9 +109,9 @@ export default function Contact() {
                 href="https://wa.me/40727854187" 
                 target="_blank" 
                 rel="noreferrer"
-                className="inline-flex items-center gap-3 bg-green-600/90 hover:bg-green-600 text-white px-10 py-5 rounded-full text-xl font-bold transition-all shadow-[0_10px_30px_rgba(22,163,74,0.15)] w-full justify-center group"
+                className="inline-flex items-center gap-2 md:gap-3 bg-green-600/90 hover:bg-green-600 text-white px-6 py-3.5 md:px-10 md:py-5 rounded-full text-base md:text-xl font-bold transition-all shadow-[0_10px_30px_rgba(22,163,74,0.15)] w-full justify-center group"
               >
-                <MessageCircle size={28} className="group-hover:scale-110 transition-transform" />
+                <MessageCircle size={20} className="w-5 h-5 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />
                 Contactează-mă pe WhatsApp
               </a>
             </div>

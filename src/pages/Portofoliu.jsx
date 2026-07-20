@@ -2,7 +2,8 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import { Zoom } from "yet-another-react-lightbox/plugins";
+import { Zoom, Captions } from "yet-another-react-lightbox/plugins";
+import "yet-another-react-lightbox/plugins/captions.css";
 import { Images, ArrowLeft, ZoomIn, Loader2 } from 'lucide-react';
 import { client, urlFor } from '../lib/sanity';
 
@@ -53,7 +54,8 @@ export default function Portofoliu() {
     if (!activeAlbum || !activeAlbum.gallery) return [];
     return activeAlbum.gallery.map(photo => ({
       src: urlFor(photo).width(1600).url(),
-      title: activeAlbum.title
+      title: activeAlbum.title,
+      description: photo.description || ''
     }));
   }, [activeAlbum]);
 
@@ -158,17 +160,26 @@ export default function Portofoliu() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} transition={{ duration: 0.4, delay: index * 0.05 }}
                   key={`photo-${index}`}
-                  className="group cursor-pointer rounded-[2rem] overflow-hidden shadow-xl border border-white/5 aspect-[4/5] relative"
-                  onClick={() => setLightboxIndex(index)}
+                  className="flex flex-col gap-4 group"
                 >
-                  <img 
-                    src={urlFor(photo).width(800).url()} 
-                    alt={`${activeAlbum.title} ${index + 1}`} 
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 group-hover:opacity-90"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-black/40 backdrop-blur-[2px]">
-                     <ZoomIn size={40} className="text-white drop-shadow-2xl scale-50 group-hover:scale-100 transition-transform duration-500" />
+                  <div 
+                    className="cursor-pointer rounded-[2rem] overflow-hidden shadow-xl border border-white/5 aspect-[4/5] relative"
+                    onClick={() => setLightboxIndex(index)}
+                  >
+                    <img 
+                      src={urlFor(photo).width(800).url()} 
+                      alt={`${activeAlbum.title} ${index + 1}`} 
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 group-hover:opacity-90"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-black/40 backdrop-blur-[2px]">
+                       <ZoomIn size={40} className="text-white drop-shadow-2xl scale-50 group-hover:scale-100 transition-transform duration-500" />
+                    </div>
                   </div>
+                  {photo.description && (
+                    <p className="text-zinc-400 text-sm font-light text-center px-4 leading-relaxed italic bg-zinc-900/30 py-2.5 rounded-2xl border border-white/5">
+                      {photo.description}
+                    </p>
+                  )}
                 </motion.div>
               ))
             )}
@@ -187,7 +198,7 @@ export default function Portofoliu() {
           index={lightboxIndex} 
           close={() => setLightboxIndex(-1)} 
           slides={slides} 
-          plugins={[Zoom]} 
+          plugins={[Zoom, Captions]} 
           carousel={{ padding: "0px", spacing: 0 }} 
           animation={{ fade: 400 }} 
         />

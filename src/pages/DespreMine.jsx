@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export default function DespreMine() {
   return (
@@ -23,13 +24,18 @@ export default function DespreMine() {
           </div>
           
           <div className="text-zinc-400 leading-relaxed text-lg font-light space-y-6">
-            <p className="text-white text-4xl font-serif mb-6 leading-tight">Hei! Sunt Fredi, fotograf pasionat din Oradea, iar misiunea mea este să surprind momentele reale, emoțiile sincere și poveștile autentice ale oamenilor.</p>
-            <p>Fie că este vorba de o nuntă, un botez sau o ședință boudoir, îmi doresc ca fotografiile mele să fie mai mult decât simple imagini – să fie amintiri vii, care te transportă înapoi în acele clipe speciale.</p>
-            <p>Îmi place să fotografiez fără ca oamenii să își dea seama prea mult de prezența mea. Nu îți voi cere să pozezi forțat, nu te voi pune în ipostaze nenaturale.</p>
-            <p>Vreau să îți împărtășesc secretul fotografiilor reușite:</p>
-            <p>O fotografie este reușită atunci când surprinde emoții sincere – o îmbrățișare caldă, o privire plină de emoție, o explozie de râs sincer.</p>
-            <p>Dacă îți dorești fotografii care să captureze cu adevărat atmosfera și emoția evenimentului tău, aș fi încântat să fac parte din povestea ta.</p>
-            <p>Hai să creăm împreună amintiri de neuitat!</p>
+                <p className="text-white text-4xl font-serif mb-2 leading-tight">Hey, eu sunt Fredi...</p>
+                <p className="text-zinc-300 text-xl font-serif mb-6 leading-tight">...fotograf de nuntă și evenimente din Oradea.</p>
+                <p>Fotografia nu este doar despre prezent. Cei care mă aleg știu că investesc în viitorul lor – în amintiri care, peste zeci de ani, vor fi și mai valoroase decât în ziua în care au fost create.</p>
+                <p>Îmi doresc ca fotografiile de nuntă făcute de mine, să fie mai mult decât simple imagini – să fie amintiri vii, care te transportă înapoi în acele clipe speciale.</p>
+                <p>Îmi place să fotografiez fără ca oamenii să simtă prea mult prezența mea. Nu îți voi cere să pozezi forțat și nu te voi pune în ipostaze nenaturale.</p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <Link to="/contact" className="btn-primary text-center uppercase tracking-wide">Solicită ofertă</Link>
+            <Link to="/portofoliu" className="btn-outline text-center uppercase tracking-wide">
+              Vezi portofoliul
+            </Link>
           </div>
 
           <div className="pt-10 flex items-center gap-6">

@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 import { client, urlFor } from '../lib/sanity'; // Added Sanity client
 
 const reviews = [
-  { name: 'Fischer Nikolett', time: '4 months ago', text: 'Szuper fotók! Nagyon türelmes és kedves, ha nem vagy elég magabiztos a pózolásban akkor ő a töölkéletes választás mert nagyon sokat segít! Egy óra alatt rengeteg kép készült amik egy életen át velünk maradnak! 🥰' },
-  { name: 'Dalma Lukács', time: '2 years ago', text: 'Csak a legjobbakat tudom Frédiről írni! Precíz, megbízható, türelmes és még sorolhatnám! Többször is volt már alkalmam a kamerája előtt szerepelni akár egyedül akár a párommal, az eredmény pedig mindig kifogástalan volt! Mindenkinek csak ajánlani tudom!' },
-  { name: 'Boglárka Kovács', time: '8 months ago', text: 'Egyszerűen nem találunk szavakat arra, mennyire hálásak vagyunk a fantasztikus fotósunknak, aki életünk egyik legszebb napját örökítette meg nemcsak az esküvőnkön, hanem a másnapi élményfotózáson is! 🥹📸' },
-  { name: 'Emese Fuzesi', time: '2 years ago', text: 'Hála és köszönet Feri! 🥰 Mindig mondogattam, hogy te egy varazsló vagy.. de ez így is van! Minden képed egy történetet mesél el.. mindig a legmeghittebb pillanatokat kapod lencsevégre, és úgy játszol a fénnyel ahogy senki! Nyugodt szívvel ajánlak barkinek, mert a te munkádban én még nem csalódtam!👌🏻😊' },
-  { name: 'Krisztina Pap', time: '9 months ago', text: 'Nagyon hálásak vagyunk, hogy te örökítetted meg a polgári esküvőnket és a kisbabánk keresztelőjét is. Csodálatos érzés visszanézni ezeket a pillanatokat, amiket ilyen profizmussal kaptál el. Nemcsak tehetséges fotós vagy, hanem olyan ember...' },
+  { name: 'Fischer Nikolett', time: '4 months ago', text: 'Fotografii superbe! Este foarte răbdător și amabil, dacă nu ai destulă încredere la pozat, el este alegerea perfectă pentru că te ajută extrem de mult! Într-o singură oră s-au făcut o mulțime de poze care vor rămâne cu noi pentru o viață întreagă! 🥰' },
+  { name: 'Dalma Lukács', time: '2 years ago', text: 'Pot scrie doar cuvinte de laudă despre Frédi! Precis, de încredere, răbdător și lista poate continua! Am avut deja ocazia de mai multe ori să mă aflu în fața camerei sale, fie singură, fie cu partenerul meu, iar rezultatul a fost întotdeauna impecabil! Îl recomand cu căldură tuturor!' },
+  { name: 'Boglárka Kovács', time: '8 months ago', text: 'Pur și simplu nu ne găsim cuvintele pentru a exprima cât de recunoscători suntem fotografului nostru fantastic, care a imortalizat una dintre cele mai frumoase zile din viața noastră, nu doar la nuntă, ci și la ședința foto de a doua zi! 🥹📸' },
+  { name: 'Emese Fuzesi', time: '2 years ago', text: 'Recunoștință și mulțumiri, Feri! 🥰 Mereu spuneam că ești un magician... și chiar așa este! Fiecare fotografie a ta spune o poveste... surprinzi întotdeauna cele mai intime momente și te joci cu lumina cum nu o face nimeni! Te recomand cu toată încrederea oricui, pentru că munca ta nu m-a dezamăgit niciodată!👌🏻😊' },
+  { name: 'Krisztina Pap', time: '9 months ago', text: 'Suntem extrem de recunoscători că ai imortalizat cununia noastră civilă și botezul bebelușului nostru. Este un sentiment minunat să retrăim aceste momente surprinse cu atâta profesionalism. Nu ești doar un fotograf talentat, ci și un om deosebit...' },
   { name: 'Iulia Bortis', time: '2 weeks ago', text: 'Am avut o experienta placuta in a colabora cu Ferenc, fotograful nostru de botez. Profesional, atent, talentat, a surprins momentele importante ale evenimentului. Pozele sunt frumoase, de o calitate foarte buna. Recomand cu incredere!' },
   { name: 'Eszter Ujvárosi', time: '1 year ago', text: 'Am avut norocul să lucrăm cu Balajti Ferenc la nunta noastră, și nu am putea fi mai mulțumiți de alegerea făcută! Este un adevărat artist, iar ceea ce face el este, fără îndoială, artă pură. Fotografiile au ieșit absolut minunate...' },
   { name: 'Krisztina Kovacs', time: '4 months ago', text: 'Domnu Balajti Ferenc a fost recomandat de la o cunostinta. De la inceput a fost foarte amabil si super profesional! Ne-a ajutat foarte multe.' },
@@ -24,9 +24,15 @@ const fadeIn = {
 };
 
 export default function Home() {
-  const [currentHero, setCurrentHero] = useState(0);
   const reviewsRef = useRef(null);
   const [latestPosts, setLatestPosts] = useState([]);
+  const [currentHero, setCurrentHero] = useState(0);
+  
+  const heroImages = [
+    './images/01.webp',
+    './images/02.webp',
+    './images/03.webp'
+  ];
 
   useEffect(() => {
     client.fetch(`*[_type == "post"] | order(publishedAt desc) [0...3] {
@@ -37,11 +43,6 @@ export default function Home() {
       summary
     }`).then(data => setLatestPosts(Array.isArray(data) ? data : []));
   }, []);
-  const heroImages = [
-    './images/hero_nunta.jpg',
-    './images/hero_produs.jpg',
-    './images/hero_boudoir.jpg'
-  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -66,19 +67,44 @@ export default function Home() {
       
       {/* 1. Hero Section with Slideshow */}
       <section className="relative h-screen flex flex-col justify-center items-center overflow-hidden pt-20">
-        <div className="absolute inset-0 z-0">
+        {/* Desktop Hero Background (Side-by-side) */}
+        <div className="absolute inset-0 z-0 hidden md:grid grid-cols-3">
+          <img
+            src="./images/01.webp"
+            className="w-full h-full object-cover"
+            alt="Hero Background 1"
+            onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2938&auto=format&fit=crop'; }}
+          />
+          <img
+            src="./images/02.webp"
+            className="w-full h-full object-cover"
+            alt="Hero Background 2"
+            onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2938&auto=format&fit=crop'; }}
+          />
+          <img
+            src="./images/03.webp"
+            className="w-full h-full object-cover"
+            alt="Hero Background 3"
+            onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2938&auto=format&fit=crop'; }}
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+
+        {/* Mobile Hero Background (Slideshow) */}
+        <div className="absolute inset-0 z-0 block md:hidden">
           <AnimatePresence>
             <motion.img
               key={currentHero}
               src={heroImages[currentHero]}
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.5 }}
               className="absolute inset-0 w-full h-full object-cover"
               onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2938&auto=format&fit=crop'; }}
             />
           </AnimatePresence>
+          <div className="absolute inset-0 bg-black/40" />
         </div>
         
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full">
@@ -125,13 +151,11 @@ export default function Home() {
               className="space-y-8 order-1 lg:order-2"
             >
               <div className="text-zinc-400 leading-relaxed text-lg font-light space-y-6">
-                <p className="text-white text-3xl font-serif mb-6 leading-tight">Hei! Sunt Fredi, fotograf pasionat din Oradea, iar misiunea mea este să surprind momentele reale, emoțiile sincere și poveștile autentice ale oamenilor.</p>
-                <p>Fie că este vorba de o nuntă, un botez sau o ședință boudoir, îmi doresc ca fotografiile mele să fie mai mult decât simple imagini – să fie amintiri vii, care te transportă înapoi în acele clipe speciale.</p>
-                <p>Îmi place să fotografiez fără ca oamenii să își dea seama prea mult de prezența mea. Nu îți voi cere să pozezi forțat, nu te voi pune în ipostaze nenaturale.</p>
-                <p>Vreau să îți împărtășesc secretul fotografiilor reușite:</p>
-                <p>O fotografie este reușită atunci când surprinde emoții sincere – o îmbrățișare caldă, o privire plină de emoție, o explozie de râs sincer.</p>
-                <p>Dacă îți dorești fotografii care să captureze cu adevărat atmosfera și emoția evenimentului tău, aș fi încântat să fac parte din povestea ta.</p>
-                <p>Hai să creăm împreună amintiri de neuitat!</p>
+                <p className="text-white text-3xl font-serif mb-2 leading-tight">Hey, eu sunt Fredi...</p>
+                <p className="text-zinc-300 text-xl font-serif mb-6 leading-tight">...fotograf de nuntă și evenimente din Oradea.</p>
+                <p>Fotografia nu este doar despre prezent. Cei care mă aleg știu că investesc în viitorul lor – în amintiri care, peste zeci de ani, vor fi și mai valoroase decât în ziua în care au fost create.</p>
+                <p>Îmi doresc ca fotografiile de nuntă făcute de mine, să fie mai mult decât simple imagini – să fie amintiri vii, care te transportă înapoi în acele clipe speciale.</p>
+                <p>Îmi place să fotografiez fără ca oamenii să simtă prea mult prezența mea. Nu îți voi cere să pozezi forțat și nu te voi pune în ipostaze nenaturale.</p>
               </div>
               
               {/* Desktop Buttons (Hidden on mobile) */}
@@ -430,9 +454,9 @@ export default function Home() {
                   href="https://wa.me/40727854187" 
                   target="_blank" 
                   rel="noreferrer"
-                  className="inline-flex items-center gap-3 bg-green-600/90 hover:bg-green-600 text-white px-10 py-5 rounded-full text-xl font-bold transition-all shadow-[0_10px_30px_rgba(22,163,74,0.15)] w-full justify-center group"
+                  className="inline-flex items-center gap-2 md:gap-3 bg-green-600/90 hover:bg-green-600 text-white px-6 py-3.5 md:px-10 md:py-5 rounded-full text-base md:text-xl font-bold transition-all shadow-[0_10px_30px_rgba(22,163,74,0.15)] w-full justify-center group"
                 >
-                  <MessageCircle size={28} className="group-hover:scale-110 transition-transform" />
+                  <MessageCircle size={20} className="w-5 h-5 md:w-7 md:h-7 group-hover:scale-110 transition-transform" />
                   Contactează-mă pe WhatsApp
                 </a>
               </div>
