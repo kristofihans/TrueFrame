@@ -60,17 +60,29 @@ export default function Navbar() {
                 onMouseEnter={() => link.hasDropdown && setIsServiceDropdownOpen(true)}
                 onMouseLeave={() => link.hasDropdown && setIsServiceDropdownOpen(false)}
               >
-                <Link
-                  to={link.path}
-                  className={`text-sm font-medium tracking-wide uppercase transition-colors hover:text-white drop-shadow-md flex items-center gap-1 ${
-                    location.pathname.startsWith(link.path) && link.path !== '/' 
-                    ? 'text-white font-bold' 
-                    : 'text-gray-100'
-                  }`}
-                >
-                  {link.name}
-                  {link.hasDropdown && <ChevronDown size={14} className={`transform transition-transform ${isServiceDropdownOpen ? 'rotate-180' : ''}`} />}
-                </Link>
+                {link.hasDropdown ? (
+                  <button
+                    className={`text-sm font-medium tracking-wide uppercase transition-colors hover:text-white drop-shadow-md flex items-center gap-1 ${
+                      location.pathname.startsWith(link.path)
+                      ? 'text-white font-bold' 
+                      : 'text-gray-100'
+                    }`}
+                  >
+                    {link.name}
+                    <ChevronDown size={14} className={`transform transition-transform ${isServiceDropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                ) : (
+                  <Link
+                    to={link.path}
+                    className={`text-sm font-medium tracking-wide uppercase transition-colors hover:text-white drop-shadow-md flex items-center gap-1 ${
+                      location.pathname.startsWith(link.path) && link.path !== '/' 
+                      ? 'text-white font-bold' 
+                      : 'text-gray-100'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )}
 
                 {link.hasDropdown && (
                   <AnimatePresence>
@@ -90,10 +102,6 @@ export default function Navbar() {
                               <ChevronDown size={14} className="-rotate-90 opacity-0 group-hover/item:opacity-100 transition-all transform translate-x-1" />
                             </Link>
                           ))}
-                          <div className="h-px bg-white/10 my-2 mx-4" />
-                          <Link to="/servicii" className="px-4 py-2 text-xs text-center font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors">
-                            Toate Serviciile
-                          </Link>
                         </div>
                       </motion.div>
                     )}
@@ -149,9 +157,6 @@ export default function Navbar() {
                                 {service.title}
                               </Link>
                             ))}
-                            <Link to="/servicii" className="px-6 py-3 text-white/40 italic text-sm ml-6 mb-2">
-                              Explorează toate...
-                            </Link>
                           </motion.div>
                         )}
                       </AnimatePresence>

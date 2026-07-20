@@ -18,7 +18,7 @@ export default function ServiceDetail() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-white bg-zinc-950 px-4">
         <h1 className="text-4xl font-serif mb-6">Serviciul nu a fost găsit</h1>
-        <Link to="/servicii" className="btn-primary">Înapoi la servicii</Link>
+        <Link to="/" className="btn-primary">Înapoi acasă</Link>
       </div>
     );
   }
@@ -45,11 +45,11 @@ export default function ServiceDetail() {
             transition={{ duration: 0.8 }}
           >
             <Link 
-              to="/servicii" 
+              to="/" 
               className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-8 text-sm uppercase tracking-widest font-bold group"
             >
               <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-              Toate Serviciile
+              Acasă
             </Link>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-normal text-white leading-tight mb-6">
               {service.title}

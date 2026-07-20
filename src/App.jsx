@@ -2,7 +2,6 @@ import React from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import Servicii from './pages/Servicii';
 import Portofoliu from './pages/Portofoliu';
 import DespreMine from './pages/DespreMine';
 import Blog from './pages/Blog';
@@ -16,7 +15,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="servicii" element={<Servicii />} />
           <Route path="servicii/:slug" element={<ServiceDetail />} />
           <Route path="portofoliu" element={<Portofoliu />} />
           <Route path="despre-mine" element={<DespreMine />} />

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, CheckCircle, Clock, ChevronLeft, ChevronRight, MessageCircle, Phone, MapPin, Camera, Mail, Calendar } from 'lucide-react';
+import { Star, CheckCircle, Clock, ChevronLeft, ChevronRight, ChevronDown, MessageCircle, Phone, MapPin, Camera, Mail, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { client, urlFor } from '../lib/sanity'; // Added Sanity client
 
@@ -18,6 +18,33 @@ const reviews = [
   { name: 'Claudiu Farcalau (Clauux)', time: '2 years ago', text: 'Recomand pe Freddy cu cel mai mare drag. Un mod de a face poze foarte profesionist dar și cu umor pentru a te face cat mai relaxat în timpul ședinței și a avea cele mai bune rezultate. Mai jos am atașat câteva poze cu partenera și singur pentru a vă face o idee.' }
 ].sort(() => 0.5 - Math.random());
 
+const faqData = [
+  {
+    question: "Cu cât timp înainte ar trebui să rezervăm data pentru eveniment?",
+    answer: "Recomandăm să ne contactați cu cel puțin 6-12 luni înainte de eveniment, în special pentru nunțile din timpul sezonului (mai-octombrie), pentru a vă asigura că data este disponibilă."
+  },
+  {
+    question: "Cât timp durează până primim fotografiile?",
+    answer: "Termenul de livrare pentru fotografiile editate este de 4-6 săptămâni de la data evenimentului, însă vă vom trimite o scurtă selecție (un preview rapid) în primele zile după nuntă/botez."
+  },
+  {
+    question: "Câte fotografii vom primi în total?",
+    answer: "Nu există o limită strictă. De regulă, pentru o nuntă completă livrăm între 500 și 800 de fotografii unice, selectate și editate profesional, care să spună întreaga poveste a zilei."
+  },
+  {
+    question: "Te deplasezi și în afara județului Bihor / orașului Oradea?",
+    answer: "Da, mă deplasez cu drag în toată țara și chiar și în străinătate pentru ședințe foto sau evenimente. Detaliile legate de transport și cazare se stabilesc de comun acord în momentul rezervării."
+  },
+  {
+    question: "Fotografiile sunt editate individual?",
+    answer: "Da, fiecare fotografie pe care o primiți este editată individual (ajustări de culoare, expunere, contrast și încadrare), păstrând un stil natural, cald și atemporal."
+  },
+  {
+    question: "Ce se întâmplă dacă pierdem fotografiile în viitor?",
+    answer: "Nu vă faceți griji. Păstrez o copie de siguranță (backup) a fotografiilor voastre timp de cel puțin 2 ani de la eveniment, așa că le puteți solicita oricând în acest interval."
+  }
+];
+
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
@@ -27,6 +54,11 @@ export default function Home() {
   const reviewsRef = useRef(null);
   const [latestPosts, setLatestPosts] = useState([]);
   const [currentHero, setCurrentHero] = useState(0);
+  const [openFaqIndex, setOpenFaqIndex] = useState(null);
+
+  const toggleFaq = (index) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
   
   const heroImages = [
     './images/01.webp',
@@ -228,11 +260,11 @@ export default function Home() {
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             {[
-              { title: 'Fotografie de nuntă', desc: 'Dacă îți dorești fotografii de nuntă naturale, o atmosferă relaxată și o poveste vizuală autentică, ești la locul potrivit…' },
-              { title: 'Fotografie și filmări promoționale', desc: 'Îți dorești fotografii și/sau videouri de produs care atrag, conving și vând? Te invit să vezi ce îți pot oferi:' },
-              { title: 'Fotografie de brand', desc: 'Hai să creăm imagini care spun cine ești, fără să spui un cuvânt…' },
-              { title: 'Boudoir', desc: 'Te invit la un shooting în care scoatem la lumină feminitatea care există deja în tine.' },
-              { title: 'Photobooth', desc: 'Îți ofer o experiență premium de photobooth, cu decor complet și detalii care o transformă într-un punct de atracție…' }
+              { title: 'Fotografie de nuntă', slug: 'fotografie-nunta', desc: 'Dacă îți dorești fotografii de nuntă naturale, o atmosferă relaxată și o poveste vizuală autentică, ești la locul potrivit…' },
+              { title: 'Fotografie și filmări promoționale', slug: 'foto-video-promotional', desc: 'Îți dorești fotografii și/sau videouri de produs care atrag, conving și vând? Te invit să vezi ce îți pot oferi:' },
+              { title: 'Fotografie de brand', slug: 'fotografie-brand', desc: 'Hai să creăm imagini care spun cine ești, fără să spui un cuvânt…' },
+              { title: 'Boudoir', slug: 'boudoir', desc: 'Te invit la un shooting în care scoatem la lumină feminitatea care există deja în tine.' },
+              { title: 'Photobooth', slug: 'cabina-foto', desc: 'Îți ofer o experiență premium de photobooth, cu decor complet și detalii care o transformă într-un punct de atracție…' }
             ].map((s, i) => (
               <motion.div 
                 key={i} transition={{ delay: i * 0.1 }}
@@ -241,7 +273,7 @@ export default function Home() {
               >
                 <h3 className="text-2xl font-serif font-normal text-white mb-6">{s.title}</h3>
                 <p className="text-zinc-400 mb-8 font-light leading-relaxed flex-grow">{s.desc}</p>
-                <Link to="/servicii" className="btn-outline group-hover:bg-white group-hover:text-black transition-all text-center">
+                <Link to={`/servicii/${s.slug}`} className="btn-outline group-hover:bg-white group-hover:text-black transition-all text-center">
                   Află detalii
                 </Link>
               </motion.div>
@@ -356,6 +388,54 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6.5. FAQ (Intrebari Frecvente) Section */}
+      <section className="py-24 bg-transparent border-t border-white/5 scroll-mt-20" id="faq">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-normal text-white mb-4">Întrebări Frecvente</h2>
+            <p className="text-zinc-400 max-w-xl mx-auto font-light">Răspunsuri la cele mai comune întrebări despre colaborarea noastră și modul în care lucrez.</p>
+            <div className="h-1 w-20 bg-white/20 mx-auto rounded-full mt-6" />
+          </div>
+
+          <div className="space-y-4">
+            {faqData.map((item, index) => {
+              const isOpen = openFaqIndex === index;
+              return (
+                <div 
+                  key={index} 
+                  className="glass-panel rounded-[1.8rem] border border-white/5 overflow-hidden transition-all duration-300 hover:border-white/15"
+                >
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none transition-colors"
+                  >
+                    <span className="text-lg md:text-xl font-serif text-white pr-4">{item.question}</span>
+                    <div className={`p-2 rounded-full bg-white/5 text-white/80 border border-white/10 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180 bg-white/10 text-white' : ''}`}>
+                      <ChevronDown size={18} />
+                    </div>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      >
+                        <div className="px-6 pb-6 md:px-8 md:pb-8 text-zinc-400 font-light leading-relaxed text-base border-t border-white/5 pt-4">
+                          {item.answer}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
