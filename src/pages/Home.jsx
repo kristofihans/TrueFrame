@@ -98,7 +98,7 @@ export default function Home() {
     <div className="w-full font-sans text-zinc-100 bg-zinc-950">
       
       {/* 1. Hero Section with Slideshow */}
-      <section className="relative h-screen flex flex-col justify-center items-center overflow-hidden pt-20">
+      <section className="relative h-screen flex flex-col justify-between items-center overflow-hidden pt-36 pb-16">
         {/* Desktop Hero Background (Side-by-side) */}
         <div className="absolute inset-0 z-0 hidden md:grid grid-cols-3">
           <img
@@ -139,16 +139,21 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/40" />
         </div>
         
+        {/* Title (Top Part) */}
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-serif font-normal text-white leading-tight mb-8"
+            className="text-2xl md:text-3xl lg:text-4xl font-serif font-normal text-white leading-tight whitespace-nowrap"
           >
             Simplu. Real. Memorabil.
           </motion.h1>
+        </div>
+
+        {/* Buttons (Bottom Part) */}
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row justify-center mt-12 gap-4"
+            className="flex flex-col sm:flex-row justify-center gap-4"
           >
             <Link to="/contact" className="btn-primary font-medium tracking-wide uppercase shadow-[0_0_30px_rgba(255,255,255,0.1)]">
               Solicită ofertă
