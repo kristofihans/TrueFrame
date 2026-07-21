@@ -21,27 +21,27 @@ const reviews = [
 const faqData = [
   {
     question: "Cu cât timp înainte ar trebui să rezervăm data pentru eveniment?",
-    answer: "Recomandăm să ne contactați cu cel puțin 6-12 luni înainte de eveniment, în special pentru nunțile din timpul sezonului (mai-octombrie), pentru a vă asigura că data este disponibilă."
+    answer: "În general, cuplurile își rezervă data cu 8–16 luni înainte de eveniment. Deoarece aleg să fotografiez doar 15–20 de evenimente pe sezon, îți recomand să nu aștepți prea mult dacă îți dorești să fim împreună în ziua nunții tale. Limitez intenționat numărul de evenimente pentru a putea oferi fiecărui cuplu toată atenția și implicarea pe care le merită."
   },
   {
     question: "Cât timp durează până primim fotografiile?",
-    answer: "Termenul de livrare pentru fotografiile editate este de 4-6 săptămâni de la data evenimentului, însă vă vom trimite o scurtă selecție (un preview rapid) în primele zile după nuntă/botez."
+    answer: "Veți primi galeria finală în aproximativ 4–6 săptămâni. Fiecare fotografie este editată individual, cu aceeași atenție la detalii, pentru a vă oferi calitatea pe care o asociez cu munca mea. Totuși, nu va trebui să așteptați atât de mult — la câteva zile după eveniment veți primi o galerie de preview, cu o selecție de imagini, ca să puteți retrăi primele emoții cât mai repede."
   },
   {
     question: "Câte fotografii vom primi în total?",
-    answer: "Nu există o limită strictă. De regulă, pentru o nuntă completă livrăm între 500 și 800 de fotografii unice, selectate și editate profesional, care să spună întreaga poveste a zilei."
+    answer: "Fiecare eveniment este unic, însă vă puteți aștepta la o galerie atent curatoriată, editată, plină de momente frumoase, nu la un număr fix de fotografii."
   },
   {
     question: "Te deplasezi și în afara județului Bihor / orașului Oradea?",
-    answer: "Da, mă deplasez cu drag în toată țara și chiar și în străinătate pentru ședințe foto sau evenimente. Detaliile legate de transport și cazare se stabilesc de comun acord în momentul rezervării."
+    answer: "Desigur. Sunt disponibil pentru evenimente atât în România, cât și în străinătate. Până acum am fotografiat în mai multe orașe din România, dar și în Ungaria, Croația și Cipru."
   },
   {
-    question: "Fotografiile sunt editate individual?",
-    answer: "Da, fiecare fotografie pe care o primiți este editată individual (ajustări de culoare, expunere, contrast și încadrare), păstrând un stil natural, cald și atemporal."
+    question: "Ne vei ajuta să pozăm în fața camerei?",
+    answer: "Bineînțeles. Atunci când este nevoie, vă voi ghida și vă voi oferi indicații, astfel încât să vă simțiți confortabil în fața camerei. În rest, prefer să surprind ziua voastră exact așa cum se desfășoară, fără să intervin mai mult decât este necesar și fără să regizez momentele. La urma urmei, este ziua voastră, nu o ședință foto."
   },
   {
-    question: "Ce se întâmplă dacă pierdem fotografiile în viitor?",
-    answer: "Nu vă faceți griji. Păstrez o copie de siguranță (backup) a fotografiilor voastre timp de cel puțin 2 ani de la eveniment, așa că le puteți solicita oricând în acest interval."
+    question: "Oferi și servicii foto + video?",
+    answer: "Dacă vă doriți și video, colaborez cu videografi pe care îi recomand cu toată încrederea. Sunt profesioniști care împărtășesc aceeași atenție la detalii și același standard de calitate. Desigur, alegerea vă aparține în totalitate."
   }
 ];
 
@@ -266,10 +266,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
             {[
               { title: 'Fotografie de nuntă', slug: 'fotografie-nunta', desc: 'Dacă îți dorești fotografii de nuntă naturale, o atmosferă relaxată și o poveste vizuală autentică, ești la locul potrivit…' },
-              { title: 'Fotografie și filmări promoționale', slug: 'foto-video-promotional', desc: 'Îți dorești fotografii și/sau videouri de produs care atrag, conving și vând? Te invit să vezi ce îți pot oferi:' },
-              { title: 'Fotografie de brand', slug: 'fotografie-brand', desc: 'Hai să creăm imagini care spun cine ești, fără să spui un cuvânt…' },
+              { title: 'Botez', slug: 'botez', desc: 'Documentarea delicată și plină de emoție a primului mare eveniment din viața copilului tău…' },
               { title: 'Boudoir', slug: 'boudoir', desc: 'Te invit la un shooting în care scoatem la lumină feminitatea care există deja în tine.' },
-              { title: 'Photobooth', slug: 'cabina-foto', desc: 'Îți ofer o experiență premium de photobooth, cu decor complet și detalii care o transformă într-un punct de atracție…' }
+              { title: 'Photobooth', slug: 'cabina-foto', desc: 'Îți ofer o experiență premium de photobooth, cu decor complet și detalii care o transformă într-un punct de atracție…' },
+              { title: 'Fotografie și filmări promoționale', slug: 'foto-video-promotional', desc: 'Îți dorești fotografii și/sau videouri de produs care atrag, conving și vând? Te invit să vezi ce îți pot oferi:' },
+              { title: 'Fotografie de brand', slug: 'fotografie-brand', desc: 'Hai să creăm imagini care spun cine ești, fără să spui un cuvânt…' }
             ].map((s, i) => (
               <motion.div 
                 key={i} transition={{ delay: i * 0.1 }}
@@ -325,7 +326,7 @@ export default function Home() {
       <section className="py-24 relative overflow-hidden border-y border-white/5">
         <div className="absolute inset-0 z-0">
           <img 
-            src="./images/photo6.jpg" 
+            src="./images/backgrounds/cespunclientii.webp" 
             alt="Reviews Background" 
             className="w-full h-full object-cover"
           />
@@ -446,8 +447,17 @@ export default function Home() {
       </section>
 
       {/* 7. Contact Section */}
-      <section className="py-24 bg-transparent" id="contact">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 relative overflow-hidden" id="contact">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="./images/backgrounds/haisanecunoastemmaibine.webp" 
+            alt="Contact Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/85 backdrop-blur-[4px]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-normal text-white mb-4">Hai să ne cunoaștem mai bine</h2>
             <div className="h-1 w-20 bg-white/20 mx-auto rounded-full" />
@@ -516,10 +526,11 @@ export default function Home() {
                 <select id="eventType" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none">
                   <option value="" className="bg-zinc-900">Alege serviciul dorit</option>
                   <option value="Fotografie de nuntă" className="bg-zinc-900">Fotografie de nuntă</option>
-                  <option value="Fotografie/filmare promoțională" className="bg-zinc-900">Fotografie/filmare promoțională</option>
-                  <option value="Fotografie de brand" className="bg-zinc-900">Fotografie de brand</option>
+                  <option value="Botez" className="bg-zinc-900">Botez</option>
                   <option value="Boudoir" className="bg-zinc-900">Boudoir</option>
                   <option value="Închiriere cabină foto (photobooth)" className="bg-zinc-900">Închiriere cabină foto (photobooth)</option>
+                  <option value="Fotografie/filmare promoțională" className="bg-zinc-900">Fotografie/filmare promoțională</option>
+                  <option value="Fotografie de brand" className="bg-zinc-900">Fotografie de brand</option>
                 </select>
 
                 <textarea id="message" rows="3" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none resize-none" placeholder="Scrie-mi pe scurt despre evenimetul/proiectul tau"></textarea>

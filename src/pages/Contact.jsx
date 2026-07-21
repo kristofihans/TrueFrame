@@ -4,8 +4,16 @@ import { MapPin, Phone, MessageCircle, Calendar } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-transparent font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="pt-32 pb-24 min-h-screen bg-transparent font-sans relative overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="./images/backgrounds/haisanecunoastemmaibine.webp" 
+          alt="Contact Background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/85 backdrop-blur-[4px]" />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Title Section matching Home.jsx */}
         <div className="text-center mb-16">
@@ -86,10 +94,11 @@ export default function Contact() {
               <select id="eventType" className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none">
                 <option value="" className="bg-zinc-900">Alege serviciul dorit</option>
                 <option value="Fotografie de nuntă" className="bg-zinc-900">Fotografie de nuntă</option>
-                <option value="Fotografie/filmare promoțională" className="bg-zinc-900">Fotografie/filmare promoțională</option>
-                <option value="Fotografie de brand" className="bg-zinc-900">Fotografie de brand</option>
+                <option value="Botez" className="bg-zinc-900">Botez</option>
                 <option value="Boudoir" className="bg-zinc-900">Boudoir</option>
                 <option value="Închiriere cabină foto (photobooth)" className="bg-zinc-900">Închiriere cabină foto (photobooth)</option>
+                <option value="Fotografie/filmare promoțională" className="bg-zinc-900">Fotografie/filmare promoțională</option>
+                <option value="Fotografie de brand" className="bg-zinc-900">Fotografie de brand</option>
               </select>
 
               <textarea id="message" rows="3" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none resize-none" placeholder="Scrie-mi pe scurt despre evenimetul/proiectul tau"></textarea>

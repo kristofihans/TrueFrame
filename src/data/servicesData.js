@@ -5,8 +5,35 @@ export const servicesData = [
     title: 'Fotografie de nunta',
     shortDesc: 'Documentarea autentică și plină de emoție a celei mai importante zile din viața voastră.',
     longDesc: 'Fiecare nuntă este o poveste unică, iar misiunea mea este să o spun într-un mod cât mai natural și emoționant. De la primele momente ale pregătirilor, pline de nerăbdare, până la energia debordantă a petrecerii, sunt acolo pentru a surprinde esența zilei voastre. Stilul meu este documentar, intervenind cât mai puțin pentru a lăsa momentele să se desfășoare de la sine, rezultând amintiri care vor dăinui o viață întreagă.',
-    image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop',
+    image: './images/backgrounds/Fotografienuntaservicii.webp',
     features: ['Documentare completă (12-14 ore)', 'Sedință foto în ziua nunții', 'Editare profesională a tuturor fotografiilor', 'Galerie online privată']
+  },
+  {
+    id: 'botez',
+    slug: 'botez',
+    title: 'Botez',
+    shortDesc: 'Documentarea delicată și plină de emoție a primului mare eveniment din viața copilului tău.',
+    longDesc: 'Botezul este prima mare sărbătoare din viața copilului vostru și o zi încărcată de emoții pure pentru întreaga familie. Misiunea mea este să surprind fiecare detaliu important — de la momentele solemne din biserică, privirile pline de iubire ale părinților și nașilor, până la bucuria și momentele relaxate de la petrecere. Abordarea mea este discretă și naturală, astfel încât voi să vă puteți bucura pe deplin de această zi specială.',
+    image: 'https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=1200&auto=format&fit=crop',
+    features: ['Acoperire completă slujbă biserică & petrecere', 'Fotografii de familie & cadre de detaliu', 'Editare profesională a tuturor fotografiilor', 'Galerie online privată securizată']
+  },
+  {
+    id: 'boudoir',
+    slug: 'boudoir',
+    title: 'Boudoir',
+    shortDesc: 'O celebrare artistică a feminității și eleganței, realizată cu maximă discreție și bun gust.',
+    longDesc: 'O ședință foto boudoir este mai mult decât un set de fotografii; este o experiență de împuternicire și re-descoperire a propriei frumuseți. Într-o atmosferă relaxată, sigură și plină de respect, captăm imagini senzuale și elegante care celebrează feminitatea ta. Este cadoul perfect pentru tine sau pentru cineva drag, oferindu-ți o nouă perspectivă asupra încrederii de sine.',
+    image: './images/photo7.jpg',
+    features: ['Atmosferă privată & confortabilă', 'Ghidare completă pentru posturi', 'Editaj artistic fin', 'Opțiune album de lux']
+  },
+  {
+    id: 'cabina-foto',
+    slug: 'cabina-foto',
+    title: 'Photobooth',
+    shortDesc: 'Distracție garantată pentru invitații voștri cu printuri instantanee magnetice de înaltă calitate.',
+    longDesc: 'Adaugă un element de interactivitate și distracție evenimentului tău! Cabina noastră foto (sau oglinda foto) vine echipată cu accesorii premium, fundaluri diversificate și personal de asistență vesel. Invitații pleacă acasă cu amintiri tipărite pe loc, sub formă de fotografii magnetice, personalizate cu design-ul evenimentului tău. Este succesul garantat al oricărei petreceri!',
+    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop',
+    features: ['Printuri nelimitate', 'Recuzită haioasă inclusă', 'Magneți cadou', 'Asistent prezent pe durata evenimentului']
   },
   {
     id: 'promotional',
@@ -25,24 +52,6 @@ export const servicesData = [
     longDesc: 'Fotografia de brand merge dincolo de o simplă imagine frumoasă; este despre construirea unei identități vizuale coerente. Lucrez îndeaproape cu antreprenori și creativi pentru a realiza portrete și imagini de lifestyle care să reflecte autenticitatea și valorile mărcii lor. Aceste imagini te vor ajuta să creezi o conexiune mai profundă cu publicul tău și să te diferențiezi în piață.',
     image: './images/photo5.jpg',
     features: ['Personal Branding Photography', 'Lifestyle & Business Portraits', 'Content Strategy focus', 'Multiple outfit changes']
-  },
-  {
-    id: 'boudoir',
-    slug: 'boudoir',
-    title: 'Boudoir',
-    shortDesc: 'O celebrare artistică a feminității și eleganței, realizată cu maximă discreție și bun gust.',
-    longDesc: 'O ședință foto boudoir este mai mult decât un set de fotografii; este o experiență de împuternicire și re-descoperire a propriei frumuseți. Într-o atmosferă relaxată, sigură și plină de respect, captăm imagini senzuale și elegante care celebrează feminitatea ta. Este cadoul perfect pentru tine sau pentru cineva drag, oferindu-ți o nouă perspectivă asupra încrederii de sine.',
-    image: './images/photo7.jpg',
-    features: ['Atmosferă privată & confortabilă', 'Ghidare completă pentru posturi', 'Editaj artistic fin', 'Opțiune album de lux']
-  },
-  {
-    id: 'cabina-foto',
-    slug: 'cabina-foto',
-    title: 'Cabina foto (Photobooth)',
-    shortDesc: 'Distracție garantată pentru invitații voștri cu printuri instantanee magnetice de înaltă calitate.',
-    longDesc: 'Adaugă un element de interactivitate și distracție evenimentului tău! Cabina noastră foto (sau oglinda foto) vine echipată cu accesorii premium, fundaluri diversificate și personal de asistență vesel. Invitații pleacă acasă cu amintiri tipărite pe loc, sub formă de fotografii magnetice, personalizate cu design-ul evenimentului tău. Este succesul garantat al oricărei petreceri!',
-    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop',
-    features: ['Printuri nelimitate', 'Recuzită haioasă inclusă', 'Magneți cadou', 'Asistent prezent pe durata evenimentului']
   },
   {
     id: 'ghidul-miresei',

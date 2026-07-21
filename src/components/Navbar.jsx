@@ -13,6 +13,8 @@ const navLinks = [
   { name: 'Contact', path: '/contact' },
 ];
 
+const dropdownServices = servicesData.filter(s => s.slug !== 'ghidul-miresei');
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -92,7 +94,7 @@ export default function Navbar() {
                         className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-72 bg-zinc-950 p-4 rounded-3xl border border-white/20 shadow-2xl"
                       >
                         <div className="flex flex-col gap-1">
-                          {servicesData.map((service) => (
+                          {dropdownServices.map((service) => (
                             <Link
                               key={service.slug}
                               to={`/servicii/${service.slug}`}
@@ -148,7 +150,7 @@ export default function Navbar() {
                             initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}
                             className="overflow-hidden flex flex-col pl-4"
                           >
-                            {servicesData.map((service) => (
+                            {dropdownServices.map((service) => (
                               <Link
                                 key={service.slug}
                                 to={`/servicii/${service.slug}`}
