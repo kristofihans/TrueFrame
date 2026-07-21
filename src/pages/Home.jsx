@@ -98,7 +98,7 @@ export default function Home() {
     <div className="w-full font-sans text-zinc-100 bg-zinc-950">
       
       {/* 1. Hero Section with Slideshow */}
-      <section className="relative h-screen flex flex-col justify-between items-center overflow-hidden pt-36 pb-16">
+      <section className="relative h-screen flex flex-col justify-end items-center overflow-hidden pb-16 md:pb-20">
         {/* Desktop Hero Background (Side-by-side) */}
         <div className="absolute inset-0 z-0 hidden md:grid grid-cols-3">
           <img
@@ -137,18 +137,15 @@ export default function Home() {
           </AnimatePresence>
         </div>
         
-        {/* Title (Top Part) */}
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full">
+        {/* Content (Title & Buttons) */}
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full space-y-6">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
             className="text-2xl md:text-3xl lg:text-4xl font-serif font-normal text-white leading-tight whitespace-nowrap drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]"
           >
             Simplu. Real. Memorabil.
           </motion.h1>
-        </div>
 
-        {/* Buttons (Bottom Part) */}
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full">
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row justify-center gap-4"
