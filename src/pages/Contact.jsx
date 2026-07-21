@@ -11,7 +11,7 @@ export default function Contact() {
           alt="Contact Background" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/85 backdrop-blur-[4px]" />
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

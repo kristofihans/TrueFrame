@@ -34,7 +34,6 @@ export default function ServiceDetail() {
             alt={service.title} 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-zinc-950 to-transparent" />
         </div>
         

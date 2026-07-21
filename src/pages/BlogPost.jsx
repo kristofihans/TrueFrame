@@ -63,7 +63,7 @@ export default function BlogPost() {
             className="w-full h-full object-cover" 
           />
         )}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px] flex items-end">
+        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent flex items-end">
           <div className="max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-16">
             <Link to="/blog" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors mb-8 font-medium group">
               <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" /> Înapoi la Blog

@@ -119,7 +119,6 @@ export default function Home() {
             alt="Hero Background 3"
             onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2938&auto=format&fit=crop'; }}
           />
-          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         {/* Mobile Hero Background (Slideshow) */}
@@ -136,14 +135,13 @@ export default function Home() {
               onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2938&auto=format&fit=crop'; }}
             />
           </AnimatePresence>
-          <div className="absolute inset-0 bg-black/40" />
         </div>
         
         {/* Title (Top Part) */}
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto w-full">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
-            className="text-2xl md:text-3xl lg:text-4xl font-serif font-normal text-white leading-tight whitespace-nowrap"
+            className="text-2xl md:text-3xl lg:text-4xl font-serif font-normal text-white leading-tight whitespace-nowrap drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]"
           >
             Simplu. Real. Memorabil.
           </motion.h1>
@@ -254,7 +252,7 @@ export default function Home() {
             alt="Services Background" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-black/35 backdrop-blur-[1px]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -330,7 +328,7 @@ export default function Home() {
             alt="Reviews Background" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/80 backdrop-blur-[4px]" />
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center text-white relative z-10">
@@ -454,7 +452,7 @@ export default function Home() {
             alt="Contact Background" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black/85 backdrop-blur-[4px]" />
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
