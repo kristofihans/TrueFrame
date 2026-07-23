@@ -228,8 +228,14 @@ export default function Home() {
               <p className="text-zinc-500 text-sm uppercase tracking-widest font-bold">Ani de experiență</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-              <div className="text-5xl font-serif text-white mb-2">400.000+</div>
-              <p className="text-zinc-500 text-sm uppercase tracking-widest font-bold">Fotografii realizate</p>
+              <div className="h-12 flex items-center justify-center mb-2">
+                <img 
+                  src="./images/selectia-editorilor-mentiune-alb.png" 
+                  alt="Selecția Editorilor" 
+                  className="h-12 w-auto object-contain"
+                />
+              </div>
+              <p className="text-zinc-500 text-sm uppercase tracking-widest font-bold">Selecția Editorilor 2026</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }}>
               <div className="text-5xl font-serif text-white mb-2 flex items-center justify-center gap-1">
