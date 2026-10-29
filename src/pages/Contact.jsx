@@ -19,9 +19,6 @@ export default function Contact() {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-serif text-white mb-4">Hai să ne cunoaștem mai bine</h1>
           <div className="h-1 w-20 bg-white/20 mx-auto rounded-full" />
-          <p className="mt-8 text-lg text-zinc-400 font-light max-w-2xl mx-auto italic">
-            "Să scriem povestea împreună. Fie că aveți deja data stabilită sau doar doriți detalii suplimentare, lăsați-mi un mesaj și vă voi răspunde cu cel mai mare drag."
-          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

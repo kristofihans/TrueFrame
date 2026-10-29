@@ -39,7 +39,7 @@ export default function Blog() {
   }
 
   return (
-    <div className="pt-32 pb-20 min-h-screen font-sans bg-transparent">
+    <div className="pt-44 md:pt-48 pb-24 min-h-screen font-sans bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -61,58 +61,60 @@ export default function Blog() {
         {/* Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, index) => (
-            <motion.article 
+            <motion.div 
               key={post._id}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="glass-panel rounded-3xl overflow-hidden flex flex-col hover:-translate-y-2 transition-transform duration-300 group"
+              className="h-full"
             >
-              <div className="aspect-video overflow-hidden relative">
-                {post.mainImage ? (
-                  <img 
-                    src={urlFor(post.mainImage).width(800).height(500).url()} 
-                    alt={post.title} 
-                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" 
-                  />
-                ) : (
-                  <div className="w-full h-full bg-zinc-900 flex items-center justify-center text-white/10 uppercase tracking-widest text-sm">
-                    Moment capturat
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300" />
-              </div>
+              <Link
+                to={`/blog/${post.slug?.current || ''}`}
+                className="glass-panel rounded-3xl overflow-hidden flex flex-col hover:-translate-y-2 transition-all duration-300 group h-full block cursor-pointer border border-white/5 hover:border-white/20"
+              >
+                <div className="aspect-video overflow-hidden relative">
+                  {post.mainImage ? (
+                    <img 
+                      src={urlFor(post.mainImage).width(800).height(500).url()} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" 
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-zinc-900 flex items-center justify-center text-white/10 uppercase tracking-widest text-sm">
+                      Moment capturat
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300" />
+                </div>
 
-              <div className="p-6 md:p-8 flex-grow flex flex-col border-t border-white/5">
-                <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wide text-zinc-500 mb-4">
-                  <span className="text-white/60">
-                    {new Date(post.publishedAt).toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' })}
-                  </span>
-                </div>
-                
-                <h2 className="text-2xl font-serif text-white mb-4 line-clamp-2">
-                  <Link to={`/blog/${post.slug.current}`} className="hover:text-zinc-200 transition-colors leading-tight">
+                <div className="p-6 md:p-8 flex-grow flex flex-col border-t border-white/5">
+                  <div className="flex items-center gap-4 text-xs font-semibold uppercase tracking-wide text-zinc-500 mb-4">
+                    <span className="text-white/60">
+                      {new Date(post.publishedAt).toLocaleDateString('ro-RO', { day: 'numeric', month: 'long', year: 'numeric' })}
+                    </span>
+                  </div>
+                  
+                  <h2 className="text-2xl font-serif text-white mb-4 line-clamp-2 leading-tight group-hover:text-zinc-200 transition-colors">
                     {post.title}
-                  </Link>
-                </h2>
-                
-                {post.summary && (
-                  <p className="text-zinc-400 font-light leading-relaxed mb-8 line-clamp-3">
-                    {post.summary}
-                  </p>
-                )}
-                
-                <div className="mt-auto flex items-center justify-between pt-6 border-t border-white/10">
-                  <Link 
-                    to={`/blog/${post.slug.current}`} 
-                    className="text-white hover:text-zinc-200 transition-colors font-medium flex items-center gap-2 group/link text-sm uppercase tracking-widest"
-                  >
-                    Citește <ChevronRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
+                  </h2>
+                  
+                  {post.summary && (
+                    <p className="text-zinc-400 font-light leading-relaxed mb-8 line-clamp-3">
+                      {post.summary}
+                    </p>
+                  )}
+                  
+                  <div className="mt-auto flex items-center justify-between pt-6 border-t border-white/10">
+                    <span 
+                      className="text-white group-hover:text-zinc-200 transition-colors font-medium flex items-center gap-2 text-sm uppercase tracking-widest"
+                    >
+                      Citește <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </motion.article>
+              </Link>
+            </motion.div>
           ))}
         </div>
 

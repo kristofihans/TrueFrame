@@ -27,15 +27,6 @@ export const servicesData = [
     features: ['Atmosferă privată & confortabilă', 'Ghidare completă pentru posturi', 'Editaj artistic fin', 'Opțiune album de lux']
   },
   {
-    id: 'cabina-foto',
-    slug: 'cabina-foto',
-    title: 'Photobooth',
-    shortDesc: 'Distracție garantată pentru invitații voștri cu printuri instantanee magnetice de înaltă calitate.',
-    longDesc: 'Adaugă un element de interactivitate și distracție evenimentului tău! Cabina noastră foto (sau oglinda foto) vine echipată cu accesorii premium, fundaluri diversificate și personal de asistență vesel. Invitații pleacă acasă cu amintiri tipărite pe loc, sub formă de fotografii magnetice, personalizate cu design-ul evenimentului tău. Este succesul garantat al oricărei petreceri!',
-    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop',
-    features: ['Printuri nelimitate', 'Recuzită haioasă inclusă', 'Magneți cadou', 'Asistent prezent pe durata evenimentului']
-  },
-  {
     id: 'promotional',
     slug: 'foto-video-promotional',
     title: 'Fotografie si filmari promotionale',
@@ -52,6 +43,15 @@ export const servicesData = [
     longDesc: 'Fotografia de brand merge dincolo de o simplă imagine frumoasă; este despre construirea unei identități vizuale coerente. Lucrez îndeaproape cu antreprenori și creativi pentru a realiza portrete și imagini de lifestyle care să reflecte autenticitatea și valorile mărcii lor. Aceste imagini te vor ajuta să creezi o conexiune mai profundă cu publicul tău și să te diferențiezi în piață.',
     image: './images/photo5.jpg',
     features: ['Personal Branding Photography', 'Lifestyle & Business Portraits', 'Content Strategy focus', 'Multiple outfit changes']
+  },
+  {
+    id: 'cabina-foto',
+    slug: 'cabina-foto',
+    title: 'Photobooth',
+    shortDesc: 'Distracție garantată pentru invitații voștri cu printuri instantanee magnetice de înaltă calitate.',
+    longDesc: 'Adaugă un element de interactivitate și distracție evenimentului tău! Cabina noastră foto (sau oglinda foto) vine echipată cu accesorii premium, fundaluri diversificate și personal de asistență vesel. Invitații pleacă acasă cu amintiri tipărite pe loc, sub formă de fotografii magnetice, personalizate cu design-ul evenimentului tău. Este succesul garantat al oricărei petreceri!',
+    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1200&auto=format&fit=crop',
+    features: ['Printuri nelimitate', 'Recuzită haioasă inclusă', 'Magneți cadou', 'Asistent prezent pe durata evenimentului']
   },
   {
     id: 'ghidul-miresei',

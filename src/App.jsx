@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import BlogPost from './pages/BlogPost';
 import ServiceDetail from './pages/ServiceDetail';
 import Servicii from './pages/Servicii';
+import FotografieNunta from './pages/FotografieNunta';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="servicii" element={<Servicii />} />
+          <Route path="servicii/fotografie-nunta" element={<FotografieNunta />} />
           <Route path="servicii/:slug" element={<ServiceDetail />} />
           <Route path="portofoliu" element={<Portofoliu />} />
           <Route path="despre-mine" element={<DespreMine />} />

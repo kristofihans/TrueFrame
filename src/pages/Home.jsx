@@ -305,13 +305,10 @@ export default function Home() {
             >
               <h2 className="text-4xl font-serif text-white">Garanție 100% Satisfacție</h2>
               <p className="text-zinc-400 text-lg font-light leading-relaxed mb-4">
-                Fotografia are valoare pe termen lung — fie că este vorba despre amintiri, imagine personală sau identitatea unui brand.
-              </p>
-              <p className="text-zinc-400 text-lg font-light leading-relaxed mb-4">
-                Ofer această garanție pentru că am încredere deplină în munca mea și în ceea ce livrez. Dacă, după livrare, consideri că nu am respectat nivelul promis și rezultatul nu reflectă ceea ce am stabilit împreună, îți returnez întreaga sumă.
+                Dacă nu prestez un serviciu asumat în condițiile convenite în prealabil, voi face mai întâi tot posibilul să remediez problema. Dacă acest lucru nu este posibil, voi rambursa contravaloarea serviciului respectiv.
               </p>
               <p className="text-zinc-400 text-lg font-light leading-relaxed">
-                Fotografia rămâne o formă de artă, iar preferințele pot fi diferite — de aceea, garanția nu acoperă aspectele subiective. Însă, dacă așteptările și promisiunile nu se aliniază, nu rămâi dezamăgit(ă).
+                Desigur, garanția nu se aplică aprecierilor subiective asupra fotografiilor – munca de creație nu este o știință exactă. În schimb, îmi asum să respect tot ceea ce am promis.
               </p>
             </motion.div>
           </div>
@@ -572,35 +569,40 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {(latestPosts || []).map((post, i) => (
-              <motion.article 
+              <motion.div 
                 key={post._id || i} transition={{ delay: i * 0.1 }}
                 initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
-                className="glass-panel overflow-hidden rounded-[2.5rem] flex flex-col group h-full border border-white/5 hover:border-white/20 transition-all hover:-translate-y-3"
+                className="h-full"
               >
-                <div className="aspect-video overflow-hidden">
-                  {post.mainImage ? (
-                    <img 
-                      src={urlFor(post.mainImage).width(800).url()} 
-                      alt={post.title} 
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" 
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-zinc-900 flex items-center justify-center text-white/5 uppercase tracking-widest text-[10px]">TrueFrame</div>
-                  )}
-                </div>
-                <div className="p-8 flex flex-col flex-grow text-left">
-                  <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] mb-4 font-black">Life & Moments</p>
-                  <h3 className="text-2xl font-serif text-white mb-5 line-clamp-2 leading-tight group-hover:text-zinc-200">{post.title}</h3>
-                  <p className="text-zinc-400 font-light text-sm line-clamp-3 mb-8 leading-relaxed">
-                    {post.summary}
-                  </p>
-                  <div className="mt-auto pt-6 border-t border-white/5">
-                    <Link to={`/blog/${post.slug?.current || '#'}`} className="text-sm font-bold uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 group/link">
-                      Citește <ChevronRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
-                    </Link>
+                <Link
+                  to={`/blog/${post.slug?.current || '#'}`}
+                  className="glass-panel overflow-hidden rounded-[2.5rem] flex flex-col group h-full border border-white/5 hover:border-white/20 transition-all hover:-translate-y-3 cursor-pointer block"
+                >
+                  <div className="aspect-video overflow-hidden">
+                    {post.mainImage ? (
+                      <img 
+                        src={urlFor(post.mainImage).width(800).url()} 
+                        alt={post.title} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" 
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-zinc-900 flex items-center justify-center text-white/5 uppercase tracking-widest text-[10px]">TrueFrame</div>
+                    )}
                   </div>
-                </div>
-              </motion.article>
+                  <div className="p-8 flex flex-col flex-grow text-left">
+                    <p className="text-[10px] text-white/40 uppercase tracking-[0.2em] mb-4 font-black">Life & Moments</p>
+                    <h3 className="text-2xl font-serif text-white mb-5 line-clamp-2 leading-tight group-hover:text-zinc-200 transition-colors">{post.title}</h3>
+                    <p className="text-zinc-400 font-light text-sm line-clamp-3 mb-8 leading-relaxed">
+                      {post.summary}
+                    </p>
+                    <div className="mt-auto pt-6 border-t border-white/5">
+                      <span className="text-sm font-bold uppercase tracking-widest hover:text-white transition-colors flex items-center gap-2 group-hover:text-white text-zinc-300">
+                        Citește <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
             ))}
           </div>
 

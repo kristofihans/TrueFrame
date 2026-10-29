@@ -3,16 +3,22 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronRight, CheckCircle, ArrowLeft } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
+import FotografieNunta from './FotografieNunta';
 
 export default function ServiceDetail() {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const service = servicesData.find(s => s.slug === slug);
 
   // Scroll to top on load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
+
+  if (slug === 'fotografie-nunta') {
+    return <FotografieNunta />;
+  }
+
+  const service = servicesData.find(s => s.slug === slug);
 
   if (!service) {
     return (
@@ -32,7 +38,7 @@ export default function ServiceDetail() {
           <img 
             src={service.image} 
             alt={service.title} 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-top"
           />
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-zinc-950 to-transparent" />
         </div>
@@ -82,7 +88,7 @@ export default function ServiceDetail() {
                 <img 
                   src={service.image} 
                   alt={service.title} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
             </motion.div>
