@@ -518,72 +518,72 @@ export default function FotografieNunta() {
       </section>
 
       {/* 8. Pachete Foto (4 packs matching the screenshot) */}
-      <section className="relative lg:min-h-screen lg:flex lg:flex-col lg:justify-center py-10 lg:py-6 xl:py-8 bg-zinc-950 border-b border-white/5 scroll-mt-14" id="pachete">
+      <section className="relative py-16 md:py-24 bg-zinc-950 border-b border-white/5 scroll-mt-14" id="pachete">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           
-          <div className="text-center mb-4 lg:mb-6">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-white">Pachete Foto de Nuntă</h2>
-            <p className="text-zinc-400 text-xs md:text-sm font-light mt-1 max-w-xl mx-auto">
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="text-3xl md:text-5xl font-serif text-white">Pachete Foto de Nuntă</h2>
+            <p className="text-zinc-400 text-sm md:text-base font-light mt-2 max-w-xl mx-auto">
               Alege pachetul potrivit pentru a vă asigura amintiri complete și fără stres.
             </p>
           </div>
 
           {/* 4 Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-5 items-stretch max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-7 items-stretch max-w-7xl mx-auto">
             
             {/* 1. ESSENTIALS */}
-            <div className="flex flex-col rounded-2xl overflow-hidden shadow-xl border border-white/10 group transition-all duration-300 hover:-translate-y-1 bg-[#ede6de]">
+            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl border border-white/10 group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
               {/* Photo Header */}
-              <div className="relative h-32 sm:h-36 lg:h-36 xl:h-44 overflow-hidden bg-zinc-900">
+              <div className="relative h-64 sm:h-72 lg:h-80 xl:h-96 overflow-hidden bg-zinc-900">
                 <img 
                   src="./images/01.webp" 
                   alt="Pachet Essentials" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-black/25" />
-                <div className="absolute top-3 inset-x-0 text-center">
-                  <h3 className="font-serif text-lg xl:text-xl tracking-widest text-white uppercase drop-shadow-md">
+                <div className="absolute top-5 inset-x-0 text-center">
+                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-md">
                     ESSENTIALS
                   </h3>
                 </div>
               </div>
 
               {/* Cream Card Body */}
-              <div className="bg-[#ede6de] text-[#3d3832] p-4 xl:p-5 flex flex-col justify-between flex-grow">
-                <div className="space-y-1.5 text-xs xl:text-[13px] font-normal leading-snug">
-                  <p className="flex items-start gap-1.5">
+              <div className="bg-[#ede6de] text-[#3d3832] p-6 xl:p-7 flex flex-col justify-between flex-grow">
+                <div className="space-y-2 sm:space-y-2.5 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug">
+                  <p className="flex items-start gap-2">
                     <span className="text-[#8c7b6d] font-bold">•</span>
                     <span>8 ore de prezență la eveniment</span>
                   </p>
-                  <p className="flex items-start gap-1.5">
+                  <p className="flex items-start gap-2">
                     <span className="text-[#8c7b6d] font-bold">•</span>
                     <span>Fotografierea pregătirilor</span>
                   </p>
-                  <p className="flex items-start gap-1.5">
+                  <p className="flex items-start gap-2">
                     <span className="text-[#8c7b6d] font-bold">•</span>
                     <span>Fotografierea cununiei civile</span>
                   </p>
-                  <p className="flex items-start gap-1.5">
+                  <p className="flex items-start gap-2">
                     <span className="text-[#8c7b6d] font-bold">•</span>
                     <span>Fotografierea cununiei religioase</span>
                   </p>
-                  <p className="flex items-start gap-1.5">
+                  <p className="flex items-start gap-2">
                     <span className="text-[#8c7b6d] font-bold">•</span>
-                    <span>Fotografierea petrecerii (până la tort)</span>
+                    <span>Fotografierea petrecerii (până la momentul tortului inclusiv)</span>
                   </p>
-                  <p className="flex items-start gap-1.5">
+                  <p className="flex items-start gap-2">
                     <span className="text-[#8c7b6d] font-bold">•</span>
                     <span>300–450 fotografii editate cu AI</span>
                   </p>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-[#c5b8aa]">
-                  <div className="text-xl xl:text-2xl font-bold font-sans text-center text-[#3d3832] tracking-tight">
+                <div className="mt-8 pt-4 border-t border-[#c5b8aa]">
+                  <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-[#3d3832] tracking-tight">
                     600 EURO
                   </div>
                   <button 
                     onClick={() => handleSelectPackage('Pachetul ESSENTIALS')}
-                    className="w-full mt-2.5 py-2 rounded-full border border-[#8c7b6d] text-[#3d3832] text-[11px] uppercase font-bold tracking-wider hover:bg-[#8c7b6d] hover:text-white transition-colors text-center"
+                    className="w-full mt-3 py-2.5 rounded-full border border-[#8c7b6d] text-[#3d3832] text-xs uppercase font-bold tracking-wider hover:bg-[#8c7b6d] hover:text-white transition-colors text-center"
                   >
                     Alege Pachetul
                   </button>
@@ -592,66 +592,66 @@ export default function FotografieNunta() {
             </div>
 
             {/* 2. ESSENTIALS PLUS */}
-            <div className="flex flex-col rounded-2xl overflow-hidden shadow-xl border border-white/10 group transition-all duration-300 hover:-translate-y-1 bg-[#ede6de]">
+            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl border border-white/10 group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
               {/* Photo Header */}
-              <div className="relative h-32 sm:h-36 lg:h-36 xl:h-44 overflow-hidden bg-zinc-900">
+              <div className="relative h-64 sm:h-72 lg:h-80 xl:h-96 overflow-hidden bg-zinc-900">
                 <img 
                   src="./images/02.webp" 
                   alt="Pachet Essentials Plus" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-black/25" />
-                <div className="absolute top-2.5 inset-x-0 text-center">
-                  <h3 className="font-serif text-lg xl:text-xl tracking-widest text-white uppercase drop-shadow-md leading-tight">
+                <div className="absolute top-4 sm:top-5 inset-x-0 text-center">
+                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-md leading-tight">
                     ESSENTIALS<br/>PLUS
                   </h3>
                 </div>
               </div>
 
               {/* Cream Card Body */}
-              <div className="bg-[#ede6de] text-[#3d3832] p-4 xl:p-5 flex flex-col justify-between flex-grow">
+              <div className="bg-[#ede6de] text-[#3d3832] p-6 xl:p-7 flex flex-col justify-between flex-grow">
                 <div>
-                  <div className="text-center font-bold text-[10px] uppercase tracking-wider text-[#574d44] mb-2 leading-tight">
+                  <div className="text-center font-bold text-xs uppercase tracking-wider text-[#574d44] mb-3 leading-tight">
                     ESSENTIALS +
                   </div>
-                  <div className="space-y-1.5 text-xs xl:text-[13px] font-normal leading-snug">
-                    <p className="flex items-start gap-1.5">
+                  <div className="space-y-2 sm:space-y-2.5 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug">
+                    <p className="flex items-start gap-2">
                       <span className="text-[#8c7b6d] font-bold">•</span>
                       <span>9 ore de prezență <strong>(în total)</strong></span>
                     </p>
-                    <p className="flex items-start gap-1.5">
+                    <p className="flex items-start gap-2">
                       <span className="text-[#8c7b6d] font-bold">•</span>
-                      <span>Ședință foto cuplu (30 min)</span>
+                      <span>Ședință foto de cuplu (30 minute)</span>
                     </p>
-                    <p className="flex items-start gap-1.5">
+                    <p className="flex items-start gap-2">
                       <span className="text-[#8c7b6d] font-bold">•</span>
                       <span>Selecție și editare manuală</span>
                     </p>
-                    <p className="flex items-start gap-1.5">
+                    <p className="flex items-start gap-2">
                       <span className="text-[#8c7b6d] font-bold">•</span>
-                      <span>500–650 fotografii editate</span>
+                      <span>500–650 fotografii editate <strong>(în total)</strong></span>
                     </p>
-                    <div className="pt-1 font-bold text-[#574d44] text-[10px] uppercase tracking-wider">
+                    <div className="pt-2 font-bold text-[#574d44] text-xs uppercase tracking-wider">
                       Bonus:
                     </div>
-                    <p className="flex items-start gap-1.5">
+                    <p className="flex items-start gap-2">
                       <span className="text-[#8c7b6d] font-bold">•</span>
                       <span>Realizarea unui moodboard</span>
                     </p>
-                    <p className="flex items-start gap-1.5">
+                    <p className="flex items-start gap-2">
                       <span className="text-[#8c7b6d] font-bold">•</span>
-                      <span>Planificarea programului</span>
+                      <span>Planificarea programului zilei nunții</span>
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-[#c5b8aa]">
-                  <div className="text-xl xl:text-2xl font-bold font-sans text-center text-[#3d3832] tracking-tight">
+                <div className="mt-8 pt-4 border-t border-[#c5b8aa]">
+                  <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-[#3d3832] tracking-tight">
                     990 EURO
                   </div>
                   <button 
                     onClick={() => handleSelectPackage('Pachetul ESSENTIALS PLUS')}
-                    className="w-full mt-2.5 py-2 rounded-full border border-[#8c7b6d] text-[#3d3832] text-[11px] uppercase font-bold tracking-wider hover:bg-[#8c7b6d] hover:text-white transition-colors text-center"
+                    className="w-full mt-3 py-2.5 rounded-full border border-[#8c7b6d] text-[#3d3832] text-xs uppercase font-bold tracking-wider hover:bg-[#8c7b6d] hover:text-white transition-colors text-center"
                   >
                     Alege Pachetul
                   </button>
@@ -660,65 +660,65 @@ export default function FotografieNunta() {
             </div>
 
             {/* 3. GOLD ** (Highlighted Card) */}
-            <div className="flex flex-col rounded-2xl overflow-hidden shadow-2xl border-2 border-[#d6ba9e] group transition-all duration-300 hover:-translate-y-1.5 relative bg-[#998471]">
-              <div className="absolute top-2 right-2 z-20 bg-black/60 backdrop-blur-md border border-white/20 text-white text-[9px] uppercase font-bold px-2 py-0.5 rounded-full">
+            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl border-2 border-[#d6ba9e] group transition-all duration-300 hover:-translate-y-2 relative bg-[#998471]">
+              <div className="absolute top-3 right-3 z-20 bg-black/60 backdrop-blur-md border border-white/20 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full">
                 Popular
               </div>
 
               {/* Photo Header */}
-              <div className="relative h-32 sm:h-36 lg:h-36 xl:h-44 overflow-hidden bg-zinc-900">
+              <div className="relative h-64 sm:h-72 lg:h-80 xl:h-96 overflow-hidden bg-zinc-900">
                 <img 
                   src="./images/hero_nunta.jpg" 
                   alt="Pachet Gold" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-black/25" />
-                <div className="absolute top-3 inset-x-0 text-center">
-                  <h3 className="font-serif text-lg xl:text-xl tracking-widest text-white uppercase drop-shadow-md">
+                <div className="absolute top-5 inset-x-0 text-center">
+                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-md">
                     GOLD **
                   </h3>
                 </div>
               </div>
 
               {/* Taupe/Brown Card Body */}
-              <div className="bg-[#998471] text-white p-4 xl:p-5 flex flex-col justify-between flex-grow">
+              <div className="bg-[#998471] text-white p-6 xl:p-7 flex flex-col justify-between flex-grow">
                 <div>
-                  <div className="text-center font-bold text-[10px] uppercase tracking-wider text-white/90 mb-2 leading-tight">
+                  <div className="text-center font-bold text-xs uppercase tracking-wider text-white/90 mb-3 leading-tight">
                     ESSENTIALS PLUS +
                   </div>
-                  <div className="space-y-1.5 text-xs xl:text-[13px] font-normal leading-snug text-white/95">
-                    <p className="flex items-start gap-1.5">
+                  <div className="space-y-2 sm:space-y-2.5 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug text-white/95">
+                    <p className="flex items-start gap-2">
                       <span className="text-white font-bold">•</span>
                       <span>12 ore de prezență <strong>(în total)</strong></span>
                     </p>
-                    <p className="flex items-start gap-1.5">
+                    <p className="flex items-start gap-2">
                       <span className="text-white font-bold">•</span>
-                      <span>700–850 fotografii editate</span>
+                      <span>700–850 fotografii editate <strong>(în total)</strong></span>
                     </p>
-                    <p className="flex items-start gap-1.5">
+                    <p className="flex items-start gap-2">
                       <span className="text-white font-bold">•</span>
-                      <span>Ședință foto After Wedding</span>
+                      <span>Ședință foto After Wedding într-o altă zi</span>
                     </p>
-                    <div className="pt-1 font-bold text-white text-[10px] uppercase tracking-wider">
+                    <div className="pt-2 font-bold text-white text-xs uppercase tracking-wider">
                       Bonus:
                     </div>
-                    <p className="flex items-start gap-1.5">
+                    <p className="flex items-start gap-2">
                       <span className="text-white font-bold">•</span>
-                      <span>reducere <strong>20 euro</strong> photobooth</span>
+                      <span>reducere de <strong>20 euro</strong> la photobooth</span>
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-white/20">
-                  <div className="text-xl xl:text-2xl font-bold font-sans text-center text-white tracking-tight">
+                <div className="mt-8 pt-4 border-t border-white/20">
+                  <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-white tracking-tight">
                     1200 EURO
                   </div>
-                  <p className="text-[10px] text-center text-white/80 font-light mt-0.5 italic">
-                    **80% dintre cupluri aleg GOLD
+                  <p className="text-xs text-center text-white/80 font-light mt-1 italic">
+                    **80% dintre cupluri au ales pachetul GOLD
                   </p>
                   <button 
                     onClick={() => handleSelectPackage('Pachetul GOLD')}
-                    className="w-full mt-2.5 py-2 rounded-full bg-white text-[#998471] text-[11px] uppercase font-bold tracking-wider hover:bg-zinc-100 transition-colors text-center shadow-lg"
+                    className="w-full mt-3 py-2.5 rounded-full bg-white text-[#998471] text-xs uppercase font-bold tracking-wider hover:bg-zinc-100 transition-colors text-center shadow-lg"
                   >
                     Alege Pachetul
                   </button>
@@ -727,54 +727,54 @@ export default function FotografieNunta() {
             </div>
 
             {/* 4. DIAMOND */}
-            <div className="flex flex-col rounded-2xl overflow-hidden shadow-xl border border-white/10 group transition-all duration-300 hover:-translate-y-1 bg-[#ede6de]">
+            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl border border-white/10 group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
               {/* Photo Header */}
-              <div className="relative h-32 sm:h-36 lg:h-36 xl:h-44 overflow-hidden bg-zinc-900">
+              <div className="relative h-64 sm:h-72 lg:h-80 xl:h-96 overflow-hidden bg-zinc-900">
                 <img 
                   src="./images/03.webp" 
                   alt="Pachet Diamond" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-black/25" />
-                <div className="absolute top-3 inset-x-0 text-center">
-                  <h3 className="font-serif text-lg xl:text-xl tracking-widest text-white uppercase drop-shadow-md">
+                <div className="absolute top-5 inset-x-0 text-center">
+                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-md">
                     DIAMOND
                   </h3>
                 </div>
               </div>
 
               {/* Cream Card Body */}
-              <div className="bg-[#ede6de] text-[#3d3832] p-4 xl:p-5 flex flex-col justify-between flex-grow">
+              <div className="bg-[#ede6de] text-[#3d3832] p-6 xl:p-7 flex flex-col justify-between flex-grow">
                 <div>
-                  <div className="text-center font-bold text-[10px] uppercase tracking-wider text-[#574d44] mb-2 leading-tight">
+                  <div className="text-center font-bold text-xs uppercase tracking-wider text-[#574d44] mb-3 leading-tight">
                     GOLD +
                   </div>
-                  <div className="space-y-1.5 text-xs xl:text-[13px] font-normal leading-snug">
-                    <p className="flex items-start gap-1.5">
+                  <div className="space-y-2 sm:space-y-2.5 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug">
+                    <p className="flex items-start gap-2">
                       <span className="text-[#8c7b6d] font-bold">•</span>
-                      <span>Ședință Save the Date</span>
+                      <span>Ședință Save the date înainte de nuntă</span>
                     </p>
-                    <p className="flex items-start gap-1.5">
+                    <p className="flex items-start gap-2">
                       <span className="text-[#8c7b6d] font-bold">•</span>
-                      <span>800–950 fotografii editate</span>
+                      <span>800–950 fotografii editate <strong>(în total)</strong></span>
                     </p>
-                    <div className="pt-1 font-bold text-[#574d44] text-[10px] uppercase tracking-wider">
+                    <div className="pt-2 font-bold text-[#574d44] text-xs uppercase tracking-wider">
                       Bonus:
                     </div>
-                    <p className="flex items-start gap-1.5">
+                    <p className="flex items-start gap-2">
                       <span className="text-[#8c7b6d] font-bold">•</span>
                       <span>2 ore de photobooth</span>
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-[#c5b8aa]">
-                  <div className="text-xl xl:text-2xl font-bold font-sans text-center text-[#3d3832] tracking-tight">
+                <div className="mt-8 pt-4 border-t border-[#c5b8aa]">
+                  <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-[#3d3832] tracking-tight">
                     1450 EURO
                   </div>
                   <button 
                     onClick={() => handleSelectPackage('Pachetul DIAMOND')}
-                    className="w-full mt-2.5 py-2 rounded-full border border-[#8c7b6d] text-[#3d3832] text-[11px] uppercase font-bold tracking-wider hover:bg-[#8c7b6d] hover:text-white transition-colors text-center"
+                    className="w-full mt-3 py-2.5 rounded-full border border-[#8c7b6d] text-[#3d3832] text-xs uppercase font-bold tracking-wider hover:bg-[#8c7b6d] hover:text-white transition-colors text-center"
                   >
                     Alege Pachetul
                   </button>
