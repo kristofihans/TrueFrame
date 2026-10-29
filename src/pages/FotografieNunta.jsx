@@ -122,6 +122,14 @@ export default function FotografieNunta() {
     }
   };
 
+  const scrollToSection = (e, id) => {
+    if (e && e.preventDefault) e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="w-full font-sans text-zinc-100 bg-zinc-950">
       
@@ -156,10 +164,18 @@ export default function FotografieNunta() {
             Momente autentice, emoții reale și amintiri care rămân vii pentru totdeauna.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-            <a href="#pachete" className="btn-primary font-medium tracking-wide uppercase">
+            <a 
+              href="#pachete" 
+              onClick={(e) => scrollToSection(e, 'pachete')}
+              className="btn-primary font-medium tracking-wide uppercase"
+            >
               Vezi Pachetele Foto
             </a>
-            <a href="#contact" className="btn-outline bg-black/40 backdrop-blur-sm hover:!bg-black/60 font-medium tracking-wide uppercase">
+            <a 
+              href="#contact" 
+              onClick={(e) => scrollToSection(e, 'contact')}
+              className="btn-outline bg-black/40 backdrop-blur-sm hover:!bg-black/60 font-medium tracking-wide uppercase"
+            >
               Solicită Ofertă
             </a>
           </div>
@@ -188,23 +204,50 @@ export default function FotografieNunta() {
                 Stilul meu este documentar, intervenind cât mai puțin pentru a lăsa momentele să se desfășoare de la sine, rezultând amintiri care vor dăinui o viață întreagă.
               </p>
 
-              <div className="pt-2 flex flex-wrap gap-4">
-                <a href="#contact" className="btn-primary font-medium tracking-wide uppercase">
+              {/* Desktop Buttons (hidden on mobile) */}
+              <div className="pt-2 hidden lg:flex flex-wrap gap-4">
+                <a 
+                  href="#contact" 
+                  onClick={(e) => scrollToSection(e, 'contact')}
+                  className="btn-primary font-medium tracking-wide uppercase"
+                >
                   Solicită ofertă
                 </a>
-                <a href="#pachete" className="btn-outline font-medium tracking-wide uppercase">
+                <a 
+                  href="#pachete" 
+                  onClick={(e) => scrollToSection(e, 'pachete')}
+                  className="btn-outline font-medium tracking-wide uppercase"
+                >
                   Consultă pachetele
                 </a>
               </div>
             </div>
 
-            <div className="lg:col-span-4">
+            <div className="lg:col-span-4 space-y-6">
               <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl glass-panel p-2">
                 <img 
                   src="./images/photo1.jpg" 
                   alt="Momente nuntă" 
                   className="w-full h-full object-cover rounded-[2rem]"
                 />
+              </div>
+
+              {/* Mobile Buttons (Shown after photo on mobile) */}
+              <div className="lg:hidden flex flex-col sm:flex-row gap-4 pt-2">
+                <a 
+                  href="#contact" 
+                  onClick={(e) => scrollToSection(e, 'contact')}
+                  className="btn-primary font-medium tracking-wide uppercase text-center w-full sm:w-auto"
+                >
+                  Solicită ofertă
+                </a>
+                <a 
+                  href="#pachete" 
+                  onClick={(e) => scrollToSection(e, 'pachete')}
+                  className="btn-outline font-medium tracking-wide uppercase text-center w-full sm:w-auto"
+                >
+                  Consultă pachetele
+                </a>
               </div>
             </div>
 
@@ -269,7 +312,7 @@ export default function FotografieNunta() {
               initial={{ opacity: 0, x: -30 }} 
               whileInView={{ opacity: 1, x: 0 }} 
               viewport={{ once: true }}
-              className="order-2 lg:order-1"
+              className="order-2 lg:order-1 space-y-6"
             >
               <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 glass-panel p-2 max-w-md mx-auto">
                 <img 
@@ -277,6 +320,20 @@ export default function FotografieNunta() {
                   alt="Balajti Ferenc (Frédi) - Fotograf de nuntă" 
                   className="w-full h-full object-cover rounded-[2rem]"
                 />
+              </div>
+
+              {/* Mobile Buttons (shown after photo on mobile) */}
+              <div className="lg:hidden flex flex-col sm:flex-row gap-4 pt-2 max-w-md mx-auto">
+                <a 
+                  href="#contact" 
+                  onClick={(e) => scrollToSection(e, 'contact')}
+                  className="btn-primary uppercase tracking-wide text-center w-full sm:w-auto"
+                >
+                  Hai să ne cunoaștem
+                </a>
+                <Link to="/portofoliu" className="btn-outline uppercase tracking-wide text-center w-full sm:w-auto">
+                  Vezi portofoliul
+                </Link>
               </div>
             </motion.div>
 
@@ -307,8 +364,13 @@ export default function FotografieNunta() {
                 </p>
               </div>
 
-              <div className="pt-4 flex flex-wrap gap-4">
-                <a href="#contact" className="btn-primary uppercase tracking-wide">
+              {/* Desktop Buttons (hidden on mobile) */}
+              <div className="pt-4 hidden lg:flex flex-wrap gap-4">
+                <a 
+                  href="#contact" 
+                  onClick={(e) => scrollToSection(e, 'contact')}
+                  className="btn-primary uppercase tracking-wide"
+                >
                   Hai să ne cunoaștem
                 </a>
                 <Link to="/portofoliu" className="btn-outline uppercase tracking-wide">
@@ -431,14 +493,18 @@ export default function FotografieNunta() {
         </div>
 
         <div className="mt-8 text-center relative z-10">
-          <a href="#contact" className="btn-primary uppercase tracking-wide">
+          <a 
+            href="#contact" 
+            onClick={(e) => scrollToSection(e, 'contact')}
+            className="btn-primary uppercase tracking-wide"
+          >
             Solicită ofertă
           </a>
         </div>
       </section>
 
       {/* 6. FAQ Section */}
-      <section className="py-24 bg-transparent border-b border-white/5 scroll-mt-20" id="faq">
+      <section className="py-24 bg-transparent border-b border-white/5 scroll-mt-24" id="faq">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-zinc-500 text-xs uppercase tracking-widest font-bold mb-3 block">Răspunsuri utile</span>
@@ -510,7 +576,11 @@ export default function FotografieNunta() {
             </motion.div>
           </div>
           <div className="mt-16 text-center">
-            <a href="#contact" className="btn-primary tracking-wider uppercase shadow-xl hover:scale-105 transition-transform">
+            <a 
+              href="#contact" 
+              onClick={(e) => scrollToSection(e, 'contact')}
+              className="btn-primary tracking-wider uppercase shadow-xl hover:scale-105 transition-transform"
+            >
               Solicită o ofertă
             </a>
           </div>
@@ -518,7 +588,7 @@ export default function FotografieNunta() {
       </section>
 
       {/* 8. Pachete Foto (4 packs matching the screenshot) */}
-      <section className="relative py-16 md:py-24 bg-zinc-950 border-b border-white/5 scroll-mt-14" id="pachete">
+      <section className="relative py-16 md:py-24 bg-zinc-950 border-b border-white/5 scroll-mt-24" id="pachete">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           
           <div className="text-center mb-10 md:mb-14">
@@ -540,9 +610,9 @@ export default function FotografieNunta() {
                   alt="Pachet Essentials" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-black/25" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/10" />
                 <div className="absolute top-5 inset-x-0 text-center">
-                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-md">
+                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] [text-shadow:_0_2px_10px_rgba(0,0,0,0.95),_0_4px_25px_rgba(0,0,0,0.9)]">
                     ESSENTIALS
                   </h3>
                 </div>
@@ -600,9 +670,9 @@ export default function FotografieNunta() {
                   alt="Pachet Essentials Plus" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-black/25" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/10" />
                 <div className="absolute top-4 sm:top-5 inset-x-0 text-center">
-                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-md leading-tight">
+                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] [text-shadow:_0_2px_10px_rgba(0,0,0,0.95),_0_4px_25px_rgba(0,0,0,0.9)] leading-tight">
                     ESSENTIALS<br/>PLUS
                   </h3>
                 </div>
@@ -672,9 +742,9 @@ export default function FotografieNunta() {
                   alt="Pachet Gold" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-black/25" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/10" />
                 <div className="absolute top-5 inset-x-0 text-center">
-                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-md">
+                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] [text-shadow:_0_2px_10px_rgba(0,0,0,0.95),_0_4px_25px_rgba(0,0,0,0.9)]">
                     GOLD **
                   </h3>
                 </div>
@@ -735,9 +805,9 @@ export default function FotografieNunta() {
                   alt="Pachet Diamond" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-black/25" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/10" />
                 <div className="absolute top-5 inset-x-0 text-center">
-                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-md">
+                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] [text-shadow:_0_2px_10px_rgba(0,0,0,0.95),_0_4px_25px_rgba(0,0,0,0.9)]">
                     DIAMOND
                   </h3>
                 </div>
@@ -794,7 +864,7 @@ export default function FotografieNunta() {
       </section>
 
       {/* 9. Formular (Contact Section) */}
-      <section className="py-24 relative overflow-hidden" id="contact">
+      <section className="py-24 relative overflow-hidden scroll-mt-24" id="contact">
         <div className="absolute inset-0 z-0">
           <img 
             src="./images/backgrounds/haisanecunoastemmaibine.webp" 
