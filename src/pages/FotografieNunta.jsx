@@ -90,6 +90,14 @@ const collaborationSteps = [
   }
 ];
 
+const weddingPackages = [
+  { id: 'Pachetul ESSENTIALS', name: 'Essentials', price: '€600' },
+  { id: 'Pachetul ESSENTIALS PLUS', name: 'Essentials Plus', price: '€990' },
+  { id: 'Pachetul GOLD', name: 'Gold', price: '€1.200' },
+  { id: 'Pachetul DIAMOND', name: 'Diamond', price: '€1.450' },
+  { id: 'Personalizat', name: 'Personalizat / Altul', price: null }
+];
+
 export default function FotografieNunta() {
   const reviewsRef = useRef(null);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
@@ -184,10 +192,10 @@ export default function FotografieNunta() {
 
       {/* 1. Main Description + CTA ("Povestea și Viziunea Mea") */}
       <section className="py-24 relative bg-zinc-950 border-b border-white/5">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
-            <div className="lg:col-span-8 space-y-8">
+            <div className="space-y-8 order-1">
               <div className="space-y-4">
                 <span className="text-zinc-500 text-xs uppercase tracking-widest font-bold">Viziunea fotografică</span>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-normal text-white leading-tight">
@@ -223,17 +231,17 @@ export default function FotografieNunta() {
               </div>
             </div>
 
-            <div className="lg:col-span-4 space-y-6">
-              <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl glass-panel p-2">
+            <div className="order-2 space-y-6">
+              <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl max-w-md mx-auto">
                 <img 
                   src="./images/photo1.jpg" 
                   alt="Momente nuntă" 
-                  className="w-full h-full object-cover rounded-[2rem]"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
               {/* Mobile Buttons (Shown after photo on mobile) */}
-              <div className="lg:hidden flex flex-col sm:flex-row gap-4 pt-2">
+              <div className="lg:hidden flex flex-col sm:flex-row gap-4 pt-2 max-w-md mx-auto">
                 <a 
                   href="#contact" 
                   onClick={(e) => scrollToSection(e, 'contact')}
@@ -314,11 +322,11 @@ export default function FotografieNunta() {
               viewport={{ once: true }}
               className="order-2 lg:order-1 space-y-6"
             >
-              <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 glass-panel p-2 max-w-md mx-auto">
+              <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl max-w-md mx-auto">
                 <img 
                   src="./images/photographerimage.jpg" 
                   alt="Balajti Ferenc (Frédi) - Fotograf de nuntă" 
-                  className="w-full h-full object-cover rounded-[2rem]"
+                  className="w-full h-full object-cover"
                 />
               </div>
 
@@ -504,13 +512,13 @@ export default function FotografieNunta() {
       </section>
 
       {/* 6. FAQ Section */}
-      <section className="py-24 bg-transparent border-b border-white/5 scroll-mt-24" id="faq">
+      <section className="py-24 bg-[#fbf9f6] border-y border-[#e8e2d9] scroll-mt-24" id="faq">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-zinc-500 text-xs uppercase tracking-widest font-bold mb-3 block">Răspunsuri utile</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-normal text-white mb-4">Întrebări Frecvente</h2>
-            <p className="text-zinc-400 max-w-xl mx-auto font-light">Tot ce trebuie să știi despre colaborare, livrare, pachete și ședințe foto.</p>
-            <div className="h-1 w-20 bg-white/20 mx-auto rounded-full mt-6" />
+            <span className="text-[#8c7b6d] text-xs uppercase tracking-widest font-bold mb-3 block">Răspunsuri utile</span>
+            <h2 className="text-4xl md:text-5xl font-serif font-normal text-zinc-900 mb-4">Întrebări Frecvente</h2>
+            <p className="text-zinc-600 max-w-xl mx-auto font-light">Tot ce trebuie să știi despre colaborare, livrare, pachete și ședințe foto.</p>
+            <div className="h-1 w-20 bg-[#8c7b6d]/40 mx-auto rounded-full mt-6" />
           </div>
 
           <div className="space-y-4">
@@ -519,14 +527,14 @@ export default function FotografieNunta() {
               return (
                 <div 
                   key={index} 
-                  className="glass-panel rounded-[1.8rem] border border-white/5 overflow-hidden transition-all duration-300 hover:border-white/15"
+                  className="bg-white rounded-[1.8rem] border border-[#e8e2d9] shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
                 >
                   <button
                     onClick={() => toggleFaq(index)}
-                    className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none transition-colors"
+                    className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none transition-colors group"
                   >
-                    <span className="text-lg md:text-xl font-serif text-white pr-4">{item.question}</span>
-                    <div className={`p-2 rounded-full bg-white/5 text-white/80 border border-white/10 transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180 bg-white/10 text-white' : ''}`}>
+                    <span className="text-lg md:text-xl font-serif text-zinc-900 group-hover:text-[#8c7b6d] transition-colors pr-4">{item.question}</span>
+                    <div className={`p-2.5 rounded-full transition-all duration-300 shrink-0 ${isOpen ? 'rotate-180 bg-zinc-900 text-white' : 'bg-[#f4efe8] text-zinc-700 group-hover:bg-[#ede6de]'}`}>
                       <ChevronDown size={18} />
                     </div>
                   </button>
@@ -539,7 +547,7 @@ export default function FotografieNunta() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: 'easeInOut' }}
                       >
-                        <div className="px-6 pb-6 md:px-8 md:pb-8 text-zinc-400 font-light leading-relaxed text-base border-t border-white/5 pt-4">
+                        <div className="px-6 pb-6 md:px-8 md:pb-8 text-zinc-600 font-light leading-relaxed text-base border-t border-[#f0ece4] pt-5">
                           {item.answer}
                         </div>
                       </motion.div>
@@ -589,9 +597,9 @@ export default function FotografieNunta() {
 
       {/* 8. Pachete Foto (4 packs matching the screenshot) */}
       <section className="relative py-16 md:py-24 bg-zinc-950 border-b border-white/5 scroll-mt-24" id="pachete">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
           
-          <div className="text-center mb-10 md:mb-14">
+          <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-5xl font-serif text-white">Pachete Foto de Nuntă</h2>
             <p className="text-zinc-400 text-sm md:text-base font-light mt-2 max-w-xl mx-auto">
               Alege pachetul potrivit pentru a vă asigura amintiri complete și fără stres.
@@ -599,10 +607,10 @@ export default function FotografieNunta() {
           </div>
 
           {/* 4 Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-7 items-stretch max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-8 items-stretch max-w-full mx-auto">
             
             {/* 1. ESSENTIALS */}
-            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl border border-white/10 group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
+            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
               {/* Photo Header */}
               <div className="relative h-64 sm:h-72 lg:h-80 xl:h-96 overflow-hidden bg-zinc-900">
                 <img 
@@ -662,7 +670,7 @@ export default function FotografieNunta() {
             </div>
 
             {/* 2. ESSENTIALS PLUS */}
-            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl border border-white/10 group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
+            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
               {/* Photo Header */}
               <div className="relative h-64 sm:h-72 lg:h-80 xl:h-96 overflow-hidden bg-zinc-900">
                 <img 
@@ -729,14 +737,14 @@ export default function FotografieNunta() {
               </div>
             </div>
 
-            {/* 3. GOLD ** (Highlighted Card) */}
-            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl border-2 border-[#d6ba9e] group transition-all duration-300 hover:-translate-y-2 relative bg-[#998471]">
-              <div className="absolute top-3 right-3 z-20 bg-black/60 backdrop-blur-md border border-white/20 text-white text-[10px] uppercase font-bold px-2.5 py-1 rounded-full">
+            {/* 3. GOLD ** (Highlighted & Larger Card) */}
+            <div className="flex flex-col rounded-3xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] group transition-all duration-300 relative bg-[#998471] z-20 lg:-translate-y-5 xl:-translate-y-7 lg:scale-[1.04]">
+              <div className="absolute top-3.5 right-3.5 z-30 bg-black/70 backdrop-blur-md text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full shadow-lg">
                 Popular
               </div>
 
-              {/* Photo Header */}
-              <div className="relative h-64 sm:h-72 lg:h-80 xl:h-96 overflow-hidden bg-zinc-900">
+              {/* Photo Header (Taller for Gold) */}
+              <div className="relative h-64 sm:h-72 lg:h-[22rem] xl:h-[26rem] overflow-hidden bg-zinc-900">
                 <img 
                   src="./images/hero_nunta.jpg" 
                   alt="Pachet Gold" 
@@ -751,7 +759,7 @@ export default function FotografieNunta() {
               </div>
 
               {/* Taupe/Brown Card Body */}
-              <div className="bg-[#998471] text-white p-6 xl:p-7 flex flex-col justify-between flex-grow">
+              <div className="bg-[#998471] text-white p-6 xl:p-8 flex flex-col justify-between flex-grow">
                 <div>
                   <div className="text-center font-bold text-xs uppercase tracking-wider text-white/90 mb-3 leading-tight">
                     ESSENTIALS PLUS +
@@ -783,21 +791,21 @@ export default function FotografieNunta() {
                   <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-white tracking-tight">
                     1200 EURO
                   </div>
-                  <p className="text-xs text-center text-white/80 font-light mt-1 italic">
-                    **80% dintre cupluri au ales pachetul GOLD
-                  </p>
                   <button 
                     onClick={() => handleSelectPackage('Pachetul GOLD')}
-                    className="w-full mt-3 py-2.5 rounded-full bg-white text-[#998471] text-xs uppercase font-bold tracking-wider hover:bg-zinc-100 transition-colors text-center shadow-lg"
+                    className="w-full mt-3 py-3 rounded-full bg-white text-[#998471] text-xs uppercase font-bold tracking-wider hover:bg-zinc-100 transition-colors text-center shadow-lg"
                   >
                     Alege Pachetul
                   </button>
+                  <p className="text-xs text-center text-white/80 font-light mt-2.5 italic">
+                    *80% dintre cupluri au ales pachetul GOLD
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* 4. DIAMOND */}
-            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl border border-white/10 group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
+            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
               {/* Photo Header */}
               <div className="relative h-64 sm:h-72 lg:h-80 xl:h-96 overflow-hidden bg-zinc-900">
                 <img 
@@ -940,7 +948,7 @@ export default function FotografieNunta() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
                   <select 
                     id="eventType" 
                     defaultValue="Fotografie de nuntă"
@@ -953,19 +961,38 @@ export default function FotografieNunta() {
                     <option value="Fotografie/filmare promoțională" className="bg-zinc-900">Fotografie/filmare promoțională</option>
                     <option value="Fotografie de brand" className="bg-zinc-900">Fotografie de brand</option>
                   </select>
+                </div>
 
-                  <select 
-                    id="pachet" 
-                    value={selectedPackage}
-                    onChange={(e) => setSelectedPackage(e.target.value)}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white transition-all outline-none appearance-none"
-                  >
-                    <option value="Pachetul ESSENTIALS" className="bg-zinc-900">Pachetul ESSENTIALS (600€)</option>
-                    <option value="Pachetul ESSENTIALS PLUS" className="bg-zinc-900">Pachetul ESSENTIALS PLUS (990€)</option>
-                    <option value="Pachetul GOLD" className="bg-zinc-900">Pachetul GOLD (1200€) - Recomandat</option>
-                    <option value="Pachetul DIAMOND" className="bg-zinc-900">Pachetul DIAMOND (1450€)</option>
-                    <option value="Personalizat" className="bg-zinc-900">Pachet Personalizat</option>
-                  </select>
+                {/* Pachete Selector Pills matching screenshot */}
+                <div className="space-y-3 pt-1">
+                  <label className="block text-sm md:text-base font-medium text-white">
+                    Ce pachet te interesează?
+                  </label>
+                  <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                    {weddingPackages.map((pkg) => {
+                      const isSelected = selectedPackage === pkg.id;
+                      return (
+                        <button
+                          key={pkg.id}
+                          type="button"
+                          onClick={() => setSelectedPackage(pkg.id)}
+                          className={`px-4 sm:px-5 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 flex items-center gap-2 cursor-pointer ${
+                            isSelected
+                              ? 'bg-white/20 border-2 border-white text-white shadow-[0_0_20px_rgba(255,255,255,0.35)] scale-[1.02]'
+                              : 'bg-white/5 border border-white/10 text-zinc-300 hover:bg-white/10 hover:border-white/25 hover:text-white'
+                          }`}
+                        >
+                          <span>{pkg.name}</span>
+                          {pkg.price && (
+                            <span className={`font-semibold ${isSelected ? 'text-white font-bold' : 'text-zinc-400'}`}>
+                              {pkg.price}
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <input type="hidden" id="pachet" name="pachet" value={selectedPackage} />
                 </div>
 
                 <textarea id="message" rows="3" required className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-white/20 focus:border-white/40 focus:bg-white/10 text-white placeholder:text-zinc-500 transition-all outline-none resize-none" placeholder="Scrie-mi pe scurt despre evenimentul/proiectul tău"></textarea>
