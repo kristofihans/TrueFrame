@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ChevronRight, CheckCircle, ArrowLeft } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
 import FotografieNunta from './FotografieNunta';
+import Boudoir from './Boudoir';
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -16,6 +17,10 @@ export default function ServiceDetail() {
 
   if (slug === 'fotografie-nunta') {
     return <FotografieNunta />;
+  }
+
+  if (slug === 'boudoir') {
+    return <Boudoir />;
   }
 
   const service = servicesData.find(s => s.slug === slug);

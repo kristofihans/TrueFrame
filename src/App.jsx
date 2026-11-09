@@ -10,6 +10,7 @@ import BlogPost from './pages/BlogPost';
 import ServiceDetail from './pages/ServiceDetail';
 import Servicii from './pages/Servicii';
 import FotografieNunta from './pages/FotografieNunta';
+import Boudoir from './pages/Boudoir';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="servicii" element={<Servicii />} />
           <Route path="servicii/fotografie-nunta" element={<FotografieNunta />} />
+          <Route path="servicii/boudoir" element={<Boudoir />} />
           <Route path="servicii/:slug" element={<ServiceDetail />} />
           <Route path="portofoliu" element={<Portofoliu />} />
           <Route path="despre-mine" element={<DespreMine />} />
