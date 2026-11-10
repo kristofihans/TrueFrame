@@ -35,6 +35,29 @@ const reviews = [
   }
 ];
 
+const collaborationSteps = [
+  {
+    step: "01",
+    title: "Ne cunoaștem",
+    desc: "Discutăm despre ideile tale, stilul fotografiilor pe care ți le dorești și ce te face să te simți confortabil. Alegem împreună pachetul potrivit și stabilim data ședinței."
+  },
+  {
+    step: "02",
+    title: "Ne pregătim",
+    desc: "Stabilim atmosfera ședinței, alegem ținutele și discutăm toate detaliile. Îți ofer sfaturi și inspirație, astfel încât să vii pregătită și fără emoții inutile."
+  },
+  {
+    step: "03",
+    title: "Trăiești experiența",
+    desc: "În timpul ședinței, te ghidez pas cu pas, de la poziții până la cele mai mici detalii. Totul se desfășoară într-o atmosferă relaxată, în ritmul tău."
+  },
+  {
+    step: "04",
+    title: "Primești fotografiile",
+    desc: "Editez cu atenție fotografiile, iar tu îți alegi fotografiile preferate, după care le primești într-o galerie online privată, gata să le admiri ori de câte ori dorești."
+  }
+];
+
 const boudoirFaqs = [
   {
     question: "1. NU AM MAI FĂCUT NICIODATĂ O ȘEDINȚĂ BOUDOIR. ESTE O PROBLEMĂ?",
@@ -62,7 +85,7 @@ const boudoirFaqs = [
   },
   {
     question: "7. CUM VOI PRIMI FOTOGRAFIILE?",
-    answer: "Fotografiile finale vor fi livrate printr-o galerie online privată, securizată cu un cod PIN, de unde le vei putea descărca la rezoluție înaltă. Dacă alegi pachetul Full Experience, vei primi și un album foto premium, cu fotografiile tale preferate."
+    answer: "Fotografiile finale vor fi livrate printr-o galerie online privată, securizată cu un cod PIN, de unde le vei putea descărca la rezoluție înaltă. Dacă alegi pachetul Full Experience (Signature), vei primi și un album foto premium, cu fotografiile tale preferate."
   }
 ];
 
@@ -120,7 +143,7 @@ export default function Boudoir() {
       <section className="relative min-h-[75vh] md:min-h-[85vh] flex flex-col justify-end items-center overflow-hidden pt-40 pb-16 md:pb-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="./images/boudoir photos/00hero photo.jpg" 
+            src="./images/boudoir photos for site/00HERO.jpg" 
             alt="Boudoir Experience Oradea" 
             className="w-full h-full object-cover object-center"
           />
@@ -216,7 +239,7 @@ export default function Boudoir() {
             <div className="order-2 space-y-6">
               <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl max-w-md mx-auto border border-white/5">
                 <img 
-                  src="./images/boudoir photos/01text photo.jpg" 
+                  src="./images/boudoir photos for site/01text photo.jpg" 
                   alt="Boudoir Experience Portrait" 
                   className="w-full h-full object-cover"
                 />
@@ -245,11 +268,142 @@ export default function Boudoir() {
         </div>
       </section>
 
-      {/* 3. Feedback Clienți */}
+      {/* 3. Cum vom colabora? (4 pași din boudoir-2.md) */}
       <section className="py-24 relative overflow-hidden border-b border-white/5">
         <div className="absolute inset-0 z-0">
           <img 
-            src="./images/boudoir photos/03ce spun clientii background.jpg" 
+            src="./images/boudoir photos for site/02cum vom colabora background.jpg" 
+            alt="Cum vom colabora" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/75 backdrop-blur-[2px]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-zinc-500 text-xs uppercase tracking-widest font-bold mb-3 block">Ghidul tău</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-white mb-4">Cum vom colabora?</h2>
+            <p className="text-zinc-400 text-lg font-light">
+              Un proces clar, deschis și relaxat, gândit pentru ca tu să te simți confortabil la fiecare pas.
+            </p>
+            <div className="h-1 w-20 bg-white/20 mx-auto rounded-full mt-6" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {collaborationSteps.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="glass-panel p-8 rounded-[2rem] border border-white/5 hover:border-white/20 transition-all flex flex-col justify-between group h-full"
+              >
+                <div>
+                  <div className="text-4xl font-serif text-zinc-500/50 group-hover:text-white/80 transition-colors font-bold mb-6">
+                    {item.step}
+                  </div>
+                  <h3 className="text-xl font-serif text-white mb-4 leading-snug">{item.title}</h3>
+                  <p className="text-zinc-400 text-sm font-light leading-relaxed">{item.desc}</p>
+                </div>
+                <div className="mt-8 pt-4 border-t border-white/5 flex items-center gap-2 text-xs uppercase tracking-wider text-zinc-500 font-semibold group-hover:text-white transition-colors">
+                  <Check size={14} className="text-white" /> Pasul {item.step}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Fotograful tău (din boudoir-2.md) */}
+      <section className="py-24 bg-zinc-950 border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Image on left */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }}
+              className="order-2 lg:order-1 space-y-6"
+            >
+              <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl max-w-md mx-auto border border-white/5">
+                <img 
+                  src="./images/photographerimage.jpg" 
+                  alt="Balajti Ferenc (Frédi) - Fotograf Boudoir" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Mobile Buttons */}
+              <div className="lg:hidden flex flex-col sm:flex-row gap-4 pt-2 max-w-md mx-auto">
+                <a 
+                  href="#contact" 
+                  onClick={(e) => scrollToSection(e, 'contact')}
+                  className="btn-primary uppercase tracking-wide text-center w-full sm:w-auto"
+                >
+                  Hai să ne cunoaștem
+                </a>
+                <Link to="/portofoliu" className="btn-outline uppercase tracking-wide text-center w-full sm:w-auto">
+                  Vezi portofoliul
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Text on right */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }}
+              className="space-y-8 order-1 lg:order-2"
+            >
+              <div className="space-y-4">
+                <span className="text-zinc-500 text-xs uppercase tracking-widest font-bold">Despre mine</span>
+                <h2 className="text-4xl md:text-5xl font-serif text-white leading-tight">
+                  Cine e fotograful tău?
+                </h2>
+                <div className="h-1 w-20 bg-white/20 rounded-full" />
+              </div>
+
+              <div className="text-zinc-300 leading-relaxed text-lg font-light space-y-5">
+                <p>
+                  Mă numesc <strong className="text-white font-medium">Balajti Ferenc</strong>, dar cei mai mulți îmi spun <strong className="text-white font-medium">Frédi</strong>. Sunt fotograf din 2012 și, de-a lungul anilor, am avut ocazia să fotografiez sute de oameni.
+                </p>
+                <p>
+                  Știu că nu este întotdeauna ușor să te lași fotografiată, mai ales într-un cadru atât de personal precum o ședință boudoir. De aceea, îmi doresc să creez o atmosferă relaxată, în care să te simți confortabilă și în siguranță.
+                </p>
+                <p>
+                  Nu trebuie să știi să pozezi sau să ai experiență în fața camerei. Te voi ghida pas cu pas, astfel încât să obținem fotografii în care să te simți frumoasă și încrezătoare.
+                </p>
+                <p className="text-white font-normal italic pt-1">
+                  Scopul meu nu este să te transform în altcineva, ci să îți arăt frumusețea ta exact așa cum este.
+                </p>
+              </div>
+
+              {/* Desktop Buttons */}
+              <div className="pt-4 hidden lg:flex flex-wrap gap-4">
+                <a 
+                  href="#contact" 
+                  onClick={(e) => scrollToSection(e, 'contact')}
+                  className="btn-primary uppercase tracking-wide"
+                >
+                  Hai să ne cunoaștem
+                </a>
+                <Link to="/portofoliu" className="btn-outline uppercase tracking-wide">
+                  Vezi portofoliul
+                </Link>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Feedback Clienți */}
+      <section className="py-24 relative overflow-hidden border-b border-white/5">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="./images/boudoir photos for site/03ce spun clientii.jpg" 
             alt="Feedback Background" 
             className="w-full h-full object-cover"
           />
@@ -265,7 +419,7 @@ export default function Boudoir() {
               <Star size={18} className="fill-current" />
               <Star size={18} className="fill-current" />
             </div>
-            <span className="font-bold">Povești reale & Transformări</span>
+            <span className="font-bold">Povești reale și sincere</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-serif mb-4">Feedback de la cliente</h2>
           <p className="text-zinc-400">Ce spun femeile care au trăit experiența Boudoir.</p>
@@ -274,7 +428,7 @@ export default function Boudoir() {
         <div className="relative group max-w-[100vw]">
           <button 
             onClick={() => scrollReviews('left')}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-zinc-900/60 border border-white/10 text-white flex items-center justify-center hover:bg-white hover:text-black transition-all hidden md:flex shadow-2xl backdrop-blur-md"
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-zinc-900/60 border border-white/10 text-white flex items-center justify-center hover:bg-white hover:text-black transition-all hidden md:flex shadow-2xl backdrop-blur-md cursor-pointer"
             aria-label="Previous reviews"
           >
             <ChevronLeft size={32} />
@@ -282,7 +436,7 @@ export default function Boudoir() {
           
           <button 
             onClick={() => scrollReviews('right')}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-zinc-900/60 border border-white/10 text-white flex items-center justify-center hover:bg-white hover:text-black transition-all hidden md:flex shadow-2xl backdrop-blur-md"
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-zinc-900/60 border border-white/10 text-white flex items-center justify-center hover:bg-white hover:text-black transition-all hidden md:flex shadow-2xl backdrop-blur-md cursor-pointer"
             aria-label="Next reviews"
           >
             <ChevronRight size={32} />
@@ -325,14 +479,14 @@ export default function Boudoir() {
           <a 
             href="#contact" 
             onClick={(e) => scrollToSection(e, 'contact')}
-            className="btn-primary uppercase tracking-wide"
+            className="btn-primary uppercase tracking-wide cursor-pointer"
           >
             Rezervă ședința ta
           </a>
         </div>
       </section>
 
-      {/* 4. FAQ Section */}
+      {/* 6. FAQ Section */}
       <section className="py-24 bg-[#fbf9f6] border-y border-[#e8e2d9] scroll-mt-24" id="faq">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -352,7 +506,7 @@ export default function Boudoir() {
                 >
                   <button
                     onClick={() => toggleFaq(index)}
-                    className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none transition-colors group"
+                    className="w-full flex items-center justify-between p-6 md:p-8 text-left outline-none transition-colors group cursor-pointer"
                   >
                     <span className="text-lg md:text-xl font-serif text-zinc-900 group-hover:text-[#8c7b6d] transition-colors pr-4">{item.question}</span>
                     <div className={`p-2.5 rounded-full transition-all duration-300 shrink-0 ${isOpen ? 'rotate-180 bg-zinc-900 text-white' : 'bg-[#f4efe8] text-zinc-700 group-hover:bg-[#ede6de]'}`}>
@@ -381,7 +535,7 @@ export default function Boudoir() {
         </div>
       </section>
 
-      {/* 5. Garanție: ANGAJAMENTUL MEU FAȚĂ DE TINE */}
+      {/* 7. Garanție: ANGAJAMENTUL MEU FAȚĂ DE TINE (Doar acest titlu conform boudoir-2.md) */}
       <section className="py-24 bg-zinc-900/20 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center border-b border-white/5 pb-16">
@@ -396,8 +550,10 @@ export default function Boudoir() {
               className="space-y-8"
             >
               <div>
-                <span className="text-zinc-500 text-xs uppercase tracking-widest font-bold block mb-2">Angajamentul meu față de tine</span>
-                <h2 className="text-4xl font-serif text-white">Garanție 100% Satisfacție</h2>
+                <h2 className="text-4xl md:text-5xl font-serif text-white tracking-wide uppercase">
+                  Angajamentul Meu Față de Tine
+                </h2>
+                <div className="h-1 w-20 bg-white/20 rounded-full mt-4" />
               </div>
               <p className="text-zinc-300 text-lg font-light leading-relaxed">
                 Îmi doresc ca experiența ta să fie una plăcută, relaxată și să te simți respectată pe tot parcursul ședinței foto.
@@ -414,7 +570,7 @@ export default function Boudoir() {
             <a 
               href="#contact" 
               onClick={(e) => scrollToSection(e, 'contact')}
-              className="btn-primary tracking-wider uppercase shadow-xl hover:scale-105 transition-transform"
+              className="btn-primary tracking-wider uppercase shadow-xl hover:scale-105 transition-transform cursor-pointer"
             >
               Solicită o ofertă
             </a>
@@ -422,11 +578,11 @@ export default function Boudoir() {
         </div>
       </section>
 
-      {/* 6. Pachete Boudoir Experience (Same style as Fotografie de Nunta) */}
+      {/* 8. Pachete Boudoir Experience (Same style as Fotografie de Nunta) */}
       <section className="relative py-16 md:py-24 overflow-hidden border-y border-white/5 scroll-mt-24" id="pachete">
         <div className="absolute inset-0 z-0">
           <img 
-            src="./images/boudoir photos/04pachete background.jpg" 
+            src="./images/boudoir photos for site/04pachete background.jpg" 
             alt="Pachete Boudoir Background" 
             className="w-full h-full object-cover"
           />
@@ -443,168 +599,207 @@ export default function Boudoir() {
           </div>
 
           {/* 3 Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-8 items-stretch max-w-full mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 xl:gap-8 items-start max-w-full mx-auto">
             
             {/* 1. NATURAL */}
-            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de] text-[#3d3832] p-8 xl:p-9 justify-between">
-              <div>
-                <div className="text-center font-bold text-xs uppercase tracking-wider text-[#8c7b6d] mb-2 leading-tight">
-                  ÎN AER LIBER
-                </div>
-                <h3 className="font-serif text-2xl xl:text-3xl tracking-wider text-[#3d3832] uppercase text-center mb-6">
-                  NATURAL
-                </h3>
-                <div className="h-0.5 w-12 bg-[#8c7b6d]/30 mx-auto rounded-full mb-6" />
-
-                <div className="space-y-3 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug">
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-[#8c7b6d] font-bold">•</span>
-                    <span>Ședință foto în aer liber</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-[#8c7b6d] font-bold">•</span>
-                    <span>60 de minute de fotografiere</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-[#8c7b6d] font-bold">•</span>
-                    <span>1–2 ținute</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-[#8c7b6d] font-bold">•</span>
-                    <span>15 fotografii retușate profesional</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-[#8c7b6d] font-bold">•</span>
-                    <span>Galerie online privată securizată</span>
-                  </p>
+            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
+              {/* Photo Header */}
+              <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden bg-zinc-900">
+                <img 
+                  src="./images/boudoir photos for site/PACHET NATURAL.jpg" 
+                  alt="Pachet Boudoir Natural" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/10" />
+                <div className="absolute top-5 inset-x-0 text-center">
+                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] [text-shadow:_0_2px_10px_rgba(0,0,0,0.95),_0_4px_25px_rgba(0,0,0,0.9)]">
+                    NATURAL
+                  </h3>
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-[#c5b8aa]">
-                <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-[#3d3832] tracking-tight h-10 flex items-center justify-center leading-none">
-                  149 EURO
+              {/* Cream Card Body */}
+              <div className="bg-[#ede6de] text-[#3d3832] p-6 xl:p-7 pb-7 xl:pb-8 flex flex-col justify-between flex-grow">
+                <div className="md:h-[260px] flex flex-col justify-start">
+                  <div className="text-center font-bold text-xs uppercase tracking-wider text-[#574d44] mb-3 leading-tight">
+                    ÎN AER LIBER
+                  </div>
+                  <div className="space-y-2.5 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug">
+                    <p className="flex items-start gap-2">
+                      <span className="text-[#8c7b6d] font-bold">•</span>
+                      <span>Ședință foto în aer liber</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-[#8c7b6d] font-bold">•</span>
+                      <span>60 de minute de fotografiere</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-[#8c7b6d] font-bold">•</span>
+                      <span>1–2 ținute</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-[#8c7b6d] font-bold">•</span>
+                      <span>15 fotografii retușate profesional</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-[#8c7b6d] font-bold">•</span>
+                      <span>Galerie online privată</span>
+                    </p>
+                  </div>
                 </div>
-                <button 
-                  onClick={() => handleSelectPackage('Pachetul NATURAL')}
-                  className="w-full mt-4 h-11 rounded-full border border-[#8c7b6d] text-[#3d3832] text-xs uppercase font-bold tracking-wider hover:bg-[#8c7b6d] hover:text-white transition-colors text-center flex items-center justify-center cursor-pointer shadow-sm"
-                >
-                  Alege Pachetul
-                </button>
+
+                <div className="mt-6 pt-4 border-t border-[#c5b8aa]">
+                  <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-[#3d3832] tracking-tight h-10 flex items-center justify-center leading-none">
+                    149 EURO
+                  </div>
+                  <button 
+                    onClick={() => handleSelectPackage('Pachetul NATURAL')}
+                    className="w-full mt-3 h-11 rounded-full border border-[#8c7b6d] text-[#3d3832] text-xs uppercase font-bold tracking-wider hover:bg-[#8c7b6d] hover:text-white transition-colors text-center flex items-center justify-center cursor-pointer"
+                  >
+                    Alege Pachetul
+                  </button>
+                </div>
               </div>
             </div>
 
             {/* 2. STUDIO ESSENTIALS */}
-            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de] text-[#3d3832] p-8 xl:p-9 justify-between">
-              <div>
-                <div className="text-center font-bold text-xs uppercase tracking-wider text-[#8c7b6d] mb-2 leading-tight">
-                  STUDIO PRIVAT
-                </div>
-                <h3 className="font-serif text-2xl xl:text-3xl tracking-wider text-[#3d3832] uppercase text-center mb-6">
-                  STUDIO ESSENTIALS
-                </h3>
-                <div className="h-0.5 w-12 bg-[#8c7b6d]/30 mx-auto rounded-full mb-6" />
-
-                <div className="space-y-3 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug">
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-[#8c7b6d] font-bold">•</span>
-                    <span>Ședință foto în studio privat</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-[#8c7b6d] font-bold">•</span>
-                    <span>60 de minute de fotografiere</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-[#8c7b6d] font-bold">•</span>
-                    <span>2 ținute</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-[#8c7b6d] font-bold">•</span>
-                    <span>20 fotografii retușate profesional</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-[#8c7b6d] font-bold">•</span>
-                    <span>Moodboard personalizat</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-[#8c7b6d] font-bold">•</span>
-                    <span>Galerie online privată securizată</span>
-                  </p>
+            <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
+              {/* Photo Header */}
+              <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden bg-zinc-900">
+                <img 
+                  src="./images/boudoir photos for site/PACHET STUDIO ESSENTIALS.jpg" 
+                  alt="Pachet Studio Essentials" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/10" />
+                <div className="absolute top-4 sm:top-5 inset-x-0 text-center">
+                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] [text-shadow:_0_2px_10px_rgba(0,0,0,0.95),_0_4px_25px_rgba(0,0,0,0.9)] leading-tight">
+                    STUDIO<br/>ESSENTIALS
+                  </h3>
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-[#c5b8aa]">
-                <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-[#3d3832] tracking-tight h-10 flex items-center justify-center leading-none">
-                  199 EURO
+              {/* Cream Card Body */}
+              <div className="bg-[#ede6de] text-[#3d3832] p-6 xl:p-7 pb-7 xl:pb-8 flex flex-col justify-between flex-grow">
+                <div className="md:h-[260px] flex flex-col justify-start">
+                  <div className="text-center font-bold text-xs uppercase tracking-wider text-[#574d44] mb-3 leading-tight">
+                    STUDIO PRIVAT
+                  </div>
+                  <div className="space-y-2.5 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug">
+                    <p className="flex items-start gap-2">
+                      <span className="text-[#8c7b6d] font-bold">•</span>
+                      <span>Ședință foto în studio privat</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-[#8c7b6d] font-bold">•</span>
+                      <span>60 de minute de fotografiere</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-[#8c7b6d] font-bold">•</span>
+                      <span>2 ținute</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-[#8c7b6d] font-bold">•</span>
+                      <span>20 fotografii retușate profesional</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-[#8c7b6d] font-bold">•</span>
+                      <span>Moodboard personalizat</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-[#8c7b6d] font-bold">•</span>
+                      <span>Galerie online privată</span>
+                    </p>
+                  </div>
                 </div>
-                <button 
-                  onClick={() => handleSelectPackage('Pachetul STUDIO ESSENTIALS')}
-                  className="w-full mt-4 h-11 rounded-full border border-[#8c7b6d] text-[#3d3832] text-xs uppercase font-bold tracking-wider hover:bg-[#8c7b6d] hover:text-white transition-colors text-center flex items-center justify-center cursor-pointer shadow-sm"
-                >
-                  Alege Pachetul
-                </button>
+
+                <div className="mt-6 pt-4 border-t border-[#c5b8aa]">
+                  <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-[#3d3832] tracking-tight h-10 flex items-center justify-center leading-none">
+                    199 EURO
+                  </div>
+                  <button 
+                    onClick={() => handleSelectPackage('Pachetul STUDIO ESSENTIALS')}
+                    className="w-full mt-3 h-11 rounded-full border border-[#8c7b6d] text-[#3d3832] text-xs uppercase font-bold tracking-wider hover:bg-[#8c7b6d] hover:text-white transition-colors text-center flex items-center justify-center cursor-pointer"
+                  >
+                    Alege Pachetul
+                  </button>
+                </div>
               </div>
             </div>
 
             {/* 3. FULL EXPERIENCE (RECOMMENDED / Popular - Taupe Featured Card) */}
-            <div className="flex flex-col rounded-3xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] group transition-all duration-300 relative bg-[#998471] text-white p-8 xl:p-9 justify-between z-20">
-              <div className="absolute top-4 right-4 z-30 bg-black/70 backdrop-blur-md text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full shadow-lg">
+            <div className="flex flex-col rounded-3xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] group transition-all duration-300 relative bg-[#998471] z-20">
+              <div className="absolute top-3.5 right-3.5 z-30 bg-black/70 backdrop-blur-md text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full shadow-lg">
                 Recomandat
               </div>
 
-              <div>
-                <div className="text-center font-bold text-xs uppercase tracking-wider text-white/90 mb-2 leading-tight">
-                  EXPERIENȚA COMPLETĂ
-                </div>
-                <h3 className="font-serif text-2xl xl:text-3xl tracking-wider text-white uppercase text-center mb-6">
-                  FULL EXPERIENCE
-                </h3>
-                <div className="h-0.5 w-12 bg-white/30 mx-auto rounded-full mb-6" />
-
-                <div className="space-y-3 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug text-white/95">
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-white font-bold">•</span>
-                    <span>Ședință foto în studio privat</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-white font-bold">•</span>
-                    <span>120 de minute de fotografiere</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-white font-bold">•</span>
-                    <span>2–3 ținute</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-white font-bold">•</span>
-                    <span>25 de fotografii retușate profesional</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-white font-bold">•</span>
-                    <span>Moodboard personalizat & ghid stilistic</span>
-                  </p>
-                  <p className="flex items-start gap-2.5">
-                    <span className="text-white font-bold">•</span>
-                    <span>Galerie online privată securizată</span>
-                  </p>
-                  <p className="flex items-start gap-2.5 font-medium text-white">
-                    <span className="text-white font-bold">•</span>
-                    <span>Album foto premium 20×20 cm inclus</span>
-                  </p>
+              {/* Photo Header */}
+              <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden bg-zinc-900">
+                <img 
+                  src="./images/boudoir photos for site/PACHET FULL EXPERIENCE.jpg" 
+                  alt="Pachet Full Experience" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/10" />
+                <div className="absolute top-4 sm:top-5 inset-x-0 text-center">
+                  <h3 className="font-serif text-xl xl:text-2xl tracking-widest text-white uppercase drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)] [text-shadow:_0_2px_10px_rgba(0,0,0,0.95),_0_4px_25px_rgba(0,0,0,0.9)] leading-tight">
+                    FULL<br/>EXPERIENCE
+                  </h3>
                 </div>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-white/20">
-                <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-white tracking-tight h-10 flex items-center justify-center leading-none">
-                  349 EURO
+              {/* Taupe/Brown Card Body - Extends further down */}
+              <div className="bg-[#998471] text-white p-6 xl:p-7 pb-10 xl:pb-12 flex flex-col justify-between flex-grow">
+                <div className="md:h-[260px] flex flex-col justify-start">
+                  <div className="text-center font-bold text-xs uppercase tracking-wider text-white/90 mb-3 leading-tight">
+                    EXPERIENȚA COMPLETĂ
+                  </div>
+                  <div className="space-y-2.5 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug text-white/95">
+                    <p className="flex items-start gap-2">
+                      <span className="text-white font-bold">•</span>
+                      <span>Ședință foto în studio privat</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-white font-bold">•</span>
+                      <span>120 de minute de fotografiere</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-white font-bold">•</span>
+                      <span>2–3 ținute</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-white font-bold">•</span>
+                      <span>25 de fotografii retușate profesional</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-white font-bold">•</span>
+                      <span>Moodboard personalizat</span>
+                    </p>
+                    <p className="flex items-start gap-2">
+                      <span className="text-white font-bold">•</span>
+                      <span>Galerie online privată</span>
+                    </p>
+                    <p className="flex items-start gap-2 font-medium text-white">
+                      <span className="text-white font-bold">•</span>
+                      <span>Album foto premium 20×20 cm</span>
+                    </p>
+                  </div>
                 </div>
-                <button 
-                  onClick={() => handleSelectPackage('Pachetul FULL EXPERIENCE')}
-                  className="w-full mt-4 h-11 rounded-full bg-white text-[#998471] text-xs uppercase font-bold tracking-wider hover:bg-zinc-100 transition-colors text-center shadow-lg flex items-center justify-center cursor-pointer"
-                >
-                  Alege Pachetul
-                </button>
-                <p className="text-xs text-center text-white/90 font-light mt-3 italic">
-                  *Pachetul favorit pentru o transformare completă
-                </p>
+
+                <div className="mt-6 pt-4 border-t border-white/20">
+                  <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-white tracking-tight h-10 flex items-center justify-center leading-none">
+                    349 EURO
+                  </div>
+                  <button 
+                    onClick={() => handleSelectPackage('Pachetul FULL EXPERIENCE')}
+                    className="w-full mt-3 h-11 rounded-full bg-white text-[#998471] text-xs uppercase font-bold tracking-wider hover:bg-zinc-100 transition-colors text-center shadow-lg flex items-center justify-center cursor-pointer"
+                  >
+                    Alege Pachetul
+                  </button>
+                  <p className="text-xs text-center text-white/90 font-light mt-3 italic">
+                    *Pachetul favorit pentru o transformare completă
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -619,11 +814,11 @@ export default function Boudoir() {
         </div>
       </section>
 
-      {/* 7. Formular de Contact (Fără hartă, centrat ca pe Fotografie de Nuntă) */}
+      {/* 9. Formular de Contact (Fără hartă, centrat ca pe Fotografie de Nuntă) */}
       <section className="py-24 relative overflow-hidden scroll-mt-24" id="contact">
         <div className="absolute inset-0 z-0">
           <img 
-            src="./images/boudoir photos/05hai sa ne cunoastem background.jpg" 
+            src="./images/boudoir photos for site/05hai sa ne cunoastem.jpg" 
             alt="Contact Background" 
             className="w-full h-full object-cover"
           />
@@ -644,7 +839,7 @@ export default function Boudoir() {
             >
               <div className="pb-6 border-b border-white/10">
                 <p className="text-zinc-400 text-lg font-light leading-relaxed">
-                  Realizez un număr limitat de ședințe boudoir lunar pentru a oferi fiecărei cliente toată atenția și intimitatea necesară.
+                  Realizez un număr limitat de ședințe boudoir lunar pentru a oferi fiecărei cliente toată atenția necesară.
                 </p>
               </div>
 
@@ -760,4 +955,3 @@ export default function Boudoir() {
     </div>
   );
 }
-

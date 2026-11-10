@@ -241,7 +241,7 @@ export default function FotografieNunta() {
             <div className="order-2 space-y-6">
               <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl max-w-md mx-auto">
                 <img 
-                  src="./images/fotografienuntaphotos/fotografiedenunta_viziuneafotografica.jpg" 
+                  src="./images/fotografienuntaphotos/fotografiedenunta_viziuneafotografica2.jpeg" 
                   alt="Momente nuntă" 
                   className="w-full h-full object-cover"
                 />
@@ -619,7 +619,7 @@ export default function FotografieNunta() {
             {/* 1. ESSENTIALS */}
             <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
               {/* Photo Header */}
-              <div className="relative h-64 sm:h-72 lg:h-80 xl:h-96 overflow-hidden bg-zinc-900">
+              <div className="relative h-80 sm:h-96 md:h-[400px] lg:h-[440px] xl:h-[490px] overflow-hidden bg-zinc-900">
                 <img 
                   src="./images/fotografienuntaphotos/pachete01.jpg" 
                   alt="Pachet Essentials" 
@@ -634,12 +634,12 @@ export default function FotografieNunta() {
               </div>
 
               {/* Cream Card Body */}
-              <div className="bg-[#ede6de] text-[#3d3832] p-6 xl:p-7 pb-7 xl:pb-8 flex flex-col justify-between flex-grow">
-                <div className="md:h-[290px] lg:h-[285px] xl:h-[295px] flex flex-col justify-start">
-                  <div className="text-center font-bold text-xs uppercase tracking-wider mb-3 leading-tight invisible select-none" aria-hidden="true">
+              <div className="bg-[#ede6de] text-[#3d3832] p-5 xl:p-6 pb-6 xl:pb-7 flex flex-col justify-between flex-grow">
+                <div className="h-[250px] lg:h-[265px] xl:h-[255px] flex flex-col justify-start">
+                  <div className="text-center font-bold text-xs uppercase tracking-wider mb-2 leading-tight invisible select-none" aria-hidden="true">
                     BASE
                   </div>
-                  <div className="space-y-2 sm:space-y-2.5 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug">
+                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug">
                     <p className="flex items-start gap-2">
                       <span className="text-[#8c7b6d] font-bold">•</span>
                       <span>8 ore de prezență la eveniment</span>
@@ -667,7 +667,7 @@ export default function FotografieNunta() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#c5b8aa]">
+                <div className="mt-4 pt-3 border-t border-[#c5b8aa]">
                   <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-[#3d3832] tracking-tight h-10 flex items-center justify-center leading-none">
                     600 EURO
                   </div>
@@ -684,7 +684,7 @@ export default function FotografieNunta() {
             {/* 2. ESSENTIALS PLUS */}
             <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
               {/* Photo Header */}
-              <div className="relative h-64 sm:h-72 lg:h-80 xl:h-96 overflow-hidden bg-zinc-900">
+              <div className="relative h-80 sm:h-96 md:h-[400px] lg:h-[440px] xl:h-[490px] overflow-hidden bg-zinc-900">
                 <img 
                   src="./images/fotografienuntaphotos/pachete02.jpg" 
                   alt="Pachet Essentials Plus" 
@@ -699,12 +699,12 @@ export default function FotografieNunta() {
               </div>
 
               {/* Cream Card Body */}
-              <div className="bg-[#ede6de] text-[#3d3832] p-6 xl:p-7 pb-7 xl:pb-8 flex flex-col justify-between flex-grow">
-                <div className="md:h-[290px] lg:h-[285px] xl:h-[295px] flex flex-col justify-start">
-                  <div className="text-center font-bold text-xs uppercase tracking-wider text-[#574d44] mb-3 leading-tight">
+              <div className="bg-[#ede6de] text-[#3d3832] p-5 xl:p-6 pb-6 xl:pb-7 flex flex-col justify-between flex-grow">
+                <div className="h-[250px] lg:h-[265px] xl:h-[255px] flex flex-col justify-start">
+                  <div className="text-center font-bold text-xs uppercase tracking-wider text-[#574d44] mb-2 leading-tight">
                     ESSENTIALS +
                   </div>
-                  <div className="space-y-2 sm:space-y-2.5 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug">
+                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug">
                     <p className="flex items-start gap-2">
                       <span className="text-[#8c7b6d] font-bold">•</span>
                       <span>9 ore de prezență <strong>(în total)</strong></span>
@@ -721,7 +721,7 @@ export default function FotografieNunta() {
                       <span className="text-[#8c7b6d] font-bold">•</span>
                       <span>500–650 fotografii editate <strong>(în total)</strong></span>
                     </p>
-                    <div className="pt-2 font-bold text-[#574d44] text-xs uppercase tracking-wider">
+                    <div className="pt-1.5 font-bold text-[#574d44] text-xs uppercase tracking-wider">
                       Bonus:
                     </div>
                     <p className="flex items-start gap-2">
@@ -735,7 +735,7 @@ export default function FotografieNunta() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#c5b8aa]">
+                <div className="mt-4 pt-3 border-t border-[#c5b8aa]">
                   <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-[#3d3832] tracking-tight h-10 flex items-center justify-center leading-none">
                     990 EURO
                   </div>
@@ -756,7 +756,7 @@ export default function FotografieNunta() {
               </div>
 
               {/* Photo Header */}
-              <div className="relative h-64 sm:h-72 lg:h-80 xl:h-96 overflow-hidden bg-zinc-900">
+              <div className="relative h-80 sm:h-96 md:h-[400px] lg:h-[440px] xl:h-[490px] overflow-hidden bg-zinc-900">
                 <img 
                   src="./images/fotografienuntaphotos/pachete03.jpg" 
                   alt="Pachet Gold" 
@@ -770,13 +770,13 @@ export default function FotografieNunta() {
                 </div>
               </div>
 
-              {/* Taupe/Brown Card Body - Extends further down */}
-              <div className="bg-[#998471] text-white p-6 xl:p-7 pb-11 xl:pb-14 flex flex-col justify-between flex-grow">
-                <div className="md:h-[290px] lg:h-[285px] xl:h-[295px] flex flex-col justify-start">
-                  <div className="text-center font-bold text-xs uppercase tracking-wider text-white/90 mb-3 leading-tight">
+              {/* Taupe/Brown Card Body - Extends slightly further down */}
+              <div className="bg-[#998471] text-white p-5 xl:p-6 pb-7 xl:pb-8 flex flex-col justify-between flex-grow">
+                <div className="h-[250px] lg:h-[265px] xl:h-[255px] flex flex-col justify-start">
+                  <div className="text-center font-bold text-xs uppercase tracking-wider text-white/90 mb-2 leading-tight">
                     ESSENTIALS PLUS +
                   </div>
-                  <div className="space-y-2 sm:space-y-2.5 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug text-white/95">
+                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug text-white/95">
                     <p className="flex items-start gap-2">
                       <span className="text-white font-bold">•</span>
                       <span>12 ore de prezență <strong>(în total)</strong></span>
@@ -789,7 +789,7 @@ export default function FotografieNunta() {
                       <span className="text-white font-bold">•</span>
                       <span>Ședință foto After Wedding într-o altă zi</span>
                     </p>
-                    <div className="pt-2 font-bold text-white text-xs uppercase tracking-wider">
+                    <div className="pt-1.5 font-bold text-white text-xs uppercase tracking-wider">
                       Bonus:
                     </div>
                     <p className="flex items-start gap-2">
@@ -799,7 +799,7 @@ export default function FotografieNunta() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/20">
+                <div className="mt-4 pt-3 border-t border-white/20">
                   <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-white tracking-tight h-10 flex items-center justify-center leading-none">
                     1200 EURO
                   </div>
@@ -809,7 +809,7 @@ export default function FotografieNunta() {
                   >
                     Alege Pachetul
                   </button>
-                  <p className="text-xs text-center text-white/90 font-light mt-3 italic">
+                  <p className="text-xs text-center text-white/90 font-light mt-2.5 italic">
                     *80% dintre cupluri au ales pachetul GOLD
                   </p>
                 </div>
@@ -819,7 +819,7 @@ export default function FotografieNunta() {
             {/* 4. DIAMOND */}
             <div className="flex flex-col rounded-3xl overflow-hidden shadow-2xl group transition-all duration-300 hover:-translate-y-2 bg-[#ede6de]">
               {/* Photo Header */}
-              <div className="relative h-64 sm:h-72 lg:h-80 xl:h-96 overflow-hidden bg-zinc-900">
+              <div className="relative h-80 sm:h-96 md:h-[400px] lg:h-[440px] xl:h-[490px] overflow-hidden bg-zinc-900">
                 <img 
                   src="./images/fotografienuntaphotos/pachete04.jpg" 
                   alt="Pachet Diamond" 
@@ -834,12 +834,12 @@ export default function FotografieNunta() {
               </div>
 
               {/* Cream Card Body */}
-              <div className="bg-[#ede6de] text-[#3d3832] p-6 xl:p-7 pb-7 xl:pb-8 flex flex-col justify-between flex-grow">
-                <div className="md:h-[290px] lg:h-[285px] xl:h-[295px] flex flex-col justify-start">
-                  <div className="text-center font-bold text-xs uppercase tracking-wider text-[#574d44] mb-3 leading-tight">
+              <div className="bg-[#ede6de] text-[#3d3832] p-5 xl:p-6 pb-6 xl:pb-7 flex flex-col justify-between flex-grow">
+                <div className="h-[250px] lg:h-[265px] xl:h-[255px] flex flex-col justify-start">
+                  <div className="text-center font-bold text-xs uppercase tracking-wider text-[#574d44] mb-2 leading-tight">
                     GOLD +
                   </div>
-                  <div className="space-y-2 sm:space-y-2.5 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug">
+                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-[13px] xl:text-sm font-normal leading-snug">
                     <p className="flex items-start gap-2">
                       <span className="text-[#8c7b6d] font-bold">•</span>
                       <span>Ședință Save the date înainte de nuntă</span>
@@ -848,7 +848,7 @@ export default function FotografieNunta() {
                       <span className="text-[#8c7b6d] font-bold">•</span>
                       <span>800–950 fotografii editate <strong>(în total)</strong></span>
                     </p>
-                    <div className="pt-2 font-bold text-[#574d44] text-xs uppercase tracking-wider">
+                    <div className="pt-1.5 font-bold text-[#574d44] text-xs uppercase tracking-wider">
                       Bonus:
                     </div>
                     <p className="flex items-start gap-2">
@@ -858,7 +858,7 @@ export default function FotografieNunta() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#c5b8aa]">
+                <div className="mt-4 pt-3 border-t border-[#c5b8aa]">
                   <div className="text-2xl xl:text-3xl font-bold font-sans text-center text-[#3d3832] tracking-tight h-10 flex items-center justify-center leading-none">
                     1450 EURO
                   </div>
